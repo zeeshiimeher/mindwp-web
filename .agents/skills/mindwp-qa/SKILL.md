@@ -55,6 +55,7 @@ Check:
 - CTA clarity
 - section dominance
 - surface rhythm, especially whether a dark hero is followed by a normal white/paper second section
+- whether the page repeats the same hero/second-section silhouette as the last rebuilt page
 - repeated structures
 - artifact truth and readability
 - density and rhythm

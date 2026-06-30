@@ -30,23 +30,28 @@ const company: FooterLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
+function footerHeadingId(title: string) {
+  return `footer-${title.toLowerCase().replaceAll(" ", "-")}`;
+}
+
 function Col({ title, links }: { title: string; links: FooterLink[] }) {
+  const headingId = footerHeadingId(title);
+
   return (
-    <div className="flex flex-col gap-3">
-      <h2 className="type-label-caps text-muted-inverse">{title}</h2>
-      <ul className="flex flex-col gap-2.5">
+    <section className="mw-footer__col" aria-labelledby={headingId}>
+      <h2 id={headingId} className="mw-footer__heading type-label-caps">
+        {title}
+      </h2>
+      <ul className="mw-footer__list">
         {links.map((l) => (
           <li key={l.href}>
-            <Link
-              href={l.href}
-              className="type-ui text-muted-inverse transition-colors hover:text-ink-inverse"
-            >
+            <Link href={l.href} prefetch={false} className="mw-footer__link type-ui">
               {l.label}
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 
@@ -54,12 +59,12 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mw-section--navy on-navy">
-      <div className="mw-container pb-10 pt-16">
-        <div className="grid gap-x-14 gap-y-10 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
-          <div className="flex flex-col gap-3">
-            <span className="type-h4 leading-none text-ink-inverse">{SITE.name}</span>
-            <p className="type-body-small max-w-xs text-muted-inverse">
+    <footer className="mw-footer on-navy">
+      <div className="mw-container mw-footer__inner">
+        <div className="mw-footer__grid">
+          <div className="mw-footer__brand">
+            <span className="mw-footer__name type-h4">{SITE.name}</span>
+            <p className="mw-footer__description type-body-small">
               Smart websites — built to bring work in and make sure it doesn&rsquo;t slip away. For
               service businesses and specialist clinics.
             </p>
@@ -69,19 +74,19 @@ export function Footer() {
           <Col title="Company" links={company} />
         </div>
 
-        <div className="type-caption mt-12 flex flex-col gap-3 border-t border-navy-line pt-6 text-muted-inverse sm:flex-row sm:items-center sm:justify-between">
+        <div className="mw-footer__bottom type-caption">
           <span>
             © {year} {SITE.name}. Building service-business websites since 2015.
           </span>
-          <nav className="flex items-center gap-3" aria-label="Legal">
+          <nav className="mw-footer__legal" aria-label="Legal">
             {FOOTER_LEGAL.map((l, i) => (
-              <span key={l.href} className="flex items-center gap-3">
+              <span key={l.href} className="mw-footer__legal-item">
                 {i > 0 && (
-                  <span aria-hidden className="text-navy-line-soft">
+                  <span aria-hidden className="mw-footer__separator">
                     ·
                   </span>
                 )}
-                <Link href={l.href} className="transition-colors hover:text-ink-inverse">
+                <Link href={l.href} prefetch={false} className="mw-footer__legal-link">
                   {l.label}
                 </Link>
               </span>

@@ -3,22 +3,19 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-const badge = cva(
-  "type-ui-small inline-flex min-h-6 items-center rounded-md px-2.5 py-1 font-semibold",
-  {
-    variants: {
-      variant: {
-        solid: "bg-emerald text-navy",
-        outline: "border border-line-strong text-muted",
-        tint: "bg-emerald-soft text-emerald-text",
-        success: "border border-success-border bg-success-surface text-success-text",
-        warning: "border border-warning-border bg-warning-surface text-warning",
-        danger: "border border-danger-border bg-danger-surface text-danger",
-      },
+const badge = cva("mw-badge", {
+  variants: {
+    variant: {
+      solid: "mw-badge--solid",
+      outline: "mw-badge--outline",
+      tint: "mw-badge--tint",
+      success: "mw-badge--success",
+      warning: "mw-badge--warning",
+      danger: "mw-badge--danger",
     },
-    defaultVariants: { variant: "tint" },
   },
-);
+  defaultVariants: { variant: "tint" },
+});
 
 export function Badge({
   children,

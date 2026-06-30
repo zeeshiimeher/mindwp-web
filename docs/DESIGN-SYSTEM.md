@@ -8,7 +8,9 @@ MindWP should feel calm, premium, specific, and commercially serious. The design
 
 Most major commercial pages should open with a dark, high-contrast hero unless the page role gives a stronger reason not to. The dark hero should feel like the decisive first impression: clear buyer problem, concrete MindWP offer, one primary next step, and a real or demonstration artifact when it earns space.
 
-After a dark hero, the second section should normally move to white or paper. Do not stack a second dark section directly after the hero unless the page has a specific dramatic reason and the contrast has been planned. MindWP pages should usually breathe through alternating surface roles, not through random shape changes.
+After a dark hero, the second section should normally move to white or paper. This is a default rhythm, not a required route template. Do not stack a second dark section directly after the hero unless the page has a specific dramatic reason and the contrast has been planned. MindWP pages should usually breathe through alternating surface roles, not through random shape changes.
+
+Valid exceptions include Work, Contact, Pricing/Process, Legal, Resource/Blog, proof-led pages, and any page whose role earns another opening.
 
 Choose the section form because the section job earns it:
 
@@ -37,10 +39,17 @@ If a color token name describes a material or trend rather than a role, prefer a
 Default page surface rhythm:
 
 - Hero: usually `navy`.
-- Second section after a dark hero: usually `section` or `raised`.
+- Second section after a dark hero: usually paper, meaning `section`, `page`, or `raised`.
 - Main body: alternate `section`, `page`, `raised`, and occasional `band` according to section job.
 - Accent surfaces: rare, for a meaningful signal or soft proof/CTA support.
 - Back-to-back dark sections: avoid by default; use only when the page arc truly needs a dark flagship continuation.
+
+Surface token meanings:
+
+- `page`: the global paper field and quiet background.
+- `section`: clean white content surface.
+- `raised`: soft paper inset or lifted surface.
+- `band`: stronger rhythm band for a real transition, proof area, or grouped sequence.
 
 ## Typography Roles
 
@@ -99,7 +108,7 @@ Use containers intentionally:
 - Narrow container for focused explanation or quieter editorial pacing.
 - Full width only when the page form genuinely needs the viewport.
 
-Text widths are roles, not decoration. Hero and flagship headings can be narrow. Body copy should stay readable. Artifacts and proof can be wider than copy.
+Text widths are roles, not decoration. Hero and flagship headings can be narrow, but `mw-text-width--hero` is optional. Long service, industry, or page titles may need a wider measure or page CSS. Body copy should stay readable. Artifacts and proof can be wider than copy.
 
 ## CSS File Shape
 
@@ -164,5 +173,6 @@ Do not judge these from code alone:
 - mobile hierarchy
 - CTA dominance
 - whether the page feels generic
+- whether the hero and second-section silhouette repeats the last rebuilt page
 
 Render the work and inspect it.

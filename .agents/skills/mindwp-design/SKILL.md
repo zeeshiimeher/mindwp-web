@@ -78,7 +78,7 @@ Mixed design axes are a warning sign. Before adding a new visual language, decid
 
 Avoid repeating the same section silhouette by accident. Adjacent sections should differ in at least one meaningful way: density, dominance, artifact type, alignment, surface, pacing, or interaction.
 
-Most major commercial pages should use a dark hero as the first impression unless the page role gives a stronger reason not to. After a dark hero, the second section should normally be white or paper, not another dark band. The usual page rhythm is dark hero, paper/white explanation or proof, then alternating light/paper/band surfaces as section jobs change.
+Most major commercial pages should use a dark hero as the first impression unless the page role gives a stronger reason not to. After a dark hero, the second section should normally be white or paper, not another dark band. This is a default rhythm, not a required route template. Work, Contact, Pricing/Process, Legal, Resource/Blog, proof-led pages, and any page whose role earns another opening can break the sequence.
 
 Default section padding is the normal choice. Compact and spacious sections should be rare and intentional; the page should feel designed through surface sequence, silhouette, density, artifact choice, and hierarchy, not padding swings.
 
@@ -127,6 +127,7 @@ Audit rendered work with:
 - first-glance impression
 - section job clarity
 - repeated structures
+- whether the hero and second-section silhouette repeats the last rebuilt page
 - dominance and proof placement
 - artifact truth and scale
 - typography wrapping

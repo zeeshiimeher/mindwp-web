@@ -1,6 +1,9 @@
 import "./globals.css";
 import "../styles/layout.css";
 import "../styles/buttons.css";
+import "../styles/primitives.css";
+import "../styles/forms.css";
+import "../styles/shell.css";
 import "../styles/motion.css";
 
 import type { Viewport } from "next";
@@ -34,13 +37,13 @@ export const viewport: Viewport = { themeColor: "#071629", colorScheme: "light" 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
-      <body className="flex min-h-dvh flex-col">
+      <body className="mw-app">
         <a href="#main" className="skip-link">
           Skip to content
         </a>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Header />
-        <main id="main" className="flex-1">
+        <main id="main" className="mw-main">
           {children}
         </main>
         <Footer />

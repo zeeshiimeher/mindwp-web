@@ -18,9 +18,9 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
 
   if (state?.ok) {
     return (
-      <div className="rounded-lg border border-line bg-raised p-8">
+      <div className="mw-form-success">
         <h2 className="type-h3">Request received.</h2>
-        <p className="mt-3">{state.message}</p>
+        <p>{state.message}</p>
       </div>
     );
   }
@@ -28,11 +28,11 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
   const err = (k: string) => state?.fieldErrors?.[k];
 
   return (
-    <form action={action} className="flex flex-col gap-5">
+    <form action={action} className="mw-form">
       {system && <input type="hidden" name="system" value={system} />}
       {source && <input type="hidden" name="source" value={source} />}
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="mw-form__row">
         <Field label="Your name" htmlFor="name" error={err("name")}>
           <Input id="name" name="name" autoComplete="name" required invalid={!!err("name")} />
         </Field>
@@ -48,7 +48,7 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
         </Field>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="mw-form__row">
         <Field label="Business or clinic name" htmlFor="businessName" error={err("businessName")}>
           <Input id="businessName" name="businessName" required invalid={!!err("businessName")} />
         </Field>
@@ -57,7 +57,7 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
         </Field>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="mw-form__row">
         <Field label="Industry / practice type" htmlFor="industry" optional>
           <Input id="industry" name="industry" />
         </Field>
@@ -97,16 +97,16 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
         <>
           <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
           <div
-            className="cf-turnstile"
+            className="mw-turnstile cf-turnstile"
             data-sitekey={siteKey}
             data-response-field-name="turnstileToken"
           />
         </>
       )}
 
-      {state && !state.ok && <p className="type-body-small text-danger">{state.message}</p>}
+      {state && !state.ok && <p className="mw-form__message type-body-small">{state.message}</p>}
 
-      <div className="pt-1">
+      <div className="mw-form__actions">
         <Button type="submit" disabled={pending}>
           {pending ? "Sending…" : "Request a Website Review"}
         </Button>

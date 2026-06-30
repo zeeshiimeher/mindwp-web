@@ -2,18 +2,13 @@ import type { ComponentProps, ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-const fieldBase =
-  "type-control min-h-12 w-full rounded-sm border bg-section px-4 py-3 text-ink placeholder:text-subtle transition-colors focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:border-disabled-border disabled:bg-disabled-bg disabled:text-disabled-text disabled:placeholder:text-disabled-text";
-const fieldOk = "border-line-strong focus:border-focus-light focus:ring-focus-light/25";
-const fieldErr = "border-danger focus:border-danger focus:ring-danger/25";
-
 type WithInvalid<T> = T & { invalid?: boolean };
 
 export function Input({ invalid, className, ...props }: WithInvalid<ComponentProps<"input">>) {
   return (
     <input
       aria-invalid={invalid || undefined}
-      className={cn(fieldBase, invalid ? fieldErr : fieldOk, className)}
+      className={cn("mw-field-control", invalid && "mw-field-control--invalid", className)}
       {...props}
     />
   );
@@ -27,7 +22,11 @@ export function Textarea({
   return (
     <textarea
       aria-invalid={invalid || undefined}
-      className={cn(fieldBase, "min-h-32 resize-y", invalid ? fieldErr : fieldOk, className)}
+      className={cn(
+        "mw-field-control mw-field-control--textarea",
+        invalid && "mw-field-control--invalid",
+        className,
+      )}
       {...props}
     />
   );
@@ -42,7 +41,7 @@ export function Select({
   return (
     <select
       aria-invalid={invalid || undefined}
-      className={cn(fieldBase, invalid ? fieldErr : fieldOk, className)}
+      className={cn("mw-field-control", invalid && "mw-field-control--invalid", className)}
       {...props}
     >
       {children}
@@ -52,7 +51,7 @@ export function Select({
 
 export function Label({ className, children, ...props }: ComponentProps<"label">) {
   return (
-    <label className={cn("type-label mb-1.5 block text-ink", className)} {...props}>
+    <label className={cn("mw-field-label type-label", className)} {...props}>
       {children}
     </label>
   );
@@ -60,7 +59,7 @@ export function Label({ className, children, ...props }: ComponentProps<"label">
 
 export function FieldError({ children }: { children?: ReactNode }) {
   if (!children) return null;
-  return <p className="type-caption mt-1 text-danger">{children}</p>;
+  return <p className="mw-field-error type-caption">{children}</p>;
 }
 
 /** Label + control + error, wired together. */
@@ -78,10 +77,10 @@ export function Field({
   children: ReactNode;
 }) {
   return (
-    <div>
+    <div className="mw-field">
       <Label htmlFor={htmlFor}>
         {label}
-        {optional && <span className="font-normal text-subtle"> (optional)</span>}
+        {optional && <span className="mw-field-optional"> (optional)</span>}
       </Label>
       {children}
       <FieldError>{error}</FieldError>

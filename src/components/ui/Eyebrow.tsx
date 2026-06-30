@@ -7,10 +7,5 @@ import { cn } from "@/lib/utils";
  * and the rule inherits text color via `bg-current`.
  */
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <p className={cn("type-eyebrow inline-flex items-center gap-2", className)}>
-      <span aria-hidden className="h-0.5 w-5 shrink-0 bg-current" />
-      {children}
-    </p>
-  );
+  return <p className={cn("mw-eyebrow type-eyebrow", className)}>{children}</p>;
 }

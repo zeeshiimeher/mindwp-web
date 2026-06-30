@@ -131,7 +131,7 @@ Spacing should feel systemized:
 
 Use a consistent spacing scale and deliberate `clamp()` values for major section padding. Do not create fluid spacing because it looks smooth in one viewport.
 
-After a dark hero, the next section should normally move to white or paper (`section`, `page`, or `raised`). Do not place a second dark section after the hero unless the section job and page arc clearly earn the sustained dark run.
+After a dark hero, the next section should normally move to white or paper. In the current token system, paper means `page`, `section`, or `raised`; `band` is a stronger transition surface. Do not place a second dark section after the hero unless the section job and page arc clearly earn the sustained dark run.
 
 ## Page CSS Shape
 

@@ -49,7 +49,7 @@ For any page plan or rebuild, lock these decisions before implementation:
 - flagship section and dominance rank
 - CTA posture and where the primary CTA appears
 - visual rhythm: dense, quiet, flagship, proof, editorial, CTA
-- surface rhythm: dark hero when earned, normally white/paper second section, then alternating surfaces by section job
+- surface rhythm: dark hero and white/paper second section as a default, or the page-role reason for breaking that rhythm
 - styling approach: global foundation changes, page CSS files, artifact CSS, isolated modules if earned
 - component/shell implications
 - QA plan: viewport checks, section crops, validation commands
