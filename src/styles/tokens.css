@@ -1,0 +1,175 @@
+/* =============================================================================
+ * MindWP design tokens — SOURCE OF TRUTH
+ * Never hardcode a hex, size, radius, or shadow in a component. Tailwind v4
+ * `@theme` color/radius/shadow vars also generate token-backed utilities.
+ * ============================================================================= */
+
+@theme {
+  /* --- Colour: core palette --------------------------------------------- */
+  --color-navy: #071629; /* dark sections, hero, footer */
+  --color-navy-soft: #0e2236; /* raised panels on dark */
+  --color-navy-raised: #142a3f; /* dark hover/inset */
+  --color-navy-line: #21384c; /* borders on dark */
+  --color-navy-line-soft: #3a4a5c; /* subtle outline on dark */
+
+  --color-emerald: #2fb98c; /* scarce accent on dark */
+  --color-emerald-text: #0f7a57; /* accessible accent text on light */
+  --color-emerald-hover: #46c79c;
+  --color-emerald-soft: #e0f0e8; /* soft accent surface */
+  --color-emerald-soft-strong: #cde7da;
+
+  /* --- Colour: page roles ----------------------------------------------- */
+  --color-page: #f3f5f4; /* default app background */
+  --color-section: #ffffff; /* clean section surface */
+  --color-raised: #f8faf9; /* quiet raised/inset surface */
+  --color-band: #eaf0ec; /* subtle page rhythm band */
+
+  --color-ink: #14181d; /* headings and primary text */
+  --color-muted: #566169; /* body and secondary text */
+  --color-subtle: #626b73; /* captions and micro-labels */
+  --color-ink-inverse: #eef2f0; /* text on navy */
+  --color-muted-inverse: #9ba6ae; /* secondary text on navy */
+
+  --color-line: #dbe2de; /* dividers and quiet borders */
+  --color-line-strong: #c7d0cb; /* input outlines and stronger borders */
+
+  /* --- Colour: semantic (state only — NEVER a brand accent) ------------- */
+  --color-success: #2fb98c;
+  --color-success-text: #0f7a57;
+  --color-success-surface: #e0f0e8;
+  --color-success-border: #cde7da;
+  --color-warning: #8a5a11;
+  --color-warning-surface: #f6ead4;
+  --color-warning-border: #d8b06c;
+  --color-danger: #9c3f34;
+  --color-danger-surface: #f7e6e3;
+  --color-danger-border: #d9a19a;
+
+  /* --- Colour: disabled ------------------------------------------------- */
+  --color-disabled-bg: #e7ece9;
+  --color-disabled-text: #606b64;
+  --color-disabled-border: #cfd8d3;
+  --color-disabled-bg-on-dark: #142a3f;
+  --color-disabled-text-on-dark: #87939d;
+
+  --color-focus-light: var(--color-emerald-text);
+  --color-focus-dark: var(--color-emerald);
+
+  /* --- Type families (bound to next/font CSS vars set in layout.tsx) ---- */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* --- Radius ----------------------------------------------------------- */
+  --radius-sm: 0.5rem; /* 8px — buttons, inputs, chips */
+  --radius-md: 0.75rem; /* 12px — metric cards */
+  --radius-lg: 1rem; /* 16px — content & dark cards */
+  --radius-pill: 999px;
+
+  /* --- Shadows (navy-based — NO glow; emerald restraint) --------------- */
+  --shadow-sm: 0 1px 2px rgba(7, 22, 41, 0.05);
+  --shadow-card: 0 8px 24px rgba(7, 22, 41, 0.06);
+  --shadow-panel: 0 16px 48px rgba(7, 22, 41, 0.1);
+  --shadow-dark-lg: 0 24px 60px rgba(0, 0, 0, 0.32);
+
+  /* --- Easing (also generates Tailwind `ease-out` / `ease-in-out`) ------ */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* --- Layout, spacing, and font tokens (not Tailwind utilities) ------------ */
+:root {
+  /* Containers */
+  --container-frame: 1920px;
+  --container: 1440px;
+  --container-wide: 1600px;
+  --container-narrow: 1120px;
+  --container-pad: clamp(1.25rem, 0.75rem + 2vw, 3rem);
+  --container-gap: 24px;
+
+  /* 4px spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Section rhythm */
+  --section-pad-s: clamp(3rem, 2.4rem + 2vw, 4.5rem);
+  --section-pad-m: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  --section-pad-l: clamp(5rem, 3.8rem + 5vw, 8rem);
+  --section-pad-xl: clamp(6rem, 4rem + 8vw, 10rem);
+  --section-pad: var(--section-pad-m);
+
+  /* Type roles. Display = Fraunces; body/UI = Inter. */
+  --h1-font-size: clamp(2.625rem, 1.75rem + 3.2vw, 4.5rem);
+  --h1-line-height: 1;
+  --h1-letter-spacing: -0.012em;
+  --h2-font-size: clamp(1.75rem, 1.25rem + 2.1vw, 3.125rem);
+  --h2-line-height: 1.08;
+  --h2-letter-spacing: -0.006em;
+  --h3-l-font-size: clamp(2.25rem, 1.7rem + 2.2vw, 4rem);
+  --h3-l-line-height: 1.04;
+  --h3-l-letter-spacing: -0.01em;
+  --h3-font-size: clamp(1.625rem, 1.45rem + 0.62vw, 2rem);
+  --h3-line-height: 1.16;
+  --h4-font-size: 1.375rem;
+  --h4-line-height: 1.25;
+  --h5-font-size: 1.125rem;
+  --h5-line-height: 1.4;
+  --h6-font-size: 0.875rem;
+  --h6-line-height: 1.4;
+  --body-l-font-size: clamp(1rem, 0.87rem + 0.53vw, 1.25rem);
+  --body-l-line-height: 1.5;
+  --body-font-size: 1rem;
+  --body-line-height: 1.62;
+  --body-s-font-size: 0.875rem;
+  --body-s-line-height: 1.5;
+  --caption-font-size: 0.8125rem;
+  --caption-line-height: 1.45;
+  --eyebrow-font-size: 0.6875rem;
+  --eyebrow-line-height: 1.05;
+  --ui-s-font-size: 0.8125rem;
+  --ui-s-line-height: 1.1;
+  --ui-font-size: 0.875rem;
+  --ui-line-height: 1.15;
+  --ui-l-font-size: 0.9375rem;
+  --ui-l-line-height: 1.2;
+  --control-font-size: 1rem;
+  --control-line-height: 1.35;
+  --label-font-size: 0.875rem;
+  --label-line-height: 1.35;
+
+  /* Readable text widths */
+  --text-width-hero: 18ch;
+  --text-width-flagship: 20ch;
+  --text-width-heading: 22ch;
+  --text-width-l: 58ch;
+  --text-width: 68ch;
+
+  /* Motion durations */
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 500ms;
+  --dur-reveal: 650ms;
+
+  /* Z-index scale */
+  --z-base: 1;
+  --z-raised: 5;
+  --z-sticky: 50;
+  --z-overlay: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+
+  /* Focus ring (accent is allowed on the focus state only) */
+  --shadow-focus: 0 0 0 3px color-mix(in srgb, var(--color-focus-light) 30%, transparent);
+  --shadow-focus-dark: 0 0 0 3px color-mix(in srgb, var(--color-focus-dark) 35%, transparent);
+}

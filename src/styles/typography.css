@@ -1,0 +1,373 @@
+/* =============================================================================
+ * Typography — element-first, role-backed.
+ * Semantic elements carry the public reading hierarchy. `*-font` classes are
+ * explicit overrides for sections and primitives that need a different role.
+ * ============================================================================= */
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  h1 {
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+  }
+
+  h2 {
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+  }
+
+  h3 {
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+  }
+
+  h4 {
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+  }
+
+  h5 {
+    font-size: var(--h5-font-size);
+    line-height: var(--h5-line-height);
+  }
+
+  h6 {
+    font-size: var(--h6-font-size);
+    line-height: var(--h6-line-height);
+  }
+
+  p,
+  li {
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--color-muted);
+  }
+
+  small {
+    font-size: var(--body-s-font-size);
+    line-height: var(--body-s-line-height);
+  }
+
+  strong,
+  b {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  a:not([class]) {
+    color: var(--color-emerald-text);
+    text-decoration: none;
+  }
+
+  a:not([class]):hover {
+    text-decoration: underline;
+  }
+
+  p a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  ol,
+  ul {
+    padding-left: 0px;
+  }
+
+  blockquote {
+    border-left: 2px solid var(--color-emerald);
+    padding-left: 1rem;
+    color: var(--color-ink);
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    background: var(--color-band);
+    padding: 0.1em 0.35em;
+    border-radius: var(--radius-sm);
+  }
+
+  .on-navy h1,
+  .on-navy h2,
+  .on-navy h3,
+  .on-navy h4,
+  .on-navy h5,
+  .on-navy h6,
+  .on-navy strong {
+    color: var(--color-ink-inverse);
+  }
+
+  .on-navy p,
+  .on-navy li,
+  .on-navy small {
+    color: var(--color-muted-inverse);
+  }
+
+  .on-navy a:not([class]) {
+    color: var(--color-emerald);
+  }
+
+  .on-navy
+    :is(.bg-page, .bg-section, .bg-raised, .bg-band, .bg-emerald-soft)
+    a:not([class]) {
+    color: var(--color-emerald-text);
+  }
+
+  .on-navy
+    :is(.bg-page, .bg-section, .bg-raised, .bg-band, .bg-emerald-soft)
+    :where(h1, h2, h3, h4, h5, h6, strong) {
+    color: var(--color-ink);
+  }
+
+  .on-navy
+    :is(.bg-page, .bg-section, .bg-raised, .bg-band, .bg-emerald-soft)
+    :where(p, li, small) {
+    color: var(--color-muted);
+  }
+
+  .on-navy
+    :is(.bg-page, .bg-section, .bg-raised, .bg-band, .bg-emerald-soft)
+    :where(.text-ink) {
+    color: var(--color-ink);
+  }
+
+  .on-navy
+    :is(.bg-page, .bg-section, .bg-raised, .bg-band, .bg-emerald-soft)
+    :where(.text-muted) {
+    color: var(--color-muted);
+  }
+
+  .on-navy
+    :is(.bg-page, .bg-section, .bg-raised, .bg-band, .bg-emerald-soft)
+    :where(.text-subtle) {
+    color: var(--color-subtle);
+  }
+
+  .on-navy
+    :is(.bg-page, .bg-section, .bg-raised, .bg-band, .bg-emerald-soft)
+    :where(.text-emerald-text) {
+    color: var(--color-emerald-text);
+  }
+}
+
+@layer components {
+  .h1-font,
+  .h2-font,
+  .h3-font-l,
+  .h3-font,
+  .h4-font {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  .h1-font {
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+  }
+
+  .h2-font {
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+  }
+
+  .h3-font-l {
+    font-size: var(--h3-l-font-size);
+    line-height: var(--h3-l-line-height);
+    letter-spacing: var(--h3-l-letter-spacing);
+  }
+
+  .h3-font {
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+  }
+
+  .h4-font {
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+  }
+
+  .h5-font {
+    font-family: var(--font-sans);
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+    line-height: var(--h5-line-height);
+    color: var(--color-ink);
+  }
+
+  .h6-font {
+    font-family: var(--font-sans);
+    font-size: var(--h6-font-size);
+    font-weight: 600;
+    line-height: var(--h6-line-height);
+    color: var(--color-ink);
+  }
+
+  .body-font-l {
+    font-family: var(--font-sans);
+    font-size: var(--body-l-font-size);
+    line-height: var(--body-l-line-height);
+  }
+
+  .body-font {
+    font-family: var(--font-sans);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+  }
+
+  .body-font-s {
+    font-family: var(--font-sans);
+    font-size: var(--body-s-font-size);
+    line-height: var(--body-s-line-height);
+  }
+
+  .caption-font {
+    font-family: var(--font-sans);
+    font-size: var(--caption-font-size);
+    line-height: var(--caption-line-height);
+    color: var(--color-subtle);
+  }
+
+  .eyebrow-font {
+    font-family: var(--font-sans);
+    font-size: var(--eyebrow-font-size);
+    font-weight: 600;
+    line-height: var(--eyebrow-line-height);
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
+    color: var(--color-emerald-text);
+  }
+
+  .label-font-caps {
+    font-family: var(--font-sans);
+    font-size: var(--eyebrow-font-size);
+    font-weight: 600;
+    line-height: var(--eyebrow-line-height);
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
+  }
+
+  .ui-font-s {
+    font-family: var(--font-sans);
+    font-size: var(--ui-s-font-size);
+    line-height: var(--ui-s-line-height);
+  }
+
+  .ui-font {
+    font-family: var(--font-sans);
+    font-size: var(--ui-font-size);
+    line-height: var(--ui-line-height);
+  }
+
+  .ui-font-l {
+    font-family: var(--font-sans);
+    font-size: var(--ui-l-font-size);
+    line-height: var(--ui-l-line-height);
+  }
+
+  .control-font {
+    font-family: var(--font-sans);
+    font-size: var(--control-font-size);
+    line-height: var(--control-line-height);
+  }
+
+  .label-font {
+    font-family: var(--font-sans);
+    font-size: var(--label-font-size);
+    font-weight: 600;
+    line-height: var(--label-line-height);
+  }
+
+  .voice-font {
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .text-width-hero {
+    max-width: var(--text-width-hero);
+  }
+
+  .text-width-flagship {
+    max-width: var(--text-width-flagship);
+  }
+
+  .text-width-l {
+    max-width: var(--text-width-l);
+  }
+
+  .text-width {
+    max-width: var(--text-width);
+  }
+
+  .on-navy .h1-font,
+  .on-navy .h2-font,
+  .on-navy .h3-font-l,
+  .on-navy .h3-font,
+  .on-navy .h4-font,
+  .on-navy .h5-font,
+  .on-navy .h6-font {
+    color: var(--color-ink-inverse);
+  }
+
+  .on-navy .eyebrow-font {
+    color: var(--color-emerald);
+  }
+
+  .on-navy .caption-font {
+    color: var(--color-muted-inverse);
+  }
+
+  .prose {
+    max-width: var(--text-width);
+    color: var(--color-muted);
+  }
+
+  .prose > * + * {
+    margin-top: 1.1em;
+  }
+
+  .prose h2 {
+    margin-top: 1.8em;
+  }
+
+  .prose h3 {
+    margin-top: 1.4em;
+  }
+
+  .prose ul,
+  .prose ol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+  }
+
+  .prose a {
+    text-decoration: underline;
+  }
+}

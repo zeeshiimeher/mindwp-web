@@ -1,0 +1,148 @@
+/* =============================================================================
+ * Button primitive.
+ *
+ * Use the React <Button> component for behaviour and routing. These classes own
+ * the visual treatment so buttons do not depend on Tailwind strings.
+ * ============================================================================= */
+
+.mw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: fit-content;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.mw-btn:where(:hover) {
+  text-decoration: none;
+}
+
+.mw-btn:where(:active) {
+  transform: translateY(1px);
+}
+
+.mw-btn:where(:disabled, [aria-disabled="true"]) {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.mw-btn--sm {
+  min-height: 2.25rem;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--ui-s-font-size);
+  line-height: var(--ui-s-line-height);
+}
+
+.mw-btn--md {
+  min-height: 2.75rem;
+  padding: 0.625rem var(--space-5);
+  font-size: var(--ui-font-size);
+  line-height: var(--ui-line-height);
+}
+
+.mw-btn--lg {
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--ui-l-font-size);
+  line-height: var(--ui-l-line-height);
+}
+
+.mw-btn--primary.mw-btn--light {
+  background: var(--color-navy);
+  color: var(--color-section);
+}
+
+.mw-btn--primary.mw-btn--light:where(:hover) {
+  background: var(--color-navy-raised);
+}
+
+.mw-btn--primary.mw-btn--dark {
+  background: var(--color-emerald);
+  color: var(--color-navy);
+}
+
+.mw-btn--primary.mw-btn--dark:where(:hover) {
+  background: var(--color-emerald-hover);
+}
+
+.mw-btn--secondary.mw-btn--light {
+  border-color: var(--color-line-strong);
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.mw-btn--secondary.mw-btn--light:where(:hover) {
+  border-color: var(--color-emerald-soft);
+  background: var(--color-emerald-soft);
+  color: var(--color-emerald-text);
+}
+
+.mw-btn--secondary.mw-btn--dark {
+  border-color: var(--color-navy-line-soft);
+  background: transparent;
+  color: var(--color-ink-inverse);
+}
+
+.mw-btn--secondary.mw-btn--dark:where(:hover) {
+  border-color: var(--color-emerald);
+  color: var(--color-emerald);
+}
+
+.mw-btn--text {
+  min-height: 0;
+  padding: var(--space-1) 0;
+  border-color: transparent;
+  background: transparent;
+}
+
+.mw-btn--text.mw-btn--light {
+  color: var(--color-emerald-text);
+}
+
+.mw-btn--text.mw-btn--dark {
+  color: var(--color-emerald);
+}
+
+.mw-btn--text:where(:hover) {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.mw-btn--light:where(:focus-visible) {
+  outline-color: var(--color-focus-light);
+  box-shadow: var(--shadow-focus);
+}
+
+.mw-btn--dark:where(:focus-visible) {
+  outline-color: var(--color-focus-dark);
+  box-shadow: var(--shadow-focus-dark);
+}
+
+.mw-btn--light:where(:disabled, [aria-disabled="true"]) {
+  background: var(--color-disabled-bg);
+  border-color: var(--color-disabled-border);
+  color: var(--color-disabled-text);
+}
+
+.mw-btn--dark:where(:disabled, [aria-disabled="true"]) {
+  background: var(--color-disabled-bg-on-dark);
+  border-color: var(--color-navy-line-soft);
+  color: var(--color-disabled-text-on-dark);
+}
+
+.mw-btn--text:where(:disabled, [aria-disabled="true"]) {
+  background: transparent;
+  border-color: transparent;
+}

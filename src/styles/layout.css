@@ -1,0 +1,190 @@
+/* =============================================================================
+ * Layout and composition framework.
+ *
+ * This is intentionally small. It defines how pages breathe and align; page CSS
+ * and earned artifacts still own the real visual idea.
+ * ============================================================================= */
+
+@layer components {
+  .mw-section {
+    width: 100%;
+    padding-block: var(--section-pad);
+    background: var(--color-page);
+  }
+
+  .mw-section--compact {
+    padding-block: var(--section-pad-s);
+  }
+
+  .mw-section--default {
+    padding-block: var(--section-pad-m);
+  }
+
+  .mw-section--spacious {
+    padding-block: var(--section-pad-l);
+  }
+
+  .mw-section--hero {
+    padding-block: var(--section-pad-xl);
+  }
+
+  .mw-section--page {
+    background: var(--color-page);
+  }
+
+  .mw-section--section {
+    background: var(--color-section);
+  }
+
+  .mw-section--raised {
+    background: var(--color-raised);
+  }
+
+  .mw-section--band {
+    background: var(--color-band);
+  }
+
+  .mw-section--accent {
+    background: var(--color-emerald-soft);
+  }
+
+  .mw-section--navy {
+    background: var(--color-navy);
+    color: var(--color-ink-inverse);
+  }
+
+  .mw-container {
+    width: min(100%, var(--container));
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
+  }
+
+  .mw-container--narrow {
+    width: min(100%, var(--container-narrow));
+  }
+
+  .mw-container--wide {
+    width: min(100%, var(--container-wide));
+  }
+
+  .mw-container--full {
+    width: 100%;
+    max-width: none;
+  }
+
+  .mw-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap, var(--space-6));
+  }
+
+  .mw-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--cluster-gap, var(--space-4));
+  }
+
+  .mw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min, 18rem)), 1fr));
+    gap: var(--grid-gap, var(--container-gap));
+  }
+
+  .mw-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--switcher-gap, var(--container-gap));
+  }
+
+  .mw-switcher > * {
+    flex-basis: calc((var(--switcher-threshold, 44rem) - 100%) * 999);
+    flex-grow: 1;
+  }
+
+  .mw-flow > * + * {
+    margin-block-start: var(--flow-space, var(--space-6));
+  }
+
+  .mw-text-width {
+    max-width: var(--text-width);
+  }
+
+  .mw-text-width--l {
+    max-width: var(--text-width-l);
+  }
+
+  .mw-text-width--heading {
+    max-width: var(--text-width-heading);
+  }
+
+  .mw-text-width--hero {
+    max-width: var(--text-width-hero);
+  }
+
+  .mw-text-width--flagship {
+    max-width: var(--text-width-flagship);
+  }
+
+  .mw-surface-page {
+    background: var(--color-page);
+    color: var(--color-ink);
+  }
+
+  .mw-surface-section {
+    background: var(--color-section);
+    color: var(--color-ink);
+  }
+
+  .mw-surface-raised {
+    background: var(--color-raised);
+    color: var(--color-ink);
+  }
+
+  .mw-surface-band {
+    background: var(--color-band);
+    color: var(--color-ink);
+  }
+
+  .mw-surface-accent {
+    background: var(--color-emerald-soft);
+    color: var(--color-ink);
+  }
+
+  .mw-surface-navy {
+    background: var(--color-navy);
+    color: var(--color-ink-inverse);
+  }
+
+  .mw-border-line {
+    border: 1px solid var(--color-line);
+  }
+
+  .mw-border-line-strong {
+    border: 1px solid var(--color-line-strong);
+  }
+
+  .mw-pad-inline {
+    padding-inline: var(--pad-inline, var(--container-pad));
+  }
+
+  .mw-pad-block {
+    padding-block: var(--pad-block, var(--section-pad-m));
+  }
+
+  .skip-link {
+    position: absolute;
+    left: var(--space-3);
+    top: -3.5rem;
+    z-index: var(--z-toast);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    background: var(--color-navy);
+    color: var(--color-ink-inverse);
+    transition: top var(--dur-fast) var(--ease-out);
+  }
+
+  .skip-link:focus {
+    top: var(--space-3);
+  }
+}

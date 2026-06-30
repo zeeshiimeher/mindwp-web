@@ -1,0 +1,43 @@
+/* =============================================================================
+ * Reveal-on-scroll motion.
+ * SSR-safe + crawler-safe: content is fully visible by default. The pre-hidden
+ * state ONLY applies once the <RevealMotion> island sets [data-js-motion] on
+ * <html>, and only when the user hasn't asked to reduce motion. The island
+ * adds `.is-revealed` as each [data-reveal] element scrolls into view.
+ * Stagger: set style="--reveal-index: N" on siblings.
+ * ============================================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-js-motion] [data-reveal] {
+    opacity: 0;
+    transition:
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+    transition-delay: calc(var(--reveal-index, 0) * 70ms);
+    will-change: opacity, transform;
+  }
+
+  [data-js-motion] [data-reveal="rise"] {
+    transform: translateY(20px);
+  }
+  [data-js-motion] [data-reveal="panel"] {
+    transform: translateY(28px) scale(0.985);
+  }
+
+  [data-js-motion] [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* SVG stroke draw-on for hand-drawn artifacts (set --draw-length to the path length) */
+  [data-js-motion] [data-reveal="line"] {
+    stroke-dasharray: var(--draw-length, 1);
+    stroke-dashoffset: var(--draw-length, 1);
+    transition: stroke-dashoffset var(--dur-slow) var(--ease-out);
+    transition-delay: calc(var(--reveal-index, 0) * 70ms);
+    opacity: 1;
+  }
+  [data-js-motion] [data-reveal="line"].is-revealed {
+    stroke-dashoffset: 0;
+  }
+}
