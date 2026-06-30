@@ -458,7 +458,7 @@ A useful underlying arc — **not a rigid template to stamp on every page:**
 Recognition -> Friction -> Clarity (the offer) -> Proof -> Action
 ```
 
-This is a guide for where copy energy goes, not a fixed section list or order. The conversion arc itself is owned by [STRATEGY.md](./STRATEGY.md); WRITING owns only how copy energy maps onto it. Pages should vary their structure and silhouette using `.agents/skills/mindwp-design/SKILL.md` — applying the identical rhythm to every page is exactly what made the old site feel templated. What every page must do is reach the **offer** and show real **proof** before the strong CTA; how it gets there can differ.
+This is a guide for where copy energy goes, not a fixed section list or order. The conversion arc itself is owned by [STRATEGY.md](./STRATEGY.md); WRITING owns only how copy energy maps onto it. Pages should vary their structure and silhouette using `.agents/skills/mindwp-design/SKILL.md`; repeating the identical rhythm across pages makes the site feel templated. What every page must do is reach the **offer** and show real **proof** before the strong CTA; how it gets there can differ.
 
 Hero sections create recognition. They should not teach the whole system.
 

@@ -16,8 +16,8 @@ export default function Error({
     <Section className="flex min-h-[60vh] items-center">
       <Container>
         <Eyebrow>Something went wrong</Eyebrow>
-        <h1 className="h2-font mt-3">A page slipped.</h1>
-        <p className="body-font mt-4 max-w-md">
+        <h1 className="type-h2 mt-3">A page slipped.</h1>
+        <p className="type-body mt-4 max-w-md">
           An unexpected error occurred on our side. Try again, or head back home.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">

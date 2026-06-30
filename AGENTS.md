@@ -14,16 +14,20 @@ MindWP is a premium web-systems company for established service businesses and s
 
 - Read this file first.
 - Use only local MindWP skills for default repo guidance.
-- Do not rebuild pages, change routes, change tokens, or edit shared primitives unless the task explicitly asks for that scope.
+- Do not add external or generic skill routing here. External references may inform local skill rewrites only; MindWP local skills remain the operating system.
+- Do not rebuild pages or change routes unless the task explicitly asks for that scope.
+- Do not change tokens, global CSS, shared primitives, header, footer, or shell casually. They may be changed when explicitly scoped or when necessary to complete the scoped task well; report why if changed for necessity.
 
 ## Skill Routing
 
-- Page rebuild or page planning: `.agents/skills/mindwp-page-rebuild/SKILL.md`
+- Task flow, page planning, rebuild sequencing, QA planning: `.agents/skills/mindwp-workflow/SKILL.md`
 - Visual thesis, section silhouette, artifacts, screenshot audit: `.agents/skills/mindwp-design/SKILL.md`
 - CSS foundation, page-level styling, semantic markup, responsive layout, spacing: `.agents/skills/mindwp-css/SKILL.md`
 - Next/App Router architecture, routes, components, typed contracts, validation: `.agents/skills/mindwp-engineering/SKILL.md`
+- Shell, primitives, header, footer, nav, buttons, forms, repeated UI: `.agents/skills/mindwp-components/SKILL.md`
 - Public copy, proof/CTA language, claim boundaries: `.agents/skills/mindwp-writing/SKILL.md`
 - Motion, transitions, scroll behavior, reduced motion: `.agents/skills/mindwp-motion/SKILL.md`
+- Rendered QA, screenshots, responsive checks, accessibility, validation: `.agents/skills/mindwp-qa/SKILL.md`
 
 ## Docs Routing
 
@@ -31,6 +35,7 @@ MindWP is a premium web-systems company for established service businesses and s
 - Offer model, systems, proof model, conversion strategy: `docs/STRATEGY.md`
 - Page roles, IA, CTA posture, rebuild planning: `docs/PAGES.md`
 - Public language and copy validation: `docs/WRITING.md`
+- Practical design-system and CSS usage guide: `docs/DESIGN-SYSTEM.md`
 - Current code structure and technical rationale: `docs/ARCHITECTURE.md`
 
 ## Non-Negotiables
@@ -52,12 +57,15 @@ MindWP is a premium web-systems company for established service businesses and s
 - Rebuilt pages should use a strong global CSS foundation plus 1-3 readable page CSS files where practical.
 - Section CSS modules are optional and should be used only when isolation is genuinely cleaner.
 - Global CSS may own tokens, type roles, layout primitives, surface roles, buttons, motion hooks, and reusable helper classes.
+- Cards, lists, grids, browser/page frames, split layouts, panels, icons, simple editorial sections, and motion are allowed when the section job earns them.
+- Do not default to generic page forms without a visual thesis.
+- Header, footer, shell, and primitives may be improved or rebuilt when the task scope includes them.
 
 ## Validation
 
 - Guidance/docs-only changes: `git diff --check`.
 - Page/component/source changes: `pnpm check`, then `pnpm build`, then `pnpm test`.
-- Visual page changes also require desktop/mobile screenshots and section crops before approval.
+- Visual page changes also require rendered screenshots and section crops before approval: desktop `1440px` and `1280px`, mobile `400px`, and tablet `1024px` when nav, artifacts, grids, multi-column sections, or major responsive structure change.
 
 ## Reporting
 

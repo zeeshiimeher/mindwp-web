@@ -8,24 +8,24 @@
 @layer components {
   .mw-section {
     width: 100%;
-    padding-block: var(--section-pad);
+    padding-block: var(--section-space-default);
     background: var(--color-page);
   }
 
   .mw-section--compact {
-    padding-block: var(--section-pad-s);
+    padding-block: var(--section-space-compact);
   }
 
   .mw-section--default {
-    padding-block: var(--section-pad-m);
+    padding-block: var(--section-space-default);
   }
 
   .mw-section--spacious {
-    padding-block: var(--section-pad-l);
+    padding-block: var(--section-space-spacious);
   }
 
   .mw-section--hero {
-    padding-block: var(--section-pad-xl);
+    padding-block: var(--section-space-hero);
   }
 
   .mw-section--page {
@@ -118,6 +118,10 @@
     max-width: var(--text-width-heading);
   }
 
+  .mw-text-width--s {
+    max-width: var(--text-width-s);
+  }
+
   .mw-text-width--hero {
     max-width: var(--text-width-hero);
   }
@@ -169,7 +173,52 @@
   }
 
   .mw-pad-block {
-    padding-block: var(--pad-block, var(--section-pad-m));
+    padding-block: var(--pad-block, var(--section-space-default));
+  }
+
+  .mw-media {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--media-radius, var(--radius-lg));
+    aspect-ratio: var(--media-ratio, 16 / 10);
+    background: var(--media-bg, var(--color-raised));
+  }
+
+  .mw-media > :is(img, picture, video, canvas, svg) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mw-media > :is(img, video) {
+    object-fit: var(--media-fit, cover);
+  }
+
+  .mw-artifact {
+    position: relative;
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--artifact-radius, var(--radius-lg));
+    aspect-ratio: var(--artifact-ratio, 16 / 10);
+    background: var(--artifact-bg, var(--color-raised));
+  }
+
+  .mw-artifact--readable {
+    overflow: auto;
+  }
+
+  .mw-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--field-min, 18rem)), 1fr));
+    gap: var(--form-gap, var(--space-5));
+  }
+
+  .mw-field-group {
+    display: grid;
+    gap: var(--field-gap, var(--space-3));
+    min-width: 0;
   }
 
   .skip-link {

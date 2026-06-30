@@ -15,10 +15,67 @@
     background: var(--color-page);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-size: var(--body-font-size);
-    line-height: var(--body-line-height);
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  main {
+    min-width: 0;
+  }
+
+  section {
+    scroll-margin-block-start: 5rem;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    font-size: var(--type-body-small-size);
+    line-height: var(--type-body-small-line);
+    color: var(--color-subtle);
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    color: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    min-width: 0;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  ::placeholder {
+    color: var(--color-subtle);
+    opacity: 1;
   }
 
   ::selection {
@@ -34,5 +91,11 @@
 
   .on-navy :focus-visible {
     outline-color: var(--color-focus-dark);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }

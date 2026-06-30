@@ -1,6 +1,6 @@
 # ARCHITECTURE — current code shape and technical rationale
 
-This doc explains the current repo shape and technical rationale. It is reference material, not the implementation checklist. Use `.agents/skills/mindwp-engineering/SKILL.md` for App Router/component architecture, `.agents/skills/mindwp-css/SKILL.md` for CSS/layout rules, and `.agents/skills/mindwp-page-rebuild/SKILL.md` for page workflow.
+This doc explains the current repo shape and technical rationale. It is reference material, not the implementation checklist. Use `.agents/skills/mindwp-engineering/SKILL.md` for App Router/React architecture, `.agents/skills/mindwp-components/SKILL.md` for shell/primitives/header/footer/forms, `.agents/skills/mindwp-css/SKILL.md` for CSS/layout rules, `docs/DESIGN-SYSTEM.md` for practical CSS-system usage, and `.agents/skills/mindwp-workflow/SKILL.md` for page workflow.
 
 ## Current State
 
@@ -36,7 +36,7 @@ src/
   content/     canonical systems and industries allow-lists
   lib/         CTA labels, contact helpers, SEO helpers, utilities
   styles/      tokens, typography, layout, buttons, motion
-docs/          strategy, writing, page, and architecture reference
+docs/          strategy, writing, page, design-system, and architecture reference
 .agents/      local MindWP skills
 ```
 
@@ -45,6 +45,7 @@ docs/          strategy, writing, page, and architecture reference
 ## Source Of Truth
 
 - `src/styles/tokens.css` owns design token values.
+- `docs/DESIGN-SYSTEM.md` owns practical guidance for using those tokens, type roles, layout helpers, page CSS, and QA widths.
 - `src/content/canonical.ts` owns systems and industries.
 - `src/config/routes.ts` owns intended route/nav/sitemap structure.
 - `src/config/site.ts` owns public site identity.
@@ -72,7 +73,7 @@ Rebuilt premium sections should use:
 - existing tokens and typography roles
 - shared primitives only when they support the section rather than flatten it
 
-Avoid recreating removed generic visual primitives: standard section headers, split layouts, equal grids, card shells, browser chrome, or old reference-copy section patterns.
+Avoid defaulting to generic visual primitives without a section job. Section headers, split layouts, equal grids, card shells, and browser/page frames are all valid when the chosen form serves the section thesis.
 
 ## CSS Model
 
@@ -112,7 +113,7 @@ The shared motion layer remains:
 - `src/components/motion/RevealMotion.tsx`
 - `src/styles/motion.css`
 
-Motion must keep content visible by default, respect reduced motion, and avoid reveal-gating LCP content. Section-specific GSAP or heavier animation belongs in isolated client islands only when justified.
+Motion must keep content visible by default, respect reduced motion, and avoid reveal-gating LCP content. Section-specific heavier animation belongs in isolated client islands only when justified.
 
 ## Validation
 
@@ -120,7 +121,7 @@ Use the gates from `.agents/skills/mindwp-engineering/SKILL.md`:
 
 - Guidance/docs-only changes: `git diff --check`.
 - Page/component changes: `pnpm check`, then `pnpm build`, then `pnpm test`.
-- Visual page changes: desktop/mobile screenshots and section crops before approval.
+- Visual page changes: screenshots at `1440px`, `1280px`, and `400px`, plus `1024px` when nav, artifacts, grids, multi-column sections, or major responsive structure change; capture relevant section crops before approval.
 
 `pnpm check` currently covers typecheck, lint, banned-name checks, and contrast checks. `pnpm test` runs Playwright smoke/a11y coverage.
 

@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 const badge = cva(
-  "ui-font-s inline-flex min-h-6 items-center rounded-md px-2.5 py-1 font-semibold",
+  "type-ui-small inline-flex min-h-6 items-center rounded-md px-2.5 py-1 font-semibold",
   {
     variants: {
       variant: {

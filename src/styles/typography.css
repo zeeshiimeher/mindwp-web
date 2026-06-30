@@ -1,7 +1,7 @@
 /* =============================================================================
  * Typography — element-first, role-backed.
- * Semantic elements carry the public reading hierarchy. `*-font` classes are
- * explicit overrides for sections and primitives that need a different role.
+ * Semantic elements carry the public reading hierarchy. `type-*` classes are
+ * explicit role overrides for sections and primitives.
  * ============================================================================= */
 
 @layer base {
@@ -23,47 +23,47 @@
   }
 
   h1 {
-    font-size: var(--h1-font-size);
-    line-height: var(--h1-line-height);
-    letter-spacing: var(--h1-letter-spacing);
+    font-size: var(--type-h1-size);
+    line-height: var(--type-h1-line);
+    letter-spacing: 0;
   }
 
   h2 {
-    font-size: var(--h2-font-size);
-    line-height: var(--h2-line-height);
-    letter-spacing: var(--h2-letter-spacing);
+    font-size: var(--type-h2-size);
+    line-height: var(--type-h2-line);
+    letter-spacing: 0;
   }
 
   h3 {
-    font-size: var(--h3-font-size);
-    line-height: var(--h3-line-height);
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-line);
   }
 
   h4 {
-    font-size: var(--h4-font-size);
-    line-height: var(--h4-line-height);
+    font-size: var(--type-h4-size);
+    line-height: var(--type-h4-line);
   }
 
   h5 {
-    font-size: var(--h5-font-size);
-    line-height: var(--h5-line-height);
+    font-size: var(--type-ui-large-size);
+    line-height: var(--type-ui-large-line);
   }
 
   h6 {
-    font-size: var(--h6-font-size);
-    line-height: var(--h6-line-height);
+    font-size: var(--type-ui-size);
+    line-height: var(--type-ui-line);
   }
 
   p,
   li {
-    font-size: var(--body-font-size);
-    line-height: var(--body-line-height);
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line);
     color: var(--color-muted);
   }
 
   small {
-    font-size: var(--body-s-font-size);
-    line-height: var(--body-s-line-height);
+    font-size: var(--type-body-small-size);
+    line-height: var(--type-body-small-line);
   }
 
   strong,
@@ -174,134 +174,124 @@
 }
 
 @layer components {
-  .h1-font,
-  .h2-font,
-  .h3-font-l,
-  .h3-font,
-  .h4-font {
+  .type-h1,
+  .type-h2,
+  .type-h3-large,
+  .type-h3,
+  .type-h3-small,
+  .type-h4 {
     font-family: var(--font-display);
     font-weight: 600;
     color: var(--color-ink);
     text-wrap: balance;
   }
 
-  .h1-font {
-    font-size: var(--h1-font-size);
-    line-height: var(--h1-line-height);
-    letter-spacing: var(--h1-letter-spacing);
+  .type-h1 {
+    font-size: var(--type-h1-size);
+    line-height: var(--type-h1-line);
+    letter-spacing: 0;
   }
 
-  .h2-font {
-    font-size: var(--h2-font-size);
-    line-height: var(--h2-line-height);
-    letter-spacing: var(--h2-letter-spacing);
+  .type-h2 {
+    font-size: var(--type-h2-size);
+    line-height: var(--type-h2-line);
+    letter-spacing: 0;
   }
 
-  .h3-font-l {
-    font-size: var(--h3-l-font-size);
-    line-height: var(--h3-l-line-height);
-    letter-spacing: var(--h3-l-letter-spacing);
+  .type-h3-large {
+    font-size: var(--type-h3-large-size);
+    line-height: var(--type-h3-large-line);
+    letter-spacing: 0;
   }
 
-  .h3-font {
-    font-size: var(--h3-font-size);
-    line-height: var(--h3-line-height);
+  .type-h3 {
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-line);
   }
 
-  .h4-font {
-    font-size: var(--h4-font-size);
-    line-height: var(--h4-line-height);
+  .type-h3-small {
+    font-size: var(--type-h3-small-size);
+    line-height: var(--type-h3-small-line);
   }
 
-  .h5-font {
+  .type-h4 {
+    font-size: var(--type-h4-size);
+    line-height: var(--type-h4-line);
+  }
+
+  .type-body-large {
     font-family: var(--font-sans);
-    font-size: var(--h5-font-size);
-    font-weight: 600;
-    line-height: var(--h5-line-height);
-    color: var(--color-ink);
+    font-size: var(--type-body-large-size);
+    line-height: var(--type-body-large-line);
   }
 
-  .h6-font {
+  .type-body {
     font-family: var(--font-sans);
-    font-size: var(--h6-font-size);
-    font-weight: 600;
-    line-height: var(--h6-line-height);
-    color: var(--color-ink);
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line);
   }
 
-  .body-font-l {
+  .type-body-small {
     font-family: var(--font-sans);
-    font-size: var(--body-l-font-size);
-    line-height: var(--body-l-line-height);
+    font-size: var(--type-body-small-size);
+    line-height: var(--type-body-small-line);
   }
 
-  .body-font {
+  .type-caption {
     font-family: var(--font-sans);
-    font-size: var(--body-font-size);
-    line-height: var(--body-line-height);
-  }
-
-  .body-font-s {
-    font-family: var(--font-sans);
-    font-size: var(--body-s-font-size);
-    line-height: var(--body-s-line-height);
-  }
-
-  .caption-font {
-    font-family: var(--font-sans);
-    font-size: var(--caption-font-size);
-    line-height: var(--caption-line-height);
+    font-size: var(--type-body-small-size);
+    line-height: var(--type-body-small-line);
     color: var(--color-subtle);
   }
 
-  .eyebrow-font {
+  .type-eyebrow {
     font-family: var(--font-sans);
-    font-size: var(--eyebrow-font-size);
+    font-size: var(--type-eyebrow-size);
     font-weight: 600;
-    line-height: var(--eyebrow-line-height);
-    letter-spacing: 0.125em;
+    line-height: var(--type-eyebrow-line);
+    letter-spacing: 0;
     text-transform: uppercase;
     color: var(--color-emerald-text);
   }
 
-  .label-font-caps {
+  .type-label-caps {
     font-family: var(--font-sans);
-    font-size: var(--eyebrow-font-size);
+    font-size: var(--type-eyebrow-size);
     font-weight: 600;
-    line-height: var(--eyebrow-line-height);
-    letter-spacing: 0.125em;
+    line-height: var(--type-eyebrow-line);
+    letter-spacing: 0;
     text-transform: uppercase;
   }
 
-  .ui-font-s {
+  .type-ui-small {
     font-family: var(--font-sans);
-    font-size: var(--ui-s-font-size);
-    line-height: var(--ui-s-line-height);
+    font-size: var(--type-ui-small-size);
+    line-height: var(--type-ui-small-line);
   }
 
-  .ui-font {
+  .type-ui {
     font-family: var(--font-sans);
-    font-size: var(--ui-font-size);
-    line-height: var(--ui-line-height);
+    font-size: var(--type-ui-size);
+    line-height: var(--type-ui-line);
   }
 
-  .ui-font-l {
+  .type-ui-large {
     font-family: var(--font-sans);
-    font-size: var(--ui-l-font-size);
-    line-height: var(--ui-l-line-height);
+    font-size: var(--type-ui-large-size);
+    line-height: var(--type-ui-large-line);
   }
 
-  .control-font {
+  .type-control {
     font-family: var(--font-sans);
-    font-size: var(--control-font-size);
-    line-height: var(--control-line-height);
+    font-size: var(--type-control-size);
+    line-height: var(--type-control-line);
   }
 
-  .label-font {
+  .type-label {
     font-family: var(--font-sans);
-    font-size: var(--label-font-size);
+    font-size: var(--type-label-size);
     font-weight: 600;
-    line-height: var(--label-line-height);
+    line-height: var(--type-label-line);
   }
 
   .voice-font {
@@ -309,37 +299,20 @@
     font-style: italic;
   }
 
-  .text-width-hero {
-    max-width: var(--text-width-hero);
-  }
-
-  .text-width-flagship {
-    max-width: var(--text-width-flagship);
-  }
-
-  .text-width-l {
-    max-width: var(--text-width-l);
-  }
-
-  .text-width {
-    max-width: var(--text-width);
-  }
-
-  .on-navy .h1-font,
-  .on-navy .h2-font,
-  .on-navy .h3-font-l,
-  .on-navy .h3-font,
-  .on-navy .h4-font,
-  .on-navy .h5-font,
-  .on-navy .h6-font {
+  .on-navy .type-h1,
+  .on-navy .type-h2,
+  .on-navy .type-h3-large,
+  .on-navy .type-h3,
+  .on-navy .type-h3-small,
+  .on-navy .type-h4 {
     color: var(--color-ink-inverse);
   }
 
-  .on-navy .eyebrow-font {
+  .on-navy .type-eyebrow {
     color: var(--color-emerald);
   }
 
-  .on-navy .caption-font {
+  .on-navy .type-caption {
     color: var(--color-muted-inverse);
   }
 

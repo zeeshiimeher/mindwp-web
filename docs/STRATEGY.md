@@ -78,7 +78,7 @@ Each primary system owns one moment. Bridge to adjacent systems only where it cl
 
 ## The service ladder (how the five systems sell as one story)
 
-The five systems are not a menu — they are **one ladder that stops work slipping away**, and every page is a rung of the same story. This spine was always implicit in the connected path above; the four rebuilds *revealed* it as the selling narrative. The public anchor — *"Work Comes In. Too Much Slips Away."* — is the headline of the whole ladder, and each system is the answer to one place work slips:
+The five systems are not a menu — they are **one ladder that stops work slipping away**, and every page is a rung of the same story. This spine is implicit in the connected path above. The public anchor — *"Work Comes In. Too Much Slips Away."* — is the headline of the whole ladder, and each system is the answer to one place work slips:
 
 ```
 Find work    → Local SEO Authority       nearby customers find and verify you

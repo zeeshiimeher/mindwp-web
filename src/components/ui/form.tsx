@@ -3,7 +3,7 @@ import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 const fieldBase =
-  "control-font min-h-12 w-full rounded-sm border bg-section px-4 py-3 text-ink placeholder:text-subtle transition-colors focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:border-disabled-border disabled:bg-disabled-bg disabled:text-disabled-text disabled:placeholder:text-disabled-text";
+  "type-control min-h-12 w-full rounded-sm border bg-section px-4 py-3 text-ink placeholder:text-subtle transition-colors focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:border-disabled-border disabled:bg-disabled-bg disabled:text-disabled-text disabled:placeholder:text-disabled-text";
 const fieldOk = "border-line-strong focus:border-focus-light focus:ring-focus-light/25";
 const fieldErr = "border-danger focus:border-danger focus:ring-danger/25";
 
@@ -52,7 +52,7 @@ export function Select({
 
 export function Label({ className, children, ...props }: ComponentProps<"label">) {
   return (
-    <label className={cn("label-font mb-1.5 block text-ink", className)} {...props}>
+    <label className={cn("type-label mb-1.5 block text-ink", className)} {...props}>
       {children}
     </label>
   );
@@ -60,7 +60,7 @@ export function Label({ className, children, ...props }: ComponentProps<"label">
 
 export function FieldError({ children }: { children?: ReactNode }) {
   if (!children) return null;
-  return <p className="caption-font mt-1 text-danger">{children}</p>;
+  return <p className="type-caption mt-1 text-danger">{children}</p>;
 }
 
 /** Label + control + error, wired together. */

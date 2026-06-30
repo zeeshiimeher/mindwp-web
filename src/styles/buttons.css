@@ -11,12 +11,14 @@
   justify-content: center;
   gap: var(--space-2);
   width: fit-content;
+  max-width: 100%;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   font-family: var(--font-sans);
   font-weight: 600;
+  text-align: center;
   text-decoration: none;
-  white-space: nowrap;
+  text-wrap: balance;
   cursor: pointer;
   transition:
     background-color var(--dur-fast) var(--ease-out),
@@ -39,24 +41,24 @@
 }
 
 .mw-btn--sm {
-  min-height: 2.25rem;
+  min-height: 2.5rem;
   padding: var(--space-2) var(--space-4);
-  font-size: var(--ui-s-font-size);
-  line-height: var(--ui-s-line-height);
+  font-size: var(--type-ui-small-size);
+  line-height: var(--type-ui-small-line);
 }
 
 .mw-btn--md {
   min-height: 2.75rem;
   padding: 0.625rem var(--space-5);
-  font-size: var(--ui-font-size);
-  line-height: var(--ui-line-height);
+  font-size: var(--type-ui-size);
+  line-height: var(--type-ui-line);
 }
 
 .mw-btn--lg {
-  min-height: 3rem;
+  min-height: 3.125rem;
   padding: var(--space-3) var(--space-6);
-  font-size: var(--ui-l-font-size);
-  line-height: var(--ui-l-line-height);
+  font-size: var(--type-ui-large-size);
+  line-height: var(--type-ui-large-line);
 }
 
 .mw-btn--primary.mw-btn--light {

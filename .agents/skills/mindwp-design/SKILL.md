@@ -1,77 +1,139 @@
 ---
 name: mindwp-design
-description: MindWP visual thesis, section silhouette, artifact, responsive quality, and screenshot-audit rules. Use for visual planning, visual audits, section design, and page-quality judgment.
+description: MindWP visual thesis, artifact choice, coherence, section silhouette, dominance, density, rhythm, mobile hierarchy, and screenshot-audit judgment. Use for visual planning, design critique, page/section form decisions, and avoiding generic generated-looking UI.
 ---
 
 # MindWP Design
 
-MindWP should feel like a confident senior studio: premium, calm, human, specific, credible, and properly made. It must not feel like SaaS product marketing, a generic agency template, or an empty design portfolio. Real visible work and earned artifacts carry credibility.
+MindWP should feel like a confident senior studio: premium, calm, human, specific, credible, and properly made. The design has to make commercial meaning visible before it shows visual taste.
+
+Use `docs/DESIGN-SYSTEM.md` for practical CSS-system roles, typography roles, section rhythm, and rendered QA widths.
 
 ## Visual Thesis
 
 Before a major section is built, define:
 
 - section job
+- buyer-world idea or business moment
 - buyer message
-- buyer-world idea, scene, or business moment
+- chosen form and why it fits
 - silhouette
 - dominance rank
 - artifact, if any, and why it earns space
+- density level
 - contrast with adjacent sections
-- mobile behavior
+- mobile hierarchy
 - fail conditions
 
-Concept before composition: start from the buyer-world idea, then choose layout. If the thesis sounds like copy slots, cards, a generic split, or a browser mockup by default, keep planning.
+If the thesis sounds like slots to fill, keep planning. Composition follows the buyer-world idea.
+
+## Form Decisions
+
+No common UI form is banned. The failure mode is defaulting to a form without knowing what it is doing.
+
+Use:
+
+- cards when items are true peers or need contained comparison
+- lists when scannability, sequence, status, or prioritization matters
+- grids when grouping, density, or side-by-side comparison matters
+- panels when a bounded operating surface helps the buyer understand a path
+- browser/page frames when real website craft, service pages, or demonstration builds are being shown
+- split layouts when two ideas need direct contrast or handoff
+- simple editorial sections when clarity, pacing, authority, or breathing room matters
+- icons when they clarify controls, categories, or status without becoming decoration
+- motion when it explains sequence, handoff, contrast, state change, or proof
+
+Rebuild the form only when it does not serve the section job.
 
 ## Artifacts
 
-Use artifacts to explain or prove something:
+Artifacts should explain or prove something:
 
-- real or demonstration work
-- service/treatment page surface
-- review/proof object
+- real or demonstration website work
+- service or treatment page surface
 - local trust surface
-- response/follow-up handoff
-- review document or diagnostic note
+- enquiry, response, or follow-up handoff
+- review/proof object
+- diagnostic note or setup record
 - before/after operating contrast
+- visible website-to-handling path
 
-Abstract subjects need a concrete proxy from the buyer's world. Use scenes when an illustration needs to explain a buyer moment; do not answer abstraction with node/rail/dot diagrams. Avoid fake dashboards, fake metrics, fake testimonials, fake rankings, generic browser chrome, tiny decorative widgets, and abstract scenes that need explanation.
+Abstract subjects need concrete buyer-world proxies. Avoid artifacts that require the surrounding copy to explain why they matter.
 
-## Repetition Rules
+## Coherence
 
-- Do not let consecutive sections share the same intro-plus-card-grid shape.
-- Do not recreate removed generic shells: standard section header, split, grid, card, old `_components`, pale panels, or browser chrome.
-- Cards are fine when items are true peers.
-- CSS is part of the design language: use one coherent page system, not unrelated isolated section fragments.
-- Differentiation is visual language, not just data-shape: vary value, density, dominance, marks, rhythm, and artifact type.
-- Data-shape examples can inspire, but must never become a fixed menu.
-- The strongest visual energy belongs to hero, offer, proof/work, local trust, flagship sections, and final CTA.
-- For hero, flagship, and proof sections, define dominance before build and verify it after render.
-- A tall empty section is not a flagship. Design power is richness, clarity, and proof value, not height.
-- Navy is base/punctuation, not every other section.
-- Emerald is scarce signal, not texture.
+A page should feel shaped by one deliberate system:
 
-## Mobile Quality
+- one radius language, with exceptions only when the component role demands it
+- one shadow/elevation language
+- one icon family and stroke/fill approach
+- controlled accent use; emerald is signal, not texture
+- navy as base or punctuation, not every other section
+- type scale and spacing rhythm that repeat without making every section identical
+- forms that vary by section job, not by random aesthetic switching
 
-- Mobile must preserve hierarchy, not become stacked panels.
-- Artifacts must stay readable or transform into a simpler earned form.
-- Avoid cramped labels, awkward headline wraps, and tiny proof.
-- Test real 375px screenshots before approving visual work.
+Mixed design axes are a warning sign. Before adding a new visual language, decide what job the existing language cannot do.
+
+## Rhythm And Dominance
+
+Avoid repeating the same section silhouette by accident. Adjacent sections should differ in at least one meaningful way: density, dominance, artifact type, alignment, surface, pacing, or interaction.
+
+Most major commercial pages should use a dark hero as the first impression unless the page role gives a stronger reason not to. After a dark hero, the second section should normally be white or paper, not another dark band. The usual page rhythm is dark hero, paper/white explanation or proof, then alternating light/paper/band surfaces as section jobs change.
+
+Default section padding is the normal choice. Compact and spacious sections should be rare and intentional; the page should feel designed through surface sequence, silhouette, density, artifact choice, and hierarchy, not padding swings.
+
+Strongest visual energy belongs to:
+
+- hero
+- offer reveal
+- flagship artifact
+- proof/work
+- local or patient trust
+- final CTA
+
+A tall empty section is not a flagship. Design power comes from clarity, richness, proof value, and proportion.
+
+## Mobile Hierarchy
+
+Mobile must preserve hierarchy, not merely stack desktop shapes. For each important section:
+
+- keep the main point visible early
+- simplify artifacts without making them decorative
+- avoid cramped labels, tiny proof, and awkward headline wraps
+- keep CTA and tap targets reachable
+- keep contrast and focus states visible
+
+If a desktop artifact becomes unreadable on 400px mobile, design a mobile artifact instead of shrinking the desktop one. If it risks breaking below 400px, report the risk instead of making 375px the primary design target.
+
+## Generated-Looking UI Checks
+
+Fail the design when it reads as:
+
+- generic SaaS marketing
+- agency template
+- report/deck layout
+- unrelated section fragments
+- repeated intro-plus-card-grid
+- fake dashboard or fake metric proof
+- decorative browser chrome with no real website craft
+- polished surface without commercial meaning
+
+Pass the design when the section's form visibly serves the business moment it owns.
 
 ## Screenshot Audit
 
-Audit like a critic:
+Audit rendered work with:
 
-- pass/fail verdict
 - first-glance impression
+- section job clarity
 - repeated structures
-- section dominance
-- artifact scale and truth
-- headline wrapping
-- desktop spacing/rhythm
-- mobile stacking/containment
+- dominance and proof placement
+- artifact truth and scale
+- typography wrapping
+- desktop rhythm
+- mobile hierarchy
 - CTA clarity
 - what must be rebuilt
 - what can remain
 
-Fail the work if it reads like a report, deck, blog, generic SaaS page, or assembled template.
+Use 1440px and 1280px desktop, 400px mobile, and 1024px tablet when nav, artifacts, grids, multi-column sections, or major responsive structure change.

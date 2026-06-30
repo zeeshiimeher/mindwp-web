@@ -80,11 +80,12 @@
 :root {
   /* Containers */
   --container-frame: 1920px;
-  --container: 1440px;
+  --container-page: 1440px;
+  --container: var(--container-page);
   --container-wide: 1600px;
   --container-narrow: 1120px;
-  --container-pad: clamp(1.25rem, 0.75rem + 2vw, 3rem);
-  --container-gap: 24px;
+  --container-pad: clamp(1.25rem, 0.85rem + 1.6vw, 3rem);
+  --container-gap: clamp(1rem, 0.8rem + 0.8vw, 1.5rem);
 
   /* 4px spacing scale */
   --space-1: 0.25rem;
@@ -102,56 +103,56 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Section rhythm */
-  --section-pad-s: clamp(3rem, 2.4rem + 2vw, 4.5rem);
-  --section-pad-m: clamp(3.5rem, 2.5rem + 4vw, 6rem);
-  --section-pad-l: clamp(5rem, 3.8rem + 5vw, 8rem);
-  --section-pad-xl: clamp(6rem, 4rem + 8vw, 10rem);
-  --section-pad: var(--section-pad-m);
+  /*
+   * Section rhythm. Default is the normal page section padding; alternating
+   * surfaces and section form should carry most pacing. Compact/spacious/hero
+   * are intentional exceptions, not the default rebuild habit.
+   */
+  --section-space-compact: clamp(3rem, 2.6rem + 1.6vw, 4rem);
+  --section-space-default: clamp(4.5rem, 3.75rem + 3vw, 6.5rem);
+  --section-space-spacious: clamp(5.5rem, 4.5rem + 4vw, 8rem);
+  --section-space-hero: clamp(6rem, 4rem + 8vw, 10rem);
 
-  /* Type roles. Display = Fraunces; body/UI = Inter. */
-  --h1-font-size: clamp(2.625rem, 1.75rem + 3.2vw, 4.5rem);
-  --h1-line-height: 1;
-  --h1-letter-spacing: -0.012em;
-  --h2-font-size: clamp(1.75rem, 1.25rem + 2.1vw, 3.125rem);
-  --h2-line-height: 1.08;
-  --h2-letter-spacing: -0.006em;
-  --h3-l-font-size: clamp(2.25rem, 1.7rem + 2.2vw, 4rem);
-  --h3-l-line-height: 1.04;
-  --h3-l-letter-spacing: -0.01em;
-  --h3-font-size: clamp(1.625rem, 1.45rem + 0.62vw, 2rem);
-  --h3-line-height: 1.16;
-  --h4-font-size: 1.375rem;
-  --h4-line-height: 1.25;
-  --h5-font-size: 1.125rem;
-  --h5-line-height: 1.4;
-  --h6-font-size: 0.875rem;
-  --h6-line-height: 1.4;
-  --body-l-font-size: clamp(1rem, 0.87rem + 0.53vw, 1.25rem);
-  --body-l-line-height: 1.5;
-  --body-font-size: 1rem;
-  --body-line-height: 1.62;
-  --body-s-font-size: 0.875rem;
-  --body-s-line-height: 1.5;
-  --caption-font-size: 0.8125rem;
-  --caption-line-height: 1.45;
-  --eyebrow-font-size: 0.6875rem;
-  --eyebrow-line-height: 1.05;
-  --ui-s-font-size: 0.8125rem;
-  --ui-s-line-height: 1.1;
-  --ui-font-size: 0.875rem;
-  --ui-line-height: 1.15;
-  --ui-l-font-size: 0.9375rem;
-  --ui-l-line-height: 1.2;
-  --control-font-size: 1rem;
-  --control-line-height: 1.35;
-  --label-font-size: 0.875rem;
-  --label-line-height: 1.35;
+  /*
+   * Type roles. Fraunces owns display/heading; Inter owns body, UI, and controls.
+   * Clamp values are approved against 1440, 1280, 1024, and 400px.
+   */
+  --type-h1-size: clamp(3rem, 2.375rem + 2.5vw, 4.75rem);
+  --type-h1-line: 0.98;
+  --type-h2-size: clamp(2.25rem, 1.86rem + 1.55vw, 3.5rem);
+  --type-h2-line: 1.04;
+  --type-h3-large-size: clamp(1.75rem, 1.52rem + 0.9vw, 2.5rem);
+  --type-h3-large-line: 1.08;
+  --type-h3-size: clamp(1.5rem, 1.35rem + 0.6vw, 2rem);
+  --type-h3-line: 1.14;
+  --type-h3-small-size: clamp(1.375rem, 1.25rem + 0.42vw, 1.75rem);
+  --type-h3-small-line: 1.16;
+  --type-h4-size: clamp(1.25rem, 1.14rem + 0.42vw, 1.5rem);
+  --type-h4-line: 1.22;
+  --type-body-large-size: clamp(1.0625rem, 1.01rem + 0.21vw, 1.1875rem);
+  --type-body-large-line: 1.56;
+  --type-body-size: clamp(1rem, 0.98rem + 0.08vw, 1.0625rem);
+  --type-body-line: 1.62;
+  --type-body-small-size: clamp(0.875rem, 0.86rem + 0.06vw, 0.9375rem);
+  --type-body-small-line: 1.5;
+  --type-ui-large-size: clamp(1rem, 0.965rem + 0.14vw, 1.125rem);
+  --type-ui-large-line: 1.25;
+  --type-ui-size: clamp(0.9375rem, 0.92rem + 0.07vw, 1rem);
+  --type-ui-line: 1.2;
+  --type-ui-small-size: clamp(0.8125rem, 0.8rem + 0.05vw, 0.875rem);
+  --type-ui-small-line: 1.16;
+  --type-eyebrow-size: clamp(0.75rem, 0.74rem + 0.03vw, 0.8125rem);
+  --type-eyebrow-line: 1.1;
+  --type-label-size: clamp(0.875rem, 0.86rem + 0.05vw, 0.9375rem);
+  --type-label-line: 1.35;
+  --type-control-size: clamp(1rem, 0.98rem + 0.08vw, 1.0625rem);
+  --type-control-line: 1.35;
 
   /* Readable text widths */
   --text-width-hero: 18ch;
   --text-width-flagship: 20ch;
   --text-width-heading: 22ch;
+  --text-width-s: 48ch;
   --text-width-l: 58ch;
   --text-width: 68ch;
 

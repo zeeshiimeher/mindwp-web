@@ -19,7 +19,7 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
   if (state?.ok) {
     return (
       <div className="rounded-lg border border-line bg-raised p-8">
-        <h2 className="h3-font">Request received.</h2>
+        <h2 className="type-h3">Request received.</h2>
         <p className="mt-3">{state.message}</p>
       </div>
     );
@@ -104,7 +104,7 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
         </>
       )}
 
-      {state && !state.ok && <p className="body-font-s text-danger">{state.message}</p>}
+      {state && !state.ok && <p className="type-body-small text-danger">{state.message}</p>}
 
       <div className="pt-1">
         <Button type="submit" disabled={pending}>

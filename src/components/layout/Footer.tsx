@@ -33,13 +33,13 @@ const company: FooterLink[] = [
 function Col({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="label-font-caps text-muted-inverse">{title}</h2>
+      <h2 className="type-label-caps text-muted-inverse">{title}</h2>
       <ul className="flex flex-col gap-2.5">
         {links.map((l) => (
           <li key={l.href}>
             <Link
               href={l.href}
-              className="ui-font text-muted-inverse transition-colors hover:text-ink-inverse"
+              className="type-ui text-muted-inverse transition-colors hover:text-ink-inverse"
             >
               {l.label}
             </Link>
@@ -58,8 +58,8 @@ export function Footer() {
       <div className="mw-container pb-10 pt-16">
         <div className="grid gap-x-14 gap-y-10 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-3">
-            <span className="h4-font leading-none text-ink-inverse">{SITE.name}</span>
-            <p className="body-font-s max-w-xs text-muted-inverse">
+            <span className="type-h4 leading-none text-ink-inverse">{SITE.name}</span>
+            <p className="type-body-small max-w-xs text-muted-inverse">
               Smart websites — built to bring work in and make sure it doesn&rsquo;t slip away. For
               service businesses and specialist clinics.
             </p>
@@ -69,7 +69,7 @@ export function Footer() {
           <Col title="Company" links={company} />
         </div>
 
-        <div className="caption-font mt-12 flex flex-col gap-3 border-t border-navy-line pt-6 text-muted-inverse sm:flex-row sm:items-center sm:justify-between">
+        <div className="type-caption mt-12 flex flex-col gap-3 border-t border-navy-line pt-6 text-muted-inverse sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {year} {SITE.name}. Building service-business websites since 2015.
           </span>

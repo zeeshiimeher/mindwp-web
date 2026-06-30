@@ -7,7 +7,7 @@ import { breadcrumbSchema, type Crumb } from "@/lib/seo/schema";
 export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
   if (crumbs.length < 2) return null;
   return (
-    <nav aria-label="Breadcrumb" className="caption-font">
+    <nav aria-label="Breadcrumb" className="type-caption">
       <JsonLd data={breadcrumbSchema(crumbs)} />
       <ol className="flex flex-wrap items-center gap-2 text-subtle">
         {crumbs.map((c, i) => {

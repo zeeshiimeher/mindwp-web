@@ -18,7 +18,7 @@ export function Header() {
   return (
     <header className="border-b border-line bg-section/85 backdrop-blur-md supports-[backdrop-filter]:bg-section/75">
       <div className="mw-container flex h-14 items-center justify-between gap-6">
-        <Link href="/" onClick={close} className="h4-font leading-none text-ink">
+        <Link href="/" onClick={close} className="type-h4 leading-none text-ink">
           MindWP
         </Link>
 
@@ -29,7 +29,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="ui-font-l font-medium text-muted transition-colors hover:text-ink"
+                className="type-ui-large font-medium text-muted transition-colors hover:text-ink"
               >
                 {item.label}
               </Link>
@@ -64,7 +64,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={close}
-              className="ui-font-l py-2 font-medium text-muted hover:text-ink"
+              className="type-ui-large py-2 font-medium text-muted hover:text-ink"
             >
               {item.label}
             </Link>
