@@ -37,7 +37,7 @@ Use transform and opacity where possible. Avoid animating layout properties unle
 
 - Do not reveal-gate LCP content, hero headline, primary CTA, or core proof.
 - Do not delay comprehension for a flourish.
-- Do not animate fake controls, fake dashboards, or fake states.
+- Do not animate fake controls, fake product interfaces, or fake states.
 - Do not use ambient loops, cursor tricks, or background noise.
 - Do not make scrolling feel hijacked unless the section itself is an earned interactive explanation.
 - Do not require hover-only interaction for important content.
@@ -49,7 +49,7 @@ Scroll choreography or heavier animation libraries belong only in isolated secti
 Prefer a small set of named intents:
 
 - `clarify`: gentle reveal or state shift
-- `handoff`: sequence from one object to the next
+- `handoff`: sequence from one element to the next
 - `contrast`: before/after or inactive/active change
 - `confirm`: success or completion feedback
 - `focus`: subtle emphasis on the current action
@@ -73,7 +73,7 @@ Check:
 
 - 1440px and 1280px desktop
 - 400px mobile
-- 1024px tablet when motion affects nav, artifacts, grids, multi-column sections, or major responsive structure
+- 1024px tablet when motion affects nav, media, grids, multi-column sections, or major responsive structure
 - reduced motion
 - no overlap during transitions
 - no jank or late content

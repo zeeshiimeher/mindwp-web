@@ -1,6 +1,6 @@
 # FOUNDATION — who MindWP is and who it serves
 
-Identity, buyer truth, and positioning. Read this when a task touches strategy, copy, page intent, or design direction. The commercial plan and offer structure are in [STRATEGY.md](./STRATEGY.md); page workflow lives in `.agents/skills/mindwp-workflow/SKILL.md`; visual planning and audit rules live in `.agents/skills/mindwp-design/SKILL.md`; voice is in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`.
+Identity, buyer truth, and positioning. Read this when a task touches strategy, copy, page intent, or design direction. The commercial plan and offer structure are in [STRATEGY.md](./STRATEGY.md); page workflow lives in `.agents/skills/mindwp-workflow/SKILL.md`; design planning and audit rules live in `.agents/skills/mindwp-design/SKILL.md`; voice is in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`.
 
 ## Core identity
 

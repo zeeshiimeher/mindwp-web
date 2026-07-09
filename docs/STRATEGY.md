@@ -1,6 +1,6 @@
 # STRATEGY — what MindWP sells
 
-The commercial brain: **what** we sell, **why** anyone buys it over another web designer, **how** the offer is structured, and **how** leads arrive. Identity and buyer truth live in [FOUNDATION.md](./FOUNDATION.md); voice in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`; visual planning rules in `.agents/skills/mindwp-design/SKILL.md`; page roles in [PAGES.md](./PAGES.md). This doc is the source for offer structure — other docs apply it, they don't redefine it.
+The commercial brain: **what** we sell, **why** anyone buys it over another web designer, **how** the offer is structured, and **how** leads arrive. Identity and buyer truth live in [FOUNDATION.md](./FOUNDATION.md); voice in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`; design planning in `.agents/skills/mindwp-design/SKILL.md`; page roles in [PAGES.md](./PAGES.md). This doc is the source for offer structure — other docs apply it, they don't redefine it.
 
 ## The business in one line
 
@@ -103,7 +103,7 @@ A brand nobody knows yet converts on **evidence**, strongest first:
 
 Hard line — the canonical "never invent proof" list (other docs point here, don't re-enumerate): no fabricated ratings, review counts, phone numbers, testimonials, client names, locations, dates, metrics, rankings, revenue, results, or guarantees. The fix for "no proof" is **show real work**, never **invent proof**.
 
-Proof labels are for evidence, not for every constructed artifact. Use honest labels when a Work item, case study, demonstration build, or anonymised client item could be mistaken for real client proof or measured outcomes. Do not force defensive labels such as "illustrative," "sample," "example," "demo," or "mockup" onto obvious service-page artifacts such as page anatomy, review documents, work records, setup notes, editorial proof objects, SVG scenes, or neutral internal diagrams when their constructed nature is already clear.
+Proof labels are for evidence, not for every constructed explanation. Use honest labels when a Work item, case study, demonstration build, or anonymised client item could be mistaken for real client proof or measured outcomes. Do not over-label clearly constructed explanatory material when it is not being presented as client proof.
 
 ## Conversion model
 

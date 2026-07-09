@@ -30,19 +30,19 @@ Check:
 
 - desktop at 1440px and 1280px
 - mobile at 400px
-- tablet at 1024px when layout changes affect grids, artifacts, navigation, multi-column sections, or major responsive structure
+- tablet at 1024px when layout changes affect grids, media, navigation, multi-column sections, or major responsive structure
 
 Desktop plus 400px mobile can be enough for simple text-led or single-column changes. If a value risks breaking below 400px, report the risk, but do not make 375px the primary approval width.
 
 Capture section crops for important sections:
 
-- hero
-- flagship artifact
-- proof/work
+- page opening
+- major proof/work sections
 - form/contact
 - header/mobile nav
 - footer
 - final CTA
+- any section with complex composition or media
 
 ## Visual Audit
 
@@ -53,12 +53,10 @@ Check:
 - offer appears soon enough
 - proof appears before strong close
 - CTA clarity
-- section dominance
-- surface rhythm, especially whether a dark hero is followed by a normal white/paper second section
-- whether the page repeats the same hero/second-section silhouette as the last rebuilt page
-- repeated structures
-- artifact truth and readability
-- density and rhythm
+- hierarchy and dominance
+- composition and rhythm
+- repeated weak patterns
+- proof or media readability when present
 - typography wrapping
 - line length
 - overflow and overlap
@@ -66,22 +64,21 @@ Check:
 - mobile hierarchy
 - footer/header scan quality
 
-If a form does not serve the section job, rebuild the form. If the form works, do not rebuild it just because it is simple.
+If a section does not support its job, revise the section plan, composition, copy, or implementation before approval.
 
 ## Coherence Audit
 
-Check for generated-looking drift:
+Check for:
 
 - competing accent colors
 - mixed radius languages without reason
 - mixed icon styles
 - unrelated shadow/elevation systems
 - random status colors
-- repeated card/grid/split pattern by default
-- decorative artifacts that do not explain or prove
+- repeated weak patterns
 - motion that draws attention away from meaning
 
-The fix is not always “remove the form.” The fix is to choose the form that serves the job.
+The fix is the change that helps the section job: sometimes copy, sometimes hierarchy, sometimes layout, sometimes a different supporting visual, and sometimes less visual material.
 
 ## Accessibility Audit
 
@@ -106,7 +103,7 @@ Check:
 - hydration warnings
 - broken links where practical
 - no horizontal scroll on mobile
-- no layout shift from unreserved media/artifacts
+- no layout shift from unreserved media
 - no client component boundary wider than needed
 - no fake or unsupported structured data
 - no route/config drift
@@ -119,7 +116,7 @@ Check:
 - `flow -> handling -> result`
 - no fake proof, metrics, rankings, ratings, testimonials, dates, locations, or results
 - no backend platform names
-- no “your CRM”
+- no "your CRM"
 - no quoting/invoicing/product-tool implication
 - clinic copy avoids medical/treatment/compliance claims
 - CTA labels match `src/lib/cta`
@@ -145,7 +142,7 @@ Approve only when:
 
 - rendered pages support the intended page/section jobs
 - 1440px desktop, 1280px desktop, and 400px mobile are coherent
-- 1024px tablet is coherent when the layout change affects nav, artifacts, grids, multi-column sections, or major responsive structure
+- 1024px tablet is coherent when the layout change affects nav, media, grids, multi-column sections, or major responsive structure
 - accessibility basics pass
 - copy/proof boundaries are clean
 - validation gates pass or blockers are explicit

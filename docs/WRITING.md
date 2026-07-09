@@ -170,7 +170,7 @@ Avoid public tool/vendor framing:
 - automation platform
 - workflow engine
 - backend stack
-- dashboard features as the main value
+- product screens or feature lists as the main value
 - ranking guarantees
 - dominate Google
 - cheap website packages
@@ -220,7 +220,7 @@ Avoid:
 - guaranteed leads, bookings, rankings, revenue, conversion lift, or campaign results
 - language that makes MindWP sound like a media buyer, ads manager, campaign optimisation service, or analytics product
 
-Use the doctrine selectively. It belongs where the page already discusses website clarity, enquiry landing, response, ownership, follow-up, or proof. Do not bend an industry page, proof section, or service-page flagship away from its owned business moment just to mention paid clicks.
+Use this idea selectively. It belongs where the page already discusses website clarity, enquiry landing, response, ownership, follow-up, or proof. Do not bend an industry page, proof section, or service page away from its owned business moment just to mention paid clicks.
 
 ## Website System Language
 
@@ -319,7 +319,7 @@ Lead with:
 - follow-up does not depend on memory
 - quotes are not left sitting after they are sent
 
-Quote and estimate boundary: MindWP does not create, prepare, price, invoice, automatically send, or send quotes. The business prepares or sends the quote; Follow-Up & CRM keeps the owner, status, next step, reminder, follow-up, and decision visibility clear around it. Prefer language such as "estimate requested," "estimate discussed," "team-prepared quote needs follow-up," "quote follow-up due," "decision pending," or "waiting on customer." Avoid copy and artifact states that make MindWP look like quote or estimating software.
+Quote and estimate boundary: MindWP does not create, prepare, price, invoice, automatically send, or send quotes. The business prepares or sends the quote; Follow-Up & CRM keeps the owner, status, next step, reminder, follow-up, and decision visibility clear around it. Prefer language such as "estimate requested," "estimate discussed," "team-prepared quote needs follow-up," "quote follow-up due," "decision pending," or "waiting on customer." Avoid copy and example states that make MindWP look like quote or estimating software.
 
 Avoid:
 
@@ -424,7 +424,7 @@ They should show:
 
 Do not imply fictional or constructed material is real client work. Do not invent names, ratings, reviews, review counts, dates, locations, testimonials, metrics, rankings, revenue, attribution, or before/after results.
 
-Use honest evidence labels when a Work item, case study, demonstration build, anonymised client item, or scenario could be mistaken for real client proof or measured outcomes. Do not force defensive labels such as "illustrative," "sample," "example," "demo," or "mockup" onto obvious service-page artifacts — page anatomy, review documents, work records, setup notes, editorial proof objects, SVG scenes, and neutral internal diagrams — when the form already reads as constructed.
+Use honest evidence labels when a Work item, case study, demonstration build, anonymised client item, or scenario could be mistaken for real client proof or measured outcomes. Do not over-label clearly constructed explanatory material when it is not being presented as client proof.
 
 Avoid "Results," "ROI," "Testimonial," "What it cost and returned," and fake before/after framing unless the page is a real case study with real evidence.
 
@@ -450,17 +450,17 @@ So: roofing is a re-roof or repair the homeowner is getting quotes for, not a st
 
 When using time language, confirm whether the time belongs to the buyer's decision or to MindWP's handling. Do not turn a considered decision period into a promise that MindWP manages the whole period.
 
-## Section Rhythm
+## Writing Rhythm
 
-A useful underlying arc — **not a rigid template to stamp on every page:**
+A useful copy arc, not a fixed section list:
 
 ```text
 Recognition -> Friction -> Clarity (the offer) -> Proof -> Action
 ```
 
-This is a guide for where copy energy goes, not a fixed section list or order. The conversion arc itself is owned by [STRATEGY.md](./STRATEGY.md); WRITING owns only how copy energy maps onto it. Pages should vary their structure and silhouette using `.agents/skills/mindwp-design/SKILL.md`; repeating the identical rhythm across pages makes the site feel templated. What every page must do is reach the **offer** and show real **proof** before the strong CTA; how it gets there can differ.
+This is a guide for where copy energy goes, not a layout rule. The conversion arc itself is owned by [STRATEGY.md](./STRATEGY.md); WRITING owns only how language maps onto it. What every page must do is reach the **offer** and show real **proof** before the strong CTA; how it gets there can differ.
 
-Hero sections create recognition. They should not teach the whole system.
+Opening copy creates recognition. It should not teach the whole system.
 
 Problem sections show real situations. They should not jump straight to the offer.
 
@@ -468,11 +468,11 @@ Comparison sections show operating contrast, not mirrored benefit bullets.
 
 Proof sections show evidence, scenario, or observed change. They should not generalize.
 
-CTA sections should feel like a practical diagnostic conversation. CTA rules live in [PAGES.md](./PAGES.md); the approved label strings are owned by `lib/cta`.
+CTA copy should feel like a practical diagnostic conversation. CTA rules live in [PAGES.md](./PAGES.md); the approved label strings are owned by `lib/cta`.
 
 Control repetition at page level. Do not make every section explain the full mechanism with the same noun cluster. Give each section one rhetorical job, then distribute language accordingly: buyer behaviour, trust, contradiction, confirmation, maintenance, payoff, fit, objection, or action. The full practical cluster belongs mainly in the scope/process section; earlier and later sections should use lighter role-specific language instead of repeating the whole list.
 
-If an artifact explains the mechanism, surrounding copy should frame it, not repeat it. Repeated support lists that restate the artifact usually signal that the section needs clearer hierarchy, not more explanation.
+If supporting media explains the mechanism, surrounding copy should frame it, not repeat it. Repeated support lists usually signal that the section needs clearer hierarchy, not more explanation.
 
 Primary service pages must not all repeat the full MindWP model. Each service page should own one business moment and use the wider connected path only where it clarifies that page's problem. If every service page says website + response + follow-up + reviews + recovery in the same way, the pages have blurred.
 
@@ -500,7 +500,7 @@ Offer, proof, and pricing carry the sell. Commercial detail lives in [STRATEGY.m
 > Good: A finished roofing site we built — clear service areas, the quote path in view, reviews placed beside the decision.
 > Banned: Increased leads 240%. Rated 4.9 by 312 customers.
 
-Label demonstration builds, anonymised work, and client work honestly when they are being used as evidence (see [PAGES.md](./PAGES.md)). Do not over-label obvious constructed service-page artifacts. Founder authority is stated modestly and truthfully: "shipping service-business websites since 2015," "a small senior team." No faces, no fabricated bios.
+Label demonstration builds, anonymised work, and client work honestly when they are being used as evidence (see [PAGES.md](./PAGES.md)). Founder authority is stated modestly and truthfully: "shipping service-business websites since 2015," "a small senior team." No faces, no fabricated bios.
 
 **Pricing.** A calm scope/price _posture_, not a tier wall. Help the buyer self-qualify on budget without pressure:
 

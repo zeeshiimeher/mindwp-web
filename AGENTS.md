@@ -1,6 +1,6 @@
 # MindWP Agent Guidance
 
-MindWP is a premium web-systems company for established service businesses and specialist clinics. The strategy and writing rules are strong; the rebuild risk is execution: generic layouts, weak artifacts, stale page history, and old visual shells returning.
+MindWP is a premium web-systems company for established service businesses and specialist clinics. The strategy and writing rules are strong; the rebuild risk is execution: generic layouts, weak commercial meaning, stale page history, and old visual shells returning.
 
 ## Current Repo State
 
@@ -21,7 +21,7 @@ MindWP is a premium web-systems company for established service businesses and s
 ## Skill Routing
 
 - Task flow, page planning, rebuild sequencing, QA planning: `.agents/skills/mindwp-workflow/SKILL.md`
-- Visual thesis, section silhouette, artifacts, screenshot audit: `.agents/skills/mindwp-design/SKILL.md`
+- Design planning, composition, hierarchy, rhythm, and rendered audit: `.agents/skills/mindwp-design/SKILL.md`
 - CSS foundation, page-level styling, semantic markup, responsive layout, spacing: `.agents/skills/mindwp-css/SKILL.md`
 - Next/App Router architecture, routes, components, typed contracts, validation: `.agents/skills/mindwp-engineering/SKILL.md`
 - Shell, primitives, header, footer, nav, buttons, forms, repeated UI: `.agents/skills/mindwp-components/SKILL.md`
@@ -46,26 +46,25 @@ MindWP is a premium web-systems company for established service businesses and s
 - Do not make MindWP sound like a SaaS product, AI chatbot vendor, CRM reseller, ads agency, ranking-hype SEO firm, quote tool, or invoice platform.
 - Do not publicly name backend platforms or white-label delivery names.
 - Do not write or imply "your CRM"; ownership language belongs to the website, domain, content, enquiries, work, and data.
-- If a visual form is weak, rebuild the form. Do not polish a bad shell.
+- If a section does not carry its commercial meaning, revisit the plan before polishing the surface.
 
 ## Rebuild Rules
 
 - Home is the default taste gate unless the user explicitly scopes a narrower target.
 - Old pages may be used only when the user explicitly requests `_dev-reference/`.
 - Do not copy old visual shells into active source.
-- Every important section needs a visual thesis before code.
+- Every important section needs a clear section job, buyer message, composition choice, hierarchy, and mobile behavior before code.
 - Rebuilt pages should use a strong global CSS foundation plus 1-3 readable page CSS files where practical.
 - Section CSS modules are optional and should be used only when isolation is genuinely cleaner.
 - Global CSS may own tokens, type roles, layout primitives, surface roles, buttons, motion hooks, and reusable helper classes.
-- Cards, lists, grids, browser/page frames, split layouts, panels, icons, simple editorial sections, and motion are allowed when the section job earns them.
-- Do not default to generic page forms without a visual thesis.
+- A section may use text, media, screenshots, illustration, cards, lists, diagrams, strong typography, or no supporting visual. Decide during page planning.
 - Header, footer, shell, and primitives may be improved or rebuilt when the task scope includes them.
 
 ## Validation
 
 - Guidance/docs-only changes: `git diff --check`.
 - Page/component/source changes: `pnpm check`, then `pnpm build`, then `pnpm test`.
-- Visual page changes also require rendered screenshots and section crops before approval: desktop `1440px` and `1280px`, mobile `400px`, and tablet `1024px` when nav, artifacts, grids, multi-column sections, or major responsive structure change.
+- Visual page changes also require rendered screenshots and section crops before approval: desktop `1440px` and `1280px`, mobile `400px`, and tablet `1024px` when nav, media, grids, multi-column sections, or major responsive structure change.
 
 ## Reporting
 

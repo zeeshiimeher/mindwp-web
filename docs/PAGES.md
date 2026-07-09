@@ -1,6 +1,6 @@
 # PAGES — roles, IA, and rebuild planning
 
-This doc owns page roles, information architecture intent, CTA posture, and the practical planning loop for rebuilding pages. Offer structure is in [STRATEGY.md](./STRATEGY.md); voice is in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`; page workflow is in `.agents/skills/mindwp-workflow/SKILL.md`; implementation rules are in `.agents/skills/mindwp-engineering/SKILL.md`; component rules are in `.agents/skills/mindwp-components/SKILL.md`; CSS rules are in `.agents/skills/mindwp-css/SKILL.md`; practical CSS-system usage is in [DESIGN-SYSTEM.md](./DESIGN-SYSTEM.md); visual planning and screenshot audit rules are in `.agents/skills/mindwp-design/SKILL.md`.
+This doc owns page roles, information architecture intent, CTA posture, and the practical planning loop for rebuilding pages. Offer structure is in [STRATEGY.md](./STRATEGY.md); voice is in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`; page workflow is in `.agents/skills/mindwp-workflow/SKILL.md`; implementation rules are in `.agents/skills/mindwp-engineering/SKILL.md`; component rules are in `.agents/skills/mindwp-components/SKILL.md`; CSS rules are in `.agents/skills/mindwp-css/SKILL.md`; practical CSS-system usage is in [DESIGN-SYSTEM.md](./DESIGN-SYSTEM.md); design planning and rendered audit rules are in `.agents/skills/mindwp-design/SKILL.md`.
 
 ## Current State
 
@@ -80,28 +80,13 @@ Each service page should define:
 - The business moment it owns.
 - What is slipping there.
 - What the smart website/system changes.
-- What proof or artifact makes that change visible.
+- What proof, media, or supporting visual is needed, if any.
 - What adjacent systems it should mention lightly.
 - What it must not imply.
 
 The five primary systems are a distinct-concept family. They should feel related, but not like the same layout with different words.
 
 Implementation pages are different: they are a parametric family under Smart Website Systems. They may share a stronger common structure because the buyer intent varies by platform/build path rather than by business moment.
-
-## Artifact Territory
-
-Use artifacts to make business meaning visible, not decorative.
-
-- Home can show the whole connected path and proof range.
-- Smart Website Systems should show the website as the public control point with handling connected underneath.
-- Local SEO should make find/verify/local trust visible.
-- Lead Response & Handling should make the first response/routing moment visible.
-- Follow-Up & CRM should make ownership/status/next-step follow-up visible without making MindWP look like quote software.
-- Reputation & Review should make good work becoming public proof visible.
-- Industry pages should show the vertical's buyer decision moment.
-- Implementation pages should show a build transformation into a serious working website system.
-
-Do not use fake dashboards, fake metrics, fake testimonials, fake rankings, or unsupported proof.
 
 ## CTA Posture
 
@@ -123,9 +108,9 @@ For each page:
 1. Read the relevant page role here.
 2. Read the offer ownership in [STRATEGY.md](./STRATEGY.md).
 3. Read [WRITING.md](./WRITING.md) when public copy is being written or audited.
-4. Lock the page spine: section order, section jobs, proof needs, and CTA posture.
+4. Lock the page spine: section order, section jobs, proof needs, supporting media needs, and CTA posture.
 5. Use `.agents/skills/mindwp-workflow/SKILL.md` to lock workflow.
-6. Use `.agents/skills/mindwp-design/SKILL.md` to define visual theses for major sections before code.
+6. Use `.agents/skills/mindwp-design/SKILL.md` to define composition, hierarchy, rhythm, and mobile behavior for major sections before code.
 7. Use `.agents/skills/mindwp-css/SKILL.md` and [DESIGN-SYSTEM.md](./DESIGN-SYSTEM.md) for CSS and page styling.
 8. Use `.agents/skills/mindwp-engineering/SKILL.md` for App Router and React implementation.
 9. Use `.agents/skills/mindwp-components/SKILL.md` when shell, primitives, forms, header, footer, or navigation are touched.
@@ -135,6 +120,6 @@ Build priority is strategic, not mandatory: Home first, then Smart Website Syste
 
 ## Proof And Claims
 
-Real demonstration builds and real named/anonymised work are the proof base. Label evidence honestly when a viewer could mistake it for client work, measured outcomes, or real proof. Do not over-label obvious constructed service-page artifacts.
+Real demonstration builds and real named/anonymised work are the proof base. Label evidence honestly when a viewer could mistake it for client work, measured outcomes, or real proof. Do not invent screenshots, metrics, testimonials, rankings, or unsupported evidence.
 
 Never invent proof. The canonical proof boundary is in [STRATEGY.md](./STRATEGY.md).

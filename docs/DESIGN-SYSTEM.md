@@ -1,27 +1,12 @@
-# DESIGN SYSTEM — practical CSS usage
+# DESIGN SYSTEM - practical CSS usage
 
-This guide explains how to use the current MindWP CSS system. It is not a visual manifesto; it is the operating guide for page rebuilds, component work, and CSS foundation changes.
+This guide explains how to use the current MindWP CSS system. It is not a visual manifesto and does not prescribe page-specific taste. Page composition decisions belong in page planning.
 
 ## Design Language
 
-MindWP should feel calm, premium, specific, and commercially serious. The design should make a real buyer situation visible before it shows visual taste.
+MindWP should feel calm, premium, specific, and commercially serious. Design should make the buyer situation, offer, proof, and next step clear before it shows visual taste.
 
-Most major commercial pages should open with a dark, high-contrast hero unless the page role gives a stronger reason not to. The dark hero should feel like the decisive first impression: clear buyer problem, concrete MindWP offer, one primary next step, and a real or demonstration artifact when it earns space.
-
-After a dark hero, the second section should normally move to white or paper. This is a default rhythm, not a required route template. Do not stack a second dark section directly after the hero unless the page has a specific dramatic reason and the contrast has been planned. MindWP pages should usually breathe through alternating surface roles, not through random shape changes.
-
-Valid exceptions include Work, Contact, Pricing/Process, Legal, Resource/Blog, proof-led pages, and any page whose role earns another opening.
-
-Choose the section form because the section job earns it:
-
-- Cards are valid when the items are true peers.
-- Lists are valid when scanning, sequence, status, or prioritisation is the job.
-- Grids are valid when grouping, comparison, or density is the job.
-- Browser and page frames are valid when real website craft is being shown.
-- Panels and split layouts are valid when a bounded surface or contrast helps the idea land.
-- Simple editorial sections are valid when pacing, clarity, and authority matter.
-
-The failure mode is defaulting to safe forms without a visual thesis.
+A section may use text, media, screenshots, illustration, cards, lists, diagrams, strong typography, or no supporting visual. Decide the composition during page planning from the section job, buyer message, proof need, hierarchy, dominance, rhythm, and mobile behavior.
 
 ## Colour Roles
 
@@ -29,20 +14,12 @@ Use role tokens rather than raw values.
 
 - Page and section surfaces: `--color-page`, `--color-section`, `--color-raised`, `--color-band`.
 - Dark surfaces: `--color-navy`, with `--color-navy-soft`, `--color-navy-raised`, and navy line roles for local depth.
-- Text: `--color-ink`, `--color-muted`, `--color-subtle`, plus inverse roles on navy.
+- Text: `--color-ink`, `--color-muted`, `--color-subtle`, plus inverse roles on dark surfaces.
 - Borders: `--color-line` and `--color-line-strong`.
-- Accent: emerald is a signal for focus, key actions, and sparse emphasis. It is not background texture.
-- Status: success, warning, and danger are for state meaning only and must not be used as decoration.
+- Accent: emerald is a signal for focus, key actions, and sparse emphasis.
+- Status: success, warning, and danger are for state meaning only.
 
 If a color token name describes a material or trend rather than a role, prefer a role name when the foundation is in scope.
-
-Default page surface rhythm:
-
-- Hero: usually `navy`.
-- Second section after a dark hero: usually paper, meaning `section`, `page`, or `raised`.
-- Main body: alternate `section`, `page`, `raised`, and occasional `band` according to section job.
-- Accent surfaces: rare, for a meaningful signal or soft proof/CTA support.
-- Back-to-back dark sections: avoid by default; use only when the page arc truly needs a dark flagship continuation.
 
 Surface token meanings:
 
@@ -59,7 +36,7 @@ Use the role that matches the content job:
 
 - `h1`: one page-level first impression.
 - `h2`: primary section heading.
-- `h3 large`: flagship subsection or proof moment below an `h2`.
+- `h3 large`: high-value subsection or proof moment below an `h2`.
 - `h3`: normal subsection heading.
 - `h3 small`: compact subsection, panel group, or dense proof heading.
 - `h4`: small card, label-led panel, or support heading.
@@ -79,36 +56,27 @@ Start with real elements: `main`, `section`, headings, paragraphs, lists, links,
 
 Global CSS gives these elements useful defaults. Add classes for layout roles, type overrides, surface changes, or intentional component behavior. Important headings, proof, claims, and CTAs must remain crawlable text, not only images, SVG, canvas, pseudo-elements, or hidden content.
 
-## Section Rhythm
+## Section Spacing
 
-Use default section rhythm before inventing one-off padding. Most normal sections should use default top and bottom padding; the page should get variety from surface, silhouette, density, artifacts, and composition.
+Use default section spacing before inventing one-off padding. Change spacing when it clarifies relationship, hierarchy, or page rhythm.
 
-- Default: normal page sections. This is the usual choice.
-- Compact: short support strips, small bridges, or tight CTA lead-ins. Use sparingly.
-- Spacious: major proof, service reveal, or substantial artifact work. Use intentionally.
-- Hero: first impression or flagship opening only.
+- Default: normal page sections.
+- Compact: short support strips, small bridges, or tight CTA lead-ins.
+- Spacious: major proof, deep explanation, or a section that needs more room.
+- Opening: first impression or page-level opening section only.
 
 Spacing should show relationship. Inner gaps are smaller than the space around a group. Use `gap` for internal layout and margins mainly for typographic flow or external separation.
-
-Normal page rhythm after a dark hero:
-
-1. Dark hero.
-2. White or paper second section that explains, proves, or reframes the offer.
-3. Alternating section surfaces where each surface change marks a real shift in section job.
-4. Dark can return for a flagship proof, serious contrast, or final close, but it should not become every other section by habit.
-
-Do not rely on compact/spacious padding to make a page feel designed. Use them only when the section job earns the change.
 
 ## Containers And Text Widths
 
 Use containers intentionally:
 
 - Default container for most page sections.
-- Wide container for large artifacts, comparison surfaces, and proof.
+- Wide container when a section needs more horizontal room.
 - Narrow container for focused explanation or quieter editorial pacing.
 - Full width only when the page form genuinely needs the viewport.
 
-Text widths are roles, not decoration. Hero and flagship headings can be narrow, but `mw-text-width--hero` is optional. Long service, industry, or page titles may need a wider measure or page CSS. Body copy should stay readable. Artifacts and proof can be wider than copy.
+Text widths are roles, not decoration. Page openings and high-value headings can be narrow or wide depending on the copy. Long service, industry, or page titles may need a wider measure or page CSS. Body copy should stay readable.
 
 ## CSS File Shape
 
@@ -117,14 +85,14 @@ Global CSS owns tokens, semantic defaults, typography roles, layout helpers, but
 Page-level CSS is normal. A rebuilt page can use 1-3 readable files near the route or page surface, such as:
 
 - `page.css`
-- `page-artifacts.css`
 - `page-responsive.css`
+- a clearly named companion file when the page has enough local styling to justify it
 
-Use global classes when they already express the role: section rhythm, container, stack, cluster, grid, switcher, text width, surface, border, type, buttons, and motion hooks.
+Use global classes when they already express the role: section spacing, container, stack, cluster, grid, switcher, text width, surface, border, type, buttons, and motion hooks.
 
-Use page CSS when the section needs a visual thesis, artifact layout, responsive behavior, page-specific rhythm, or a local composition that should not become global.
+Use page CSS when a section needs local composition, responsive behavior, page-specific rhythm, or styling that should not become global.
 
-Use isolated component or section CSS only when isolation is cleaner: complex interactive islands, reused artifacts, unusual selector risk, or behavior/state styling that belongs to the component.
+Use isolated component or section CSS only when isolation is cleaner: complex interactive islands, reused components, unusual selector risk, or behavior/state styling that belongs to the component.
 
 ## Buttons, Links, And Forms
 
@@ -136,17 +104,17 @@ Forms should remain dedicated by page or use case unless repeated need proves ab
 
 Do not make a MindWP form look like a quote tool, invoice system, SaaS demo, or CRM product.
 
-## Images And Artifacts
+## Media
 
-Reserve space before media loads. Preserve aspect ratio. Keep real work, website craft, proof labels, and CTA context readable on mobile.
+Reserve space before media loads. Preserve aspect ratio. Keep real work, proof labels, and CTA context readable on mobile.
 
-Use object cropping only when the crop does not hide the point of the artifact. If a desktop artifact becomes unreadable at mobile width, design a mobile artifact instead of shrinking the desktop one.
+Use object cropping only when the crop does not hide the point of the media. If a desktop composition becomes unreadable at mobile width, plan a mobile treatment instead of simply shrinking it.
 
 ## Motion
 
-Stillness is the baseline. CSS transitions are the default. Heavier motion belongs in isolated client islands only when it explains sequence, handoff, contrast, state change, or proof.
+Stillness is the baseline. CSS transitions are the default. Heavier motion belongs in isolated client islands only when it clarifies sequence, handoff, contrast, state change, interaction feedback, or proof.
 
-Do not reveal-gate the hero headline, primary CTA, or LCP content. Reduced-motion behavior is required.
+Do not reveal-gate the page heading, primary CTA, or LCP content. Reduced-motion behavior is required.
 
 ## Breakpoints And Rendered QA
 
@@ -156,7 +124,7 @@ Primary visual QA widths:
 - Tablet: `1024px`
 - Mobile: `400px`
 
-Tablet is required when layout changes affect nav, artifacts, grids, multi-column sections, or major responsive structure. If a value risks breaking below `400px`, report it, but do not design the whole system around `375px`.
+Tablet is required when layout changes affect nav, media, grids, multi-column sections, or major responsive structure. If a value risks breaking below `400px`, report it, but do not design the whole system around `375px`.
 
 Rendered screenshots and section crops are required before approval for visual page or component work. A passing build is not visual approval.
 
@@ -165,14 +133,13 @@ Rendered screenshots and section crops are required before approval for visual p
 Do not judge these from code alone:
 
 - first-glance commercial meaning
-- whether the form serves the section job
-- artifact readability
+- hierarchy and composition
 - typography wrapping
-- repeated silhouette
+- repeated weak patterns
 - contrast on the actual composed background
 - mobile hierarchy
 - CTA dominance
+- whether proof or media is readable when present
 - whether the page feels generic
-- whether the hero and second-section silhouette repeats the last rebuilt page
 
 Render the work and inspect it.

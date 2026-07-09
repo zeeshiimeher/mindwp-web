@@ -41,7 +41,7 @@ Do not put broad page systems, visual factories, or large content models into ro
 
 Use Metadata API helpers. Do not hardcode `<title>` or `<meta>` tags in JSX. Structured data must not invent proof, ratings, reviews, outcomes, prices, or claims.
 
-Use `next/link` for internal navigation. Use `next/image` or explicit image dimensions/aspect-ratio where public images or artifacts need sizing, optimization, or layout-shift protection.
+Use `next/link` for internal navigation. Use `next/image` or explicit image dimensions/aspect-ratio where public images or media need sizing, optimization, or layout-shift protection.
 
 Add route `loading` or `error` boundaries only when async data, streaming, or meaningful failure states justify them.
 

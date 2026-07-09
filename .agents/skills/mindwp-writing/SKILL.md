@@ -104,7 +104,7 @@ The word "system" is allowed, but it must be earned by the problem.
 - Strong close usually uses one clear action.
 - CTA tone is diagnostic, specific, calm, and low-pressure.
 - Proof labels are for evidence that could be mistaken for real client work, measured outcomes, or demonstration builds.
-- Obvious constructed service-page artifacts do not need defensive labels.
+- Clearly constructed explanatory material does not need defensive labels.
 
 ## Rewrite Behavior
 

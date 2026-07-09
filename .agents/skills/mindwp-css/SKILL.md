@@ -1,17 +1,17 @@
 ---
 name: mindwp-css
-description: MindWP CSS foundation and page styling rules. Use when writing or reviewing global CSS, page-level CSS, tokens, typography roles, semantic element defaults, responsive layout, spacing, forms, focus states, cleanup, or CSS architecture.
+description: MindWP CSS foundation and page styling rules. Use when writing or reviewing global CSS, page-level CSS, tokens, typography roles, semantic element defaults, responsive layout, spacing, media, forms, focus states, cleanup, or CSS architecture.
 ---
 
 # MindWP CSS
 
-CSS is part of MindWP's design language. It should create a coherent premium system that is readable, inspectable, accessible, and easy to change.
+CSS is part of MindWP's design system. It should be readable, inspectable, accessible, and easy to change.
 
-Use `docs/DESIGN-SYSTEM.md` as the practical guide for how the CSS system should be applied in page rebuilds.
+Use `docs/DESIGN-SYSTEM.md` as the practical guide for applying the CSS system in page rebuilds.
 
 ## Ownership
 
-Global CSS is important. It may own:
+Global CSS may own:
 
 - token values and semantic color roles
 - typography roles and element defaults
@@ -19,17 +19,13 @@ Global CSS is important. It may own:
 - surface, button, focus, motion, and form foundations
 - reusable utility class names
 
-Page CSS is normal. A rebuilt page should usually use 1-3 readable files such as:
+Page CSS is normal. A rebuilt page can use one clear page stylesheet and a small number of companion files when the page has enough local styling to justify them.
 
-- `page.css`
-- `page-artifacts.css`
-- `page-responsive.css`
-
-Section CSS modules are optional, not default. Use a module when isolation is cleaner: complex islands, reusable artifacts, unusual interaction, or selector-bleed risk.
+Section CSS modules are optional, not default. Use a module when isolation is cleaner: complex islands, reused components, unusual interaction, or selector-bleed risk.
 
 Tokens, typography roles, layout helpers, spacing roles, global class names, and global CSS files can be improved, renamed, removed, or rebuilt when the task scope includes foundation work.
 
-Page CSS should live near the route or page component it serves and be imported by that page/layout according to the repo's existing Next.js styling pattern. Keep filenames descriptive and limited; prefer one clear page stylesheet before adding artifact or responsive companions.
+Page CSS should live near the route or page component it serves and be imported by that page/layout according to the repo's existing Next.js styling pattern. Keep filenames descriptive and limited.
 
 ## Semantic Defaults
 
@@ -64,7 +60,7 @@ Prefer role-based token names over raw color, material, or effect names where pr
 
 Avoid raw hex, arbitrary radii, one-off shadows, random spacing, and component-local color systems unless the task is explicitly creating or replacing the token foundation.
 
-Status color is for meaning, not decoration. Pair status color with text or icon where meaning matters.
+Status color is for meaning. Pair status color with text or icon where meaning matters.
 
 ## Typography
 
@@ -73,14 +69,14 @@ Fraunces and Inter should feel premium, readable, and consistent.
 Design type clamps deliberately:
 
 - set sensible min, preferred, and max values
-- reserve display scale for hero, flagship, and proof moments
-- use `type-h3-small` for compact subsection, panel group, or dense proof headings when normal `h3` is too dominant
+- reserve display scale for page openings and major proof moments
+- use compact heading roles when normal headings are too dominant
 - keep body copy in readable measure
 - avoid viewport-width font scaling as a substitute for a type system
 - use `tabular-nums` where aligned numbers, prices, dates, or counters matter
 - keep body letter spacing at normal unless a type role has a specific reason
 
-Check hero lines, section headings, labels, buttons, captions, and proof copy at 1440px desktop, 1280px desktop, 1024px tablet when structure changes require it, and 400px mobile.
+Check page headings, section headings, labels, buttons, captions, and proof copy at 1440px desktop, 1280px desktop, 1024px tablet when structure changes require it, and 400px mobile.
 
 ## Layout Decisions
 
@@ -99,7 +95,6 @@ Use grid for two-dimensional layout:
 - asymmetric sections
 - media/text systems
 - comparison matrices
-- artifact layouts
 - stable track systems
 
 Use `gap` before margin hacks. Group spacing should show relationship: inner gaps are smaller than the space around the group. Margins are mainly for external separation and typographic rhythm.
@@ -110,28 +105,26 @@ Prefer intrinsic CSS:
 - `auto-fit` when empty columns should collapse
 - `auto-fill` when preserving slots is intentional
 - `max()`, `min()`, and `fit-content()` when they clarify constraints
-- `aspect-ratio` for fixed-format artifacts, media, cards, and frames
+- `aspect-ratio` for fixed-format media, cards, and frames
 - `min-width: 0` on grid/flex children where text can overflow
 
-Avoid fixed heights unless the section needs a stable viewport, canvas, or artifact frame. Avoid absolute positioning for normal layout; reserve it for badges, overlays, annotations, and controlled decorative layers.
+Avoid fixed heights unless the section needs a stable viewport, canvas, or media frame. Avoid absolute positioning for normal layout; reserve it for badges, overlays, annotations, and controlled decorative layers.
 
-Media and artifact CSS should preserve aspect ratio, reserve space before assets load, and keep real work/images readable on mobile. Do not crop important website craft, proof labels, or CTA context just to fit a decorative frame.
+Media CSS should preserve aspect ratio, reserve space before assets load, and keep important proof, labels, and CTA context readable on mobile.
 
 ## Spacing And Containers
 
 Spacing should feel systemized:
 
 - default section padding is the normal choice for most sections
-- compact, spacious, and hero spacing are intentional exceptions
-- surface alternation, density, silhouette, and artifact choice create most page rhythm
+- compact, spacious, and opening spacing are intentional exceptions
+- surface alternation, density, hierarchy, and composition create most page rhythm
 - container widths distinguish full, wide, default, narrow, and text measures
-- artifacts and proof areas may claim more width than copy
+- proof and media areas may claim more width than copy when needed
 - not every heading should sit in the same centered max-width block
 - simple editorial sections may be quiet and narrow when pacing matters
 
 Use a consistent spacing scale and deliberate `clamp()` values for major section padding. Do not create fluid spacing because it looks smooth in one viewport.
-
-After a dark hero, the next section should normally move to white or paper. In the current token system, paper means `page`, `section`, or `raised`; `band` is a stronger transition surface. Do not place a second dark section after the hero unless the section job and page arc clearly earn the sustained dark run.
 
 ## Page CSS Shape
 
@@ -141,7 +134,7 @@ Keep page CSS readable:
 - selectors should usually be one or two levels deep
 - avoid selector chains that depend on exact DOM depth
 - CSS should support clean JSX, not force wrapper bloat
-- page artifacts can have their own grouped CSS when that improves scanning
+- local compositions can have grouped CSS when that improves scanning
 - responsive rules should be near the page/component they explain unless they belong globally
 
 ## Forms And Inputs
@@ -193,15 +186,15 @@ Do not solve layering with arbitrary large `z-index` values. If a section needs 
 Choose mobile-first or desktop-first by section complexity:
 
 - mobile-first for simple stacks, forms, and text-led sections
-- desktop-first can be clearer for complex artifacts whose desktop composition defines the idea
+- desktop-first can be clearer when the desktop composition defines the idea
 
-Primary visual QA widths are 1440px desktop, 1280px desktop, 1024px tablet, and 400px mobile. Tablet is required when layout changes affect nav, artifacts, grids, multi-column sections, or major responsive structure. If a value risks breaking below 400px, report it, but do not design the whole system around 375px.
+Primary visual QA widths are 1440px desktop, 1280px desktop, 1024px tablet, and 400px mobile. Tablet is required when layout changes affect nav, media, grids, multi-column sections, or major responsive structure. If a value risks breaking below 400px, report it, but do not design the whole system around 375px.
 
 Before approval, check:
 
 - no horizontal overflow
 - no overlapping text or controls
-- readable artifacts
+- readable proof or media when present
 - stable CTA groups
 - button text fits
 - headings wrap well
@@ -228,5 +221,5 @@ When changing CSS:
 2. Search for existing classes/tokens before adding new ones.
 3. Remove duplicated or stale CSS only when usage is safely proven.
 4. Prefer renaming/replacing weak foundations over layering new exceptions.
-5. Check 1440px desktop, 1280px desktop, 400px mobile, and 1024px tablet when the layout changes affect nav, artifacts, grids, multi-column sections, or major responsive structure.
+5. Check 1440px desktop, 1280px desktop, 400px mobile, and 1024px tablet when the layout changes affect nav, media, grids, multi-column sections, or major responsive structure.
 6. Run the validation gate required by `AGENTS.md`.

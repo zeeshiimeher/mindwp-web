@@ -73,7 +73,7 @@ Rebuilt premium sections should use:
 - existing tokens and typography roles
 - shared primitives only when they support the section rather than flatten it
 
-Avoid defaulting to generic visual primitives without a section job. Section headers, split layouts, equal grids, card shells, and browser/page frames are all valid when the chosen form serves the section thesis.
+Avoid defaulting to broad visual factories before a section job is clear. Keep composition decisions local until repeated built need proves a shared pattern.
 
 ## CSS Model
 
@@ -83,7 +83,7 @@ Avoid defaulting to generic visual primitives without a section job. Section hea
 - `src/styles/buttons.css` supports the `Button` component.
 - `src/styles/motion.css` supports shared reveal/motion hooks.
 
-Global CSS should provide the shared foundation. Page-specific rhythm, artifacts, responsive rules, and visual detail belong in readable page CSS, with section modules used only when they are cleaner.
+Global CSS should provide the shared foundation. Page-specific rhythm, responsive rules, and visual detail belong in readable page CSS, with section modules used only when they are cleaner.
 
 ## Forms And Contact
 
@@ -121,7 +121,7 @@ Use the gates from `.agents/skills/mindwp-engineering/SKILL.md`:
 
 - Guidance/docs-only changes: `git diff --check`.
 - Page/component changes: `pnpm check`, then `pnpm build`, then `pnpm test`.
-- Visual page changes: screenshots at `1440px`, `1280px`, and `400px`, plus `1024px` when nav, artifacts, grids, multi-column sections, or major responsive structure change; capture relevant section crops before approval.
+- Visual page changes: screenshots at `1440px`, `1280px`, and `400px`, plus `1024px` when nav, media, grids, multi-column sections, or major responsive structure change; capture relevant section crops before approval.
 
 `pnpm check` currently covers typecheck, lint, banned-name checks, and contrast checks. `pnpm test` runs Playwright smoke/a11y coverage.
 

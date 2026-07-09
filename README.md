@@ -13,7 +13,7 @@ The active repo is currently reset to a clean page surface: public page routes e
 **Local skills**
 
 - `.agents/skills/mindwp-workflow/SKILL.md` owns task flow, page planning, rebuild sequencing, and QA planning.
-- `.agents/skills/mindwp-design/SKILL.md` owns visual thesis, artifacts, coherence, rhythm, and screenshot audit rules.
+- `.agents/skills/mindwp-design/SKILL.md` owns design planning, composition, hierarchy, rhythm, and screenshot audit rules.
 - `.agents/skills/mindwp-css/SKILL.md` owns global CSS foundations, page-level CSS, semantic markup, responsive layout, forms, states, and cleanup.
 - `.agents/skills/mindwp-engineering/SKILL.md` owns Next/App Router architecture, components, typed contracts, and validation gates.
 - `.agents/skills/mindwp-components/SKILL.md` owns shell, primitives, header, footer, nav, buttons, forms, repeated UI, states, and accessibility.
@@ -27,7 +27,7 @@ The active repo is currently reset to a clean page surface: public page routes e
 - `docs/STRATEGY.md` owns the offer model, five systems, proof model, conversion strategy, and market/industry posture.
 - `docs/WRITING.md` owns public language, voice, copy validation, and claim boundaries.
 - `docs/PAGES.md` owns page roles, IA intent, CTA posture, and rebuild planning logic.
-- `docs/DESIGN-SYSTEM.md` owns practical CSS/design-system usage, type roles, section rhythm, page CSS conventions, and rendered QA widths.
+- `docs/DESIGN-SYSTEM.md` owns practical CSS/design-system usage, type roles, spacing, page CSS conventions, media handling, and rendered QA widths.
 - `docs/ARCHITECTURE.md` owns technical rationale and current code structure.
 
 ## Source Of Truth
