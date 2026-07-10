@@ -28,6 +28,8 @@ Use source files for machine facts:
 
 Docs explain strategy. `docs/DESIGN-SYSTEM.md` explains practical CSS-system usage. Source files own enforceable values.
 
+Canonical and route registries may contain future possibilities. They do not make every route a launch requirement; public navigation and sitemaps must contain only approved, built pages.
+
 ## App Router
 
 Routes stay thin:
@@ -145,6 +147,6 @@ Code/page/component changes:
 - `pnpm build`
 - `pnpm test`
 
-Visual changes also need rendered QA through `mindwp-qa`.
+Visual changes also need the rendered screenshot and section-crop QA required by `AGENTS.md`.
 
 If a gate fails, fix the cause or report the exact blocker.

@@ -1,129 +1,156 @@
-# ARCHITECTURE — current code shape and technical rationale
+# ARCHITECTURE — rebuild decisions and technical rationale
 
+The repository has a clean page surface. Active public route files exist under `src/app/**/page.tsx` and intentionally render `null`. Shared shell, primitives, tokens, route configuration, canonical content, SEO helpers, contact handling, and validation remain.
 
-
-The repo has been reset to a clean page surface:
-
-- Active public page routes exist under `src/app/**/page.tsx`.
-- Those route files intentionally render `null`.
-- Shared shell, primitives, tokens, motion helpers, route config, canonical config, SEO helpers, contact code, and validation scripts remain.
-- `_dev-reference/current-site/` preserves the previous site as a standalone ignored reference copy.
-
-The reference copy is not active source. Do not import from it, lint it, search it, or treat its docs/skills as current guidance unless the user explicitly asks to inspect the reference copy.
+`_dev-reference/current-site/` is an ignored standalone reference copy. Do not read, search, import, or restore from it unless the user explicitly asks.
 
 ## Stack
 
-| Layer             | Choice                                                                                        |
-| ----------------- | --------------------------------------------------------------------------------------------- |
-| Framework         | Next.js App Router + React + TypeScript                                                       |
-| Styling           | Tailwind v4 plus CSS-variable tokens; rebuilt visual work should use a strong global foundation plus readable page CSS |
-| Fonts             | `next/font/google`: Fraunces and Inter                                                        |
-| Forms             | Server actions + zod + Resend + Cloudflare Turnstile                                          |
-| SEO               | Metadata API + JSON-LD helpers + generated sitemap/robots                                     |
-| Quality           | ESLint, TypeScript, banned-name checks, contrast checks, Playwright smoke/a11y tests          |
-| Deployment target | Cloudflare/OpenNext config remains in the repo                                                |
+| Layer | Decision |
+|---|---|
+| Framework | Next.js App Router, React, and TypeScript |
+| Rendering | Server Components by default; small Client Component islands for real interaction and motion |
+| Styling | CSS-first: shared token/base CSS plus art-directed page CSS; Tailwind v4 remains optional |
+| Motion | CSS for interface feedback; GSAP in isolated narrative or signature sections |
+| Fonts | `next/font`; Fraunces and Inter are current defaults, not permanent art-direction constraints |
+| Forms | Server actions, Zod, Resend, and Cloudflare Turnstile |
+| SEO | Metadata API, JSON-LD helpers, and generated sitemap/robots |
+| Quality | ESLint, TypeScript, name/contrast checks, Playwright smoke and accessibility tests |
+| Deployment | Cloudflare/OpenNext configuration remains available |
 
-## Active Folder Map
+## The key rebuild decision
+
+The new homepage will **not** begin with a global component library or Tailwind composition system.
+
+Build order:
+
+1. Approve a homepage visual direction and content hierarchy.
+2. Build local semantic sections and page-level CSS around that direction.
+3. Isolate only the interactions that require client-side behavior.
+4. Promote components, tokens, and patterns to shared code after repeated use is proven.
+
+This preserves visual originality while keeping the stable infrastructure reusable.
+
+## Active folder map
 
 ```text
 src/
-  app/         App Router shell, route files, sitemap, robots, manifest, errors, icon, OG image
-  components/  shared UI, layout, forms, motion, JsonLd, Breadcrumbs
-  config/      site identity, route/nav registry, env parsing
-  content/     canonical systems and industries allow-lists
-  lib/         CTA labels, contact helpers, SEO helpers, utilities
-  styles/      tokens, typography, layout, buttons, motion
-docs/          strategy, writing, page, design-system, and architecture reference
-.agents/      local MindWP skills
+  app/         App Router shell, route files, metadata surfaces, sitemap, robots
+  components/  shared layout, forms, motion helpers, SEO components, stable UI
+  config/      site identity, environment parsing, and route/navigation registry
+  content/     canonical capability and industry allow-lists
+  lib/         CTA, contact, SEO, and utility helpers
+  styles/      global tokens, type/base rules, layout helpers, shell, forms, motion
+docs/          business, page, writing, design, and architecture decisions
+.agents/       repository-specific implementation skills
 ```
 
-`src/components/sections/` is intentionally absent until new page sections are built.
+Page-specific components and CSS should live close to the route they serve until reuse is real. `src/components/sections/` should not become a dumping ground for generic marketing blocks.
 
-## Source Of Truth
+## Route architecture
 
-- `src/styles/tokens.css` owns design token values.
-- `docs/DESIGN-SYSTEM.md` owns practical guidance for using those tokens, type roles, layout helpers, page CSS, and QA widths.
-- `src/content/canonical.ts` owns systems and industries.
-- `src/config/routes.ts` owns intended route/nav/sitemap structure.
-- `src/config/site.ts` owns public site identity.
-- `src/lib/cta` owns approved CTA labels.
-- `scripts/check-names.mjs` owns enforced banned names/routes/terms.
+Routes stay thin:
 
-During the reset state, route config and canonical config may describe intended future routes that do not yet have rebuilt page content. That is acceptable, but agents must not treat empty pages as finished pages.
-
-## Rebuild Architecture
-
-Routes should stay thin:
-
-- metadata
-- JSON-LD where needed
+- metadata and JSON-LD
 - page-level data decisions
-- section rendering
+- composition of local sections
 
+The current route and canonical registries represent a larger future site. They are not the required launch surface. Before public launch, the sitemap and navigation must include only pages that contain approved public content.
 
-## CSS Model
+The previous fixed-length “exactly five systems” type guard is a strategy-era constraint, not a technical requirement. It should be changed when route/canonical cleanup enters scope; capability names can remain canonical without forcing five launch pages.
 
-- `src/styles/tokens.css` exposes color, type, spacing, radius, shadow, and motion tokens.
-- `src/styles/typography.css` owns semantic type roles.
-- `src/styles/layout.css` owns section, container, text-width, and small surface helpers.
-- `src/styles/buttons.css` supports the `Button` component.
-- `src/styles/motion.css` supports shared reveal/motion hooks.
+## CSS architecture
 
-Global CSS should provide the shared foundation. Page-specific rhythm, responsive rules, and visual detail belong in readable page CSS, with section modules used only when they are cleaner.
+`src/styles/*` remains the shared foundation:
 
-## Forms And Contact
+- `tokens.css` — repeated color, type, spacing, elevation, motion, and layer roles
+- `typography.css` — semantic defaults and stable type roles
+- `layout.css` — small container and layout helpers
+- `buttons.css` — shared action foundations
+- `forms.css` — accessible form controls and states
+- `shell.css` — header, navigation, and footer behavior
+- `motion.css` — quiet shared reveal behavior
 
-The contact path remains the main dynamic surface:
+The homepage should add local page CSS for its art direction, signature compositions, responsive rules, and page-specific variables. Local values are acceptable when they are intentional and not yet shared design roles.
 
-- server action in `src/app/contact/actions.ts`
-- zod validation in `src/lib/contact/schema.ts`
-- contact URL attribution in `src/lib/contact/contactHref.ts`
-- env parsing in `src/config/env.ts`
+Tailwind stays installed because it is already part of the pipeline and can help with small utilities or future surfaces. It should not be the default authoring language for the homepage, and there is no reason to remove it before the visual build.
 
-The contact form should remain the only public write path unless the project scope explicitly changes.
+## Component architecture
 
-## SEO And Routing
+Server Components are the default. Use Client Components only for:
 
-- `src/lib/seo/metadata.ts` builds shared metadata.
-- `src/lib/seo/schema.ts` builds JSON-LD.
-- `src/app/sitemap.ts` derives routes from `src/config/routes.ts`.
-- `src/app/robots.ts` owns robots output.
+- navigation/disclosure state
+- browser APIs or measured layout
+- direct manipulation needed for GSAP or interaction
+- form state that cannot remain server-side
+- real pointer, scroll, or state-driven behavior
 
-Structured data must not invent proof, ratings, results, reviews, or claims.
+Keep client boundaries at the section or interaction level. Do not turn the homepage into one Client Component.
 
-## Motion Model
+Existing primitives are optional infrastructure. `Section`, `Container`, `Button`, `Badge`, and `Eyebrow` can be extended, restyled, replaced, or skipped when their current visual form conflicts with the approved design.
 
-The shared motion layer remains:
+## Motion architecture
 
-- `src/components/motion/Reveal.tsx`
-- `src/components/motion/RevealMotion.tsx`
-- `src/styles/motion.css`
+Retain the current IntersectionObserver reveal helper for quiet supporting content. Do not use it on every block.
 
-Motion must keep content visible by default, respect reduced motion, and avoid reveal-gating LCP content. Section-specific heavier animation belongs in isolated client islands only when justified.
+Signature motion should live in isolated Client Components and use GSAP only where choreography, pinning, scrubbed progress, sequencing, or coordinated transforms justify it. Prefer transforms and opacity, manage cleanup through GSAP context, and avoid persistent work outside the viewport.
+
+Every signature section must have:
+
+- a complete static server-rendered composition
+- a reduced-motion treatment
+- mobile behavior designed separately where necessary
+- no reveal-gating of LCP or critical content
+
+## Shell architecture
+
+The current header and footer are accessible foundations but reflect the old IA and generic visual shell. They should be redesigned with the homepage so brand, navigation, mobile menu, and footer feel like one system.
+
+Navigation should expose the small approved launch surface. Future capability and industry routes can remain in canonical data without appearing in the shell until built.
+
+## Forms and privacy
+
+The contact path remains the only public write surface unless scope changes:
+
+- action: `src/app/contact/actions.ts`
+- validation: `src/lib/contact/schema.ts`
+- attribution: `src/lib/contact/contactHref.ts`
+- private environment parsing: `src/config/env.ts`
+
+Contact destination addresses and service keys belong only in private environment variables. Public configuration, example values, client bundles, error messages, and logs must not expose personal contact details or submitted enquiry data.
+
+The form must never claim an enquiry was delivered when email transport is unavailable.
+
+## SEO and proof
+
+Use shared metadata and JSON-LD helpers. Do not hardcode metadata in JSX or invent ratings, reviews, prices, results, locations, or claims.
+
+Sitemap generation must follow the approved live route set rather than every future canonical possibility. Empty route files are scaffolding, not public pages.
+
+## Performance posture
+
+Visual ambition is allowed, but performance is part of the design:
+
+- size and preload the real LCP asset correctly
+- reserve space for media
+- use optimized images and responsive sources
+- keep client JavaScript inside earned islands
+- load GSAP only where it is used
+- avoid large always-running canvases or filters without measured value
+- verify layout shift and mobile interaction quality
 
 ## Validation
 
-Use the gates from `.agents/skills/mindwp-engineering/SKILL.md`:
+Guidance/docs-only changes:
 
-- Guidance/docs-only changes: `git diff --check`.
-- Page/component changes: `pnpm check`, then `pnpm build`, then `pnpm test`.
-- Visual page changes: screenshots at `1440px`, `1280px`, and `400px`, plus `1024px` when nav, media, grids, multi-column sections, or major responsive structure change; capture relevant section crops before approval.
+- `git diff --check`
 
-`pnpm check` currently covers typecheck, lint, banned-name checks, and contrast checks. `pnpm test` runs Playwright smoke/a11y coverage.
+Page/component/source changes:
 
-## Reference Copy
+- `pnpm check`
+- `pnpm build`
+- `pnpm test`
 
-`_dev-reference/current-site/` is a standalone ignored copy of the previous site. It exists so the old pages can be run and inspected without keeping old sections in active source.
+Visual work also requires rendered screenshots and section crops at `1440px`, `1280px`, and `400px`, plus `1024px` when nav, media, grids, multi-column composition, sticky behavior, or major responsive structure changes.
 
-Only use it when explicitly requested, for:
-
-- content reference
-- old-vs-new comparison
-- checking what not to repeat
-
-Do not use it for:
-
-- active imports
-- current docs/skills authority
-- search-driven implementation defaults
-- restoring old visual shells
+Build success is a technical gate. Rendered review decides visual approval.

@@ -1,6 +1,6 @@
 # MindWP Agent Guidance
 
-MindWP is a premium web-systems company for established service businesses and specialist clinics. The strategy and writing rules are strong; the rebuild risk is execution: generic layouts, weak commercial meaning, stale page history, and old visual shells returning.
+MindWP is a premium smart-website company for established service businesses and specialist clinics. The rebuild must solve two things together: a clear commercial idea and a distinctive visual experience. The main execution risks are generic layouts, excessive explanatory copy, repeated component patterns, weak proof presentation, and old visual shells returning.
 
 ## Current Repo State
 
@@ -20,6 +20,8 @@ MindWP is a premium web-systems company for established service businesses and s
 - Public language and copy validation: `docs/WRITING.md`
 - Practical design-system and CSS usage guide: `docs/DESIGN-SYSTEM.md`
 - Current code structure and technical rationale: `docs/ARCHITECTURE.md`
+
+For major visual pages, approve a page-specific visual direction before implementation. Shared tokens and primitives are foundations, not the visual thesis.
 
 
 

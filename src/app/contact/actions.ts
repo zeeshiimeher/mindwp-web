@@ -3,7 +3,6 @@
 import { Resend } from "resend";
 
 import { env, isEmailConfigured, isTurnstileConfigured } from "@/config/env";
-import { SITE } from "@/config/site";
 import { reviewRequestSchema } from "@/lib/contact/schema";
 
 export interface SubmitState {
@@ -48,17 +47,13 @@ export async function submitReviewRequest(
     return { ok: false, message: "Spam check failed — please try again." };
   }
 
-  // No transport configured (e.g. local/preview): log and accept so the flow works.
+  // Never log submitted personal details or claim delivery when email is unavailable.
   if (!isEmailConfigured) {
-    console.info("[contact] (email not configured) enquiry:", {
-      name: data.name,
-      email: data.email,
-      businessName: data.businessName,
-      problemArea: data.problemArea,
-      system: data.system,
-      source: data.source,
-    });
-    return { ok: true, message: "Thanks — your request has been received. We'll be in touch." };
+    console.error("[contact] email delivery is not configured");
+    return {
+      ok: false,
+      message: "The request form is unavailable right now. Please try again later.",
+    };
   }
 
   try {
@@ -86,7 +81,7 @@ export async function submitReviewRequest(
     console.error("[contact] send failed:", err);
     return {
       ok: false,
-      message: `Something went wrong sending your request. Email us directly at ${SITE.enquiryEmail}.`,
+      message: "Something went wrong sending your request. Please try again later.",
     };
   }
 }

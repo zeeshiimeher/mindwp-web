@@ -5,9 +5,7 @@ description: MindWP motion and interaction rules. Use when adding, reviewing, or
 
 # MindWP Motion
 
-Motion must support meaning. It cannot rescue weak design or replace proof.
-
-Stillness is the default.
+Motion must support meaning, atmosphere, or interaction quality. It cannot rescue weak design or replace proof. Static composition remains the foundation; stillness is not a requirement for every expressive surface.
 
 ## When Motion Is Earned
 
@@ -21,8 +19,9 @@ Use motion when it clarifies:
 - state change
 - cause and effect
 - interaction feedback
+- visual depth or atmosphere that strengthens the approved art direction
 
-Do not add motion as wallpaper. If the section is unclear when static, fix the section first.
+Decorative motion should remain restrained and optional. If the section is unclear when static, fix the section first.
 
 ## Implementation Order
 
@@ -38,8 +37,8 @@ Use transform and opacity where possible. Avoid animating layout properties unle
 - Do not reveal-gate LCP content, hero headline, primary CTA, or core proof.
 - Do not delay comprehension for a flourish.
 - Do not animate fake controls, fake product interfaces, or fake states.
-- Do not use ambient loops, cursor tricks, or background noise.
-- Do not make scrolling feel hijacked unless the section itself is an earned interactive explanation.
+- Ambient loops, pointer response, and parallax are allowed when subtle, performant, non-essential, and removed under reduced motion.
+- Do not hijack scrolling. A pinned or scrubbed section must preserve orientation and be justified by the explanation or visual story.
 - Do not require hover-only interaction for important content.
 
 Scroll choreography or heavier animation libraries belong only in isolated section client islands when the section earns them.

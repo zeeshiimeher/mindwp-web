@@ -1,0 +1,4 @@
+interface:
+  display_name: "MindWP Site"
+  short_description: "Plan, build, and verify the MindWP website"
+  default_prompt: "Use $mindwp-site to plan and build a MindWP page from strategy through rendered QA."

@@ -11,8 +11,6 @@ export const SITE = {
   description:
     "Smart websites — conversion-focused sites with lead handling built in — for established service businesses and specialist clinics. The handling is built in, not bolted on.",
   locale: "en",
-  /** Where contact-form enquiries are delivered. Override with CONTACT_EMAIL. */
-  enquiryEmail: process.env.CONTACT_EMAIL ?? "zeeshiimeher@gmail.com",
 } as const;
 
 /** Build an absolute URL from a site-relative path (for canonical/OG/sitemap). */

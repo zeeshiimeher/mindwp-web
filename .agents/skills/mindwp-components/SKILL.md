@@ -114,6 +114,8 @@ Buttons and links should have:
 
 Use one primary action per decision moment. Secondary actions should be visibly subordinate.
 
+The shared `Button` owns stable behavior and common roles; it does not require every action to share one visual shape. A page may use an accessible local link/button treatment or add a proven variant when the art direction needs a distinct editorial, project, navigation, or text action.
+
 ## Forms
 
 Forms should be dedicated by page/use case unless repeated need proves abstraction.

@@ -1,145 +1,186 @@
-# DESIGN SYSTEM - practical CSS usage
+# DESIGN SYSTEM — visual and CSS foundation
 
-This guide explains how to use the current MindWP CSS system. It is not a visual manifesto and does not prescribe page-specific taste. Page composition decisions belong in page planning.
+This guide defines how MindWP turns a visual direction into maintainable code. It protects quality and consistency without making every page look like the same component template.
 
-## Design Language
+The homepage and other major pages still need a page-specific visual brief before implementation. Tokens are a foundation, not the art direction.
 
-MindWP should feel calm, premium, specific, and commercially serious. Design should make the buyer situation, offer, proof, and next step clear before it shows visual taste.
+## Design standard
 
-A section may use text, media, screenshots, illustration, cards, lists, diagrams, strong typography, or no supporting visual. Decide the composition during page planning from the section job, buyer message, proof need, hierarchy, dominance, rhythm, and mobile behavior.
+MindWP's website is part of its portfolio. It should feel designed, not assembled.
 
-## Colour Roles
+The visual system should support:
 
-Use role tokens rather than raw values.
+- strong editorial typography and purposeful scale
+- asymmetric compositions and controlled overlap
+- large project imagery and interface demonstrations
+- depth through layering, crop, light, texture, and motion
+- rhythm that alternates intensity with breathing room
+- interactions that make the smart-website idea easier or more enjoyable to understand
+- a polished mobile composition, not a collapsed desktop page
 
-- Page and section surfaces: `--color-page`, `--color-section`, `--color-raised`, `--color-band`.
-- Dark surfaces: `--color-navy`, with `--color-navy-soft`, `--color-navy-raised`, and navy line roles for local depth.
-- Text: `--color-ink`, `--color-muted`, `--color-subtle`, plus inverse roles on dark surfaces.
-- Borders: `--color-line` and `--color-line-strong`.
-- Accent: emerald is a signal for focus, key actions, and sparse emphasis.
-- Status: success, warning, and danger are for state meaning only.
+Avoid repeating the standard agency pattern of centred heading, paragraph, three equal cards, and CTA. Cards, grids, and bands are allowed when the content genuinely needs them, not as the default shape of every section.
 
-If a color token name describes a material or trend rather than a role, prefer a role name when the foundation is in scope.
+## Visual direction before components
 
-Surface token meanings:
+Before building a major page, decide:
 
-- `page`: the global paper field and quiet background.
-- `section`: clean white content surface.
-- `raised`: soft paper inset or lifted surface.
-- `band`: stronger rhythm band for a real transition, proof area, or grouped sequence.
+1. The page's emotional impression.
+2. The central visual metaphor or composition idea.
+3. The hero's dominant visual asset.
+4. Two or three signature moments elsewhere on the page.
+5. The typography behavior and image language.
+6. The motion story and reduced-motion fallback.
+7. How the concept changes on mobile.
 
-## Typography Roles
+Do not begin by selecting existing primitives or laying out copy blocks. First define what the visitor should see and feel; then choose the simplest code that can express it.
 
-Fraunces owns display and heading roles. Inter owns body, UI, forms, labels, and supporting text.
+## CSS strategy
 
-Use the role that matches the content job:
+MindWP is **CSS-first**:
 
-- `h1`: one page-level first impression.
-- `h2`: primary section heading.
-- `h3 large`: high-value subsection or proof moment below an `h2`.
-- `h3`: normal subsection heading.
-- `h3 small`: compact subsection, panel group, or dense proof heading.
-- `h4`: small card, label-led panel, or support heading.
-- `body large`: lead copy or high-value explanation.
-- `body`: normal readable copy.
-- `body small`: captions, helper copy, quieter notes.
-- `UI large`, `UI`, `UI small`: nav, badges, compact controls, metadata.
-- `eyebrow`: short category or orientation label.
-- `label`: visible form labels and grouped control labels.
-- `control`: input, textarea, select, and button text.
+- Global CSS owns reset/base behavior, shared tokens, accessible states, type foundations, containers, and stable shell behavior.
+- Page-level CSS owns composition, art direction, page rhythm, responsive behavior, and signature visuals.
+- Component CSS owns complex isolated interactions or genuinely reused behavior.
+- Tailwind remains available for occasional token-backed utilities, but it is not the primary visual authoring method and should not produce long utility strings throughout art-directed sections.
 
-Fluid type uses deliberate min, preferred, and max values. Do not invent random `clamp()` values inside page CSS. Adjust the foundation when the scale itself is wrong.
+A homepage can use one main stylesheet and a small number of clearly named companion files. Keep selectors readable and close to the page they serve.
 
-## Semantic Defaults
+## Tokens: shared roles and local expression
 
-Start with real elements: `main`, `section`, headings, paragraphs, lists, links, buttons, figures, captions, forms, labels, inputs, textareas, and selects.
+Use shared tokens for roles that repeat across the site:
 
-Global CSS gives these elements useful defaults. Add classes for layout roles, type overrides, surface changes, or intentional component behavior. Important headings, proof, claims, and CTAs must remain crawlable text, not only images, SVG, canvas, pseudo-elements, or hidden content.
+- core text and surface colors
+- focus and status colors
+- spacing and container foundations
+- type and control roles
+- shared radii and elevation
+- common motion durations and easings
+- shell layers
 
-## Section Spacing
+Page-specific custom properties and carefully chosen local values are allowed when they express an approved visual direction. Examples include a hero-only gradient field, a project-specific accent, an unusual mask radius, a section perspective value, or choreography timing.
 
-Use default section spacing before inventing one-off padding. Change spacing when it clarifies relationship, hierarchy, or page rhythm.
+Promote a local value into the global token system only after it proves to be a stable repeated role. Do not turn every artistic decision into a global token before the first page is designed.
 
-- Default: normal page sections.
-- Compact: short support strips, small bridges, or tight CTA lead-ins.
-- Spacious: major proof, deep explanation, or a section that needs more room.
-- Opening: first impression or page-level opening section only.
+## Color
 
-Spacing should show relationship. Inner gaps are smaller than the space around a group. Use `gap` for internal layout and margins mainly for typographic flow or external separation.
+The current navy, paper, and emerald palette is a useful starting foundation, not a permanent constraint. It may be refined when the homepage visual direction is chosen.
 
-## Containers And Text Widths
+Color should create hierarchy and atmosphere, not only alternate flat section backgrounds. Consider:
 
-Use containers intentionally:
+- tonal depth within dark scenes
+- warm or cool paper variation
+- project-derived accents in proof areas
+- restrained gradient, blur, texture, or light effects
+- high-contrast editorial transitions
 
-- Default container for most page sections.
-- Wide container when a section needs more horizontal room.
-- Narrow container for focused explanation or quieter editorial pacing.
-- Full width only when the page form genuinely needs the viewport.
+Brand color must remain accessible where it carries text or control meaning. Status colors remain reserved for actual states.
 
-Text widths are roles, not decoration. Page openings and high-value headings can be narrow or wide depending on the copy. Long service, industry, or page titles may need a wider measure or page CSS. Body copy should stay readable.
+## Typography
 
-## CSS File Shape
+Fraunces and Inter are the current default families. They can stay, be tuned, or be replaced if the chosen art direction needs a more distinctive voice.
 
-Global CSS owns tokens, semantic defaults, typography roles, layout helpers, buttons, motion hooks, and reusable state/focus foundations.
+Typography should use more than a safe H1/H2/H3 ladder:
 
-Page-level CSS is normal. A rebuilt page can use 1-3 readable files near the route or page surface, such as:
+- display moments may exceed the global H1 scale
+- selected words may use italic, contrast, variable width, or alternate treatment
+- headings can be narrow, wide, offset, layered, or paired with media
+- body measures remain readable
+- labels and navigation remain precise
 
-- `page.css`
-- `page-responsive.css`
-- a clearly named companion file when the page has enough local styling to justify it
+Do not force every heading into the same font, weight, width, and balanced wrap. Important headings, proof, and actions must remain real crawlable text even when creatively composed.
 
-Use global classes when they already express the role: section spacing, container, stack, cluster, grid, switcher, text width, surface, border, type, buttons, and motion hooks.
+## Layout and section rhythm
 
-Use page CSS when a section needs local composition, responsive behavior, page-specific rhythm, or styling that should not become global.
+Use containers as alignment anchors, not cages. Full-bleed media, controlled overflow, edge-aligned type, nested grids, sticky compositions, and layered scenes are allowed.
 
-Use isolated component or section CSS only when isolation is cleaner: complex interactive islands, reused components, unusual selector risk, or behavior/state styling that belongs to the component.
+Prefer grid for deliberate two-dimensional composition and flex for rows, clusters, and alignment. Use intrinsic sizing where possible. Reserve absolute positioning for controlled layers and decorative or annotated elements—not normal content flow.
 
-## Buttons, Links, And Forms
+Page rhythm should alternate:
 
-Use the shared `Button` primitive for canonical actions. Button labels should state one clear action. Use one primary action per decision moment; secondary actions should be visibly subordinate.
+- dense and quiet
+- light and dark
+- explanatory and visual
+- static and interactive
+- contained and full-bleed
 
-Unclassed text links use semantic defaults. Navigation and component links can use UI type roles and component states.
+Not every section needs equal vertical padding or a visible background change. Relationship and pacing should determine spacing.
 
-Forms should remain dedicated by page or use case unless repeated need proves abstraction. Forms need visible labels, helper text where useful, field-level errors, pending/success/error states, visible focus, and target sizes that work on touch screens.
+## Components and primitives
 
-Do not make a MindWP form look like a quote tool, invoice system, SaaS demo, or CRM product.
+Shared components are infrastructure. Use them when they preserve semantics, accessibility, or genuinely repeated behavior.
 
-## Media
+Keep a section local when its composition is part of the page's visual thesis. Build the first version well before turning it into a configurable component.
 
-Reserve space before media loads. Preserve aspect ratio. Keep real work, proof labels, and CTA context readable on mobile.
+The existing `Container`, `Section`, `Button`, `Badge`, and `Eyebrow` primitives are optional tools, not mandatory visual forms. They can be extended, restyled, or bypassed with accessible local markup when the page needs a different expression.
 
-Use object cropping only when the crop does not hide the point of the media. If a desktop composition becomes unreadable at mobile width, plan a mobile treatment instead of simply shrinking it.
+Do not create prop-heavy marketing-section factories before repeated use is proven.
 
-## Motion
+## Buttons, navigation, and forms
 
-Stillness is the baseline. CSS transitions are the default. Heavier motion belongs in isolated client islands only when it clarifies sequence, handoff, contrast, state change, interaction feedback, or proof.
+Actions need semantic links or buttons, clear labels, visible focus, suitable touch targets, and intentional hover/active states.
 
-Do not reveal-gate the page heading, primary CTA, or LCP content. Reduced-motion behavior is required.
+The shared `Button` can provide common behavior, but primary, editorial, project, navigation, and text actions do not all need the same shape. Add variants only when their roles are real and repeated.
 
-## Breakpoints And Rendered QA
+Forms require visible labels, helper/error text, pending/success/error states, accessible announcements, and confident spacing. They should feel like the natural end of a premium service experience, not a generic CRM or quote-tool interface.
 
-Primary visual QA widths:
+## Media and visual assets
 
-- Desktop: `1440px` and `1280px`
-- Tablet: `1024px`
-- Mobile: `400px`
+Reserve space before media loads and use explicit dimensions or aspect ratios. Choose crops that preserve the point of the work.
 
-Tablet is required when layout changes affect nav, media, grids, multi-column sections, or major responsive structure. If a value risks breaking below `400px`, report it, but do not design the whole system around `375px`.
+Proof should be shown at a scale where a visitor can judge typography, hierarchy, and responsive craft. Use separate crops or compositions for mobile when shrinking a desktop screenshot would make it unreadable.
 
-Rendered screenshots and section crops are required before approval for visual page or component work. A passing build is not visual approval.
+Visual assets may include:
 
-## What Code Cannot Prove
+- real project screenshots
+- clearly labelled demonstration builds
+- art-directed interface fragments
+- abstract diagrams grounded in the actual workflow
+- original illustration, texture, or generated imagery when it supports the chosen concept
 
-Do not judge these from code alone:
+Do not use fake analytics, fabricated client interfaces, or meaningless dashboard filler.
 
-- first-glance commercial meaning
-- hierarchy and composition
-- typography wrapping
-- repeated weak patterns
-- contrast on the actual composed background
+## Motion and interaction
+
+Use three levels:
+
+1. **Interface feedback** — short CSS transitions for hover, focus, active, selection, and controls.
+2. **Section choreography** — purposeful CSS or GSAP sequences that explain connection, handoff, contrast, or reveal visual detail.
+3. **Atmosphere** — restrained ambient movement, pointer response, or parallax that adds depth without becoming required for comprehension.
+
+Signature motion belongs in isolated Client Components. The static composition must remain complete, important content must be visible without JavaScript, and `prefers-reduced-motion` must remove non-essential movement.
+
+Do not reveal-gate the hero headline, primary CTA, LCP image, or core proof. Avoid scroll hijacking, long waits, constant high-cost animation, and interaction that works only on hover.
+
+## Responsive design
+
+Responsive work is composition, not shrinking.
+
+- Reorder only when source order remains logical.
+- Reframe or replace dense desktop media on mobile.
+- Preserve the dominant idea of each signature section.
+- Reduce decorative layers before reducing readable type or touch targets.
+- Verify typography wrapping, overlaps, sticky behavior, controls, and proof readability.
+
+Primary QA widths:
+
+- `1440px` desktop
+- `1280px` desktop
+- `1024px` tablet when structure, nav, media, grids, or motion change
+- `400px` mobile
+
+## Visual approval
+
+Code quality cannot prove taste. Every visual build requires rendered full-page screenshots and section crops at the required widths.
+
+Review:
+
+- first-glance visual impact
+- offer clarity without reading every paragraph
+- composition and typography
+- repeated patterns or visual fatigue
+- proof scale and legibility
+- interaction quality and reduced motion
 - mobile hierarchy
-- CTA dominance
-- whether proof or media is readable when present
-- whether the page feels generic
+- whether the page feels specific to MindWP
 
-Render the work and inspect it.
+A passing build is necessary. It is not visual approval.

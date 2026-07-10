@@ -58,13 +58,13 @@ Use role-backed tokens for public page design:
 
 Prefer role-based token names over raw color, material, or effect names where practical: `surface-raised`, `text-muted`, `accent-signal`, and `border-subtle` age better than names tied to a single hex value or visual fad.
 
-Avoid raw hex, arbitrary radii, one-off shadows, random spacing, and component-local color systems unless the task is explicitly creating or replacing the token foundation.
+Avoid accidental raw values and random local systems. Page-specific custom properties and carefully chosen local values are allowed when they express an approved visual direction and are not yet stable shared roles. Promote them to global tokens after repetition is proven.
 
 Status color is for meaning. Pair status color with text or icon where meaning matters.
 
 ## Typography
 
-Fraunces and Inter should feel premium, readable, and consistent.
+Fraunces and Inter are the current readable defaults. They may be tuned or replaced when an approved visual direction requires a more distinctive type voice.
 
 Design type clamps deliberately:
 

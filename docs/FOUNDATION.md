@@ -1,60 +1,89 @@
 # FOUNDATION — who MindWP is and who it serves
 
-Identity, buyer truth, and positioning. Read this when a task touches strategy, copy, page intent, or design direction. The commercial plan and offer structure are in [STRATEGY.md](./STRATEGY.md).
+This document owns MindWP's identity, buyer truth, positioning, and public privacy boundary. Offer structure belongs in [STRATEGY.md](./STRATEGY.md), page roles in [PAGES.md](./PAGES.md), and voice in [WRITING.md](./WRITING.md).
 
 ## Core identity
 
-MindWP builds **smart websites** — conversion-focused websites with lead handling built in — for established service businesses and specialist clinics, sold globally across English-speaking markets.
+MindWP builds **smart websites** for established service businesses and specialist clinics in English-speaking markets.
 
-Two parts, always together:
+A smart website combines two things:
 
-- **The website** makes the offer clear, builds trust, and captures enquiries (calls, forms, quotes, bookings, consultation requests).
-- **The connected handling** — response, ownership, follow-up, reviews — is built into the *same* site, so work doesn't slip away between being found, contacted, answered, followed up, and proven.
+- A carefully designed website that explains the offer, builds trust, shows proof, and makes the next step clear.
+- Connected handling that can route enquiries, support a fast response, keep follow-up visible, and help completed work become reviews and proof.
 
-That bundle is the product, and it's the reason a buyer picks MindWP over any other web designer. MindWP should feel practical, operational, calm, premium, human, commercially serious, and grounded in real work.
+The website and handling are designed as one customer journey. The exact handling setup changes with the client's business; it is not a fixed software package.
 
-## What MindWP is not
+MindWP sits between a traditional web-design service and a practical digital operations partner. It is not positioned as a generic freelancer, a cheap WordPress package, a SaaS product, an automation reseller, or a full marketing agency.
 
-Not a generic web design agency, a cheap WordPress package shop, a Fiverr gig, a SaaS product, an AI chatbot vendor, an automation-bro offer, a CRM/tool reseller, a backend-platform reseller, an SEO ranking-hype provider, a generic doctor-marketing agency, a healthcare software/EMR/compliance company, or a portfolio-only design shop.
+## The central promise
 
-It sells a website system that brings work in and makes sure it doesn't leak. It never sells tools as the product, and never names the backend platform publicly.
+Most websites finish their job when somebody submits a form. A MindWP website is designed around what should happen before and after that moment too: understanding, trust, enquiry, response, ownership, follow-up, and proof.
+
+The public promise should remain simple:
+
+> A better website, connected to better handling around the enquiries it creates.
+
+This is a positioning idea, not mandatory homepage copy. It can be expressed more creatively when the meaning remains clear.
+
+## Who it serves
+
+MindWP has two equal market lanes at launch:
+
+- **Established home-service businesses** selling considered work such as installations, replacements, surveys, repairs, and quoted projects.
+- **Specialist clinics and practices** selling trust-led treatments, consultations, and ongoing care.
+
+Neither lane is the permanent priority. Both should be tested with strong work and specific pages; future proof, demand, and sales experience can determine where MindWP specialises more deeply.
+
+Good-fit clients already have meaningful work, real enquiries, and enough value in each job, case, or patient relationship to care about how opportunities are handled. They want more than a brochure redesign and are willing to improve the process around the website.
+
+MindWP is usually not a fit for brand-new businesses with no traction, lowest-price shoppers, buyers wanting only a decorative page, or clients expecting guaranteed rankings, leads, or revenue.
 
 ## Buyer truth
 
-The buyer is an established service-business owner, operator, clinic owner, or practice manager. The business already has activity — calls, searches, site visits, forms, quotes, consultations, jobs, appointments, reviews, staff pressure, repeat work, scattered inboxes, missed follow-up.
+The buyer often recognises some combination of these situations:
 
-**The problem is rarely lack of demand. It's weak handling between moments.** Work slips when nearby customers can't find or verify the business, service/treatment pages don't build trust, calls are missed, forms land nowhere useful, response is slow, nobody owns follow-up, reviews aren't requested, and good work never becomes proof.
+- The website looks dated or does not explain the business clearly.
+- Strong work is not presented with enough trust or proof.
+- Calls, forms, messages, bookings, or consultation requests are scattered.
+- Response and follow-up rely on memory or individual inboxes.
+- Paid or earned attention reaches a weak landing and handling path.
+- Happy customers or patients do not consistently become visible proof.
 
-Paid attention is still just attention. Whether someone arrives from search, a referral, a campaign, a form, a message, a call, WhatsApp, Messenger, a DM, or an organic visit, the source is not the core issue. All attention needs the same website and handling path: the page builds trust, the next step is clear, the enquiry lands somewhere useful, and response, ownership, follow-up, and proof have somewhere to go. But Paid attention also a important selling point many business runs ads and waste money.
+Do not assume every client has every problem. Diagnose first, then describe the relevant gaps. MindWP should never manufacture urgency simply to make the full system sound necessary.
 
-Public copy should make the buyer feel: *"This is exactly what happens here."* Then show the smart website that fixes it. Recognition first, then the concrete offer and real proof — quickly, not buried under philosophy.
+## Brand character
 
-Good-fit buyers have meaningful job, case, or patient value; real activity; and visible leakage around enquiries, response, follow-up, and proof. MindWP is **not** for brand-new businesses with no traction, cheapest-website shoppers, brochure-only redesigns, or hype-seekers.
+MindWP should feel:
 
-## Authority comes from real work
+- visually accomplished and design-led
+- calm, premium, and commercially serious
+- modern without looking like a generic SaaS template
+- technically capable without leading with tools
+- human and observant without exposing private founder details
 
-MindWP is a brand buyers don't know yet, so it earns trust with **evidence, not adjectives**: demonstration builds shown big, anonymised real client work, a real builder with a decade of craft, and a clear process. It never invents proof — no fabricated ratings or results. (The canonical "never invent proof" list and the full proof model: [STRATEGY.md](./STRATEGY.md).)
+The website itself is part of the proof. It should demonstrate composition, typography, interaction, art direction, responsive craft, and technical polish—not rely on long copy to claim those abilities.
 
-## The website as the public control point
+## Authority and privacy
 
-For most service businesses and small or growing clinics, the website is the front door and the visible place where several business moments meet: search/visibility, trust/proof, service or treatment clarity, enquiry capture, response and routing, follow-up ownership, and reviews. It's also where the buyer can most easily *see* that the wider handling path is weak.
+Authority comes from real work, demonstration builds labelled honestly, a clear process, and truthful experience. Public copy may refer to building WordPress websites since 2015, but it must not publish the founder's personal name, photograph, location, marketplace identity, account details, or other identifying information unless explicitly approved later.
 
-The website is the public control point for attention the business earns or buys. It is where trust, clarity, and next-step confidence are formed before the enquiry moves into handling; MindWP does not need to own the source of attention to make the path after attention clearer.
-
-This is why **Smart Website Systems is the public anchor** — without swallowing the other four active systems (their commercial structure and boundaries are owned by [STRATEGY.md](./STRATEGY.md)). For specialist clinics the website is the **practice front door**: it helps patients understand the treatment, trust the provider, choose the next step, and book or enquire — never hospital software, EMR, compliance, or treatment claims.
-
-Handling is the full path, not only post-enquiry follow-up. The website handles pre-enquiry trust, clarity, proof placement, and next-step confidence; connected handling carries response, ownership, follow-up, and proof after contact. A page may show the relationship between those moments, but it must not imply MindWP owns every moment equally.
+Never invent client names, testimonials, ratings, metrics, results, locations, or guarantees.
 
 ## The buyer's mental model
 
-The plain-language path the buyer should grasp before any offer architecture:
+The business path is simple:
 
-1. Customers or patients **find** the business → 2. they **check** whether they trust it → 3. the website makes the **offer clear** → 4. they **contact / book / enquire** → 5. the enquiry **lands somewhere useful** → 6. **response** happens quickly → 7. **follow-up and ownership** stay visible → 8. good work becomes **proof, reviews, and repeat value**.
+1. People find or hear about the business.
+2. They check whether they understand and trust it.
+3. They choose to call, enquire, request a quote, or book.
+4. The enquiry reaches the right place.
+5. Response and follow-up stay visible.
+6. Good work becomes proof that supports the next decision.
 
-This is the mental model, not a route taxonomy.
+This model guides strategy. It is not a required homepage diagram, section order, or copy formula.
 
-## Vocabulary boundaries
+## Public language boundary
 
-Lead public copy with **working-day objects**: calls, forms, quotes, consultations, bookings, jobs, appointments, reviews, staff pressure, missed replies, local trust, patient trust, proof, response, status, next step. Don't lead with infrastructure, backend tools, automations, platform names, dashboards, or internal taxonomy.
+Lead with the buyer's world: calls, forms, quotes, bookings, consultations, appointments, follow-up, reviews, staff pressure, trust, and proof. Explain tools only when they help a serious buyer understand delivery.
 
-"System" is allowed — it's central to MindWP — but earn it with the problem first. "Connected handling" follows the same rule: show the calls/forms/follow-up gaps the buyer recognises, *then* name the path. Detailed language rules: [WRITING.md](./WRITING.md).
+"Smart website" and "connected handling" are useful public concepts, but they should not be repeated in every section. Visuals, examples, interaction, and proof should carry part of the explanation.
