@@ -1,10 +1,10 @@
 # FOUNDATION — who MindWP is and who it serves
 
-Identity, buyer truth, and positioning. Read this when a task touches strategy, copy, page intent, or design direction. The commercial plan and offer structure are in [STRATEGY.md](./STRATEGY.md); page workflow lives in `.agents/skills/mindwp-workflow/SKILL.md`; design planning and audit rules live in `.agents/skills/mindwp-design/SKILL.md`; voice is in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`.
+Identity, buyer truth, and positioning. Read this when a task touches strategy, copy, page intent, or design direction. The commercial plan and offer structure are in [STRATEGY.md](./STRATEGY.md).
 
 ## Core identity
 
-MindWP builds **smart websites** — conversion-focused websites with lead handling built in — for established service businesses and specialist clinics, sold globally across English-speaking markets. It's run by a builder shipping WordPress sites since 2015, with a small senior team.
+MindWP builds **smart websites** — conversion-focused websites with lead handling built in — for established service businesses and specialist clinics, sold globally across English-speaking markets.
 
 Two parts, always together:
 
@@ -25,7 +25,7 @@ The buyer is an established service-business owner, operator, clinic owner, or p
 
 **The problem is rarely lack of demand. It's weak handling between moments.** Work slips when nearby customers can't find or verify the business, service/treatment pages don't build trust, calls are missed, forms land nowhere useful, response is slow, nobody owns follow-up, reviews aren't requested, and good work never becomes proof.
 
-Paid attention is still just attention. Whether someone arrives from search, a referral, a campaign, a form, a message, a call, WhatsApp, Messenger, a DM, or an organic visit, the source is not the core issue. All attention needs the same website and handling path: the page builds trust, the next step is clear, the enquiry lands somewhere useful, and response, ownership, follow-up, and proof have somewhere to go.
+Paid attention is still just attention. Whether someone arrives from search, a referral, a campaign, a form, a message, a call, WhatsApp, Messenger, a DM, or an organic visit, the source is not the core issue. All attention needs the same website and handling path: the page builds trust, the next step is clear, the enquiry lands somewhere useful, and response, ownership, follow-up, and proof have somewhere to go. But Paid attention also a important selling point many business runs ads and waste money.
 
 Public copy should make the buyer feel: *"This is exactly what happens here."* Then show the smart website that fixes it. Recognition first, then the concrete offer and real proof — quickly, not buried under philosophy.
 

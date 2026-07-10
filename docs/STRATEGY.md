@@ -1,6 +1,6 @@
 # STRATEGY — what MindWP sells
 
-The commercial brain: **what** we sell, **why** anyone buys it over another web designer, **how** the offer is structured, and **how** leads arrive. Identity and buyer truth live in [FOUNDATION.md](./FOUNDATION.md); voice in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`; design planning in `.agents/skills/mindwp-design/SKILL.md`; page roles in [PAGES.md](./PAGES.md). This doc is the source for offer structure — other docs apply it, they don't redefine it.
+The commercial brain: **what** we sell, **why** anyone buys it over another web designer, **how** the offer is structured, and **how** leads arrive. Identity and buyer truth live in [FOUNDATION.md](./FOUNDATION.md); voice in [WRITING.md](./WRITING.md) and page roles in [PAGES.md](./PAGES.md). This doc is the source for offer structure — other docs apply it, they don't redefine it.
 
 ## The business in one line
 
@@ -27,7 +27,7 @@ Two things to keep straight about the product:
 - **The handling is modular and scoped per client.** One client wants booking + follow-up + reputation; another just reviews + a calendar. **Scope *and* price vary client to client — never a fixed package.** It's delivered on a connected backend platform that is **never named publicly** and is never the hero.
 - **It is not quoting / invoicing / estimate software.** Don't let the site read like a fixed-price-quote tool — that's a misframe to avoid. A calm scope/price *posture* is fine (below); a quoting-tool impression is not.
 
-> The line that must land by section 3 of the homepage and on every service page: a MindWP website doesn't just look good — it brings work in and makes sure it doesn't slip away.
+> The line that must: MindWP website doesn't just look good — it brings work in and makes sure it doesn't slip away.
 
 ## Why a buyer chooses MindWP over any other web designer
 

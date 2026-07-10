@@ -1,14 +1,11 @@
 # ARCHITECTURE — current code shape and technical rationale
 
-This doc explains the current repo shape and technical rationale. It is reference material, not the implementation checklist. Use `.agents/skills/mindwp-engineering/SKILL.md` for App Router/React architecture, `.agents/skills/mindwp-components/SKILL.md` for shell/primitives/header/footer/forms, `.agents/skills/mindwp-css/SKILL.md` for CSS/layout rules, `docs/DESIGN-SYSTEM.md` for practical CSS-system usage.
 
-## Current State
 
 The repo has been reset to a clean page surface:
 
 - Active public page routes exist under `src/app/**/page.tsx`.
 - Those route files intentionally render `null`.
-- Old active page sections were removed from `src/components/sections`.
 - Shared shell, primitives, tokens, motion helpers, route config, canonical config, SEO helpers, contact code, and validation scripts remain.
 - `_dev-reference/current-site/` preserves the previous site as a standalone ignored reference copy.
 
@@ -63,17 +60,6 @@ Routes should stay thin:
 - page-level data decisions
 - section rendering
 
-Sections should own their layout and content. There is deliberately no rigid shared content model for marketing sections. Stable contracts stay typed; section presentation can remain local.
-
-Rebuilt premium sections should use:
-
-- section-specific React components
-- readable page-level CSS by default
-- section CSS modules only when isolation is genuinely cleaner
-- existing tokens and typography roles
-- shared primitives only when they support the section rather than flatten it
-
-Avoid defaulting to broad visual factories before a section job is clear. Keep composition decisions local until repeated built need proves a shared pattern.
 
 ## CSS Model
 

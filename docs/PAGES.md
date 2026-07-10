@@ -1,6 +1,6 @@
 # PAGES — roles, IA, and rebuild planning
 
-This doc owns page roles, information architecture intent, CTA posture, and the practical planning loop for rebuilding pages. Offer structure is in [STRATEGY.md](./STRATEGY.md); voice is in [WRITING.md](./WRITING.md) and `.agents/skills/mindwp-writing/SKILL.md`; page workflow is in `.agents/skills/mindwp-workflow/SKILL.md`; implementation rules are in `.agents/skills/mindwp-engineering/SKILL.md`; component rules are in `.agents/skills/mindwp-components/SKILL.md`; CSS rules are in `.agents/skills/mindwp-css/SKILL.md`; practical CSS-system usage is in [DESIGN-SYSTEM.md](./DESIGN-SYSTEM.md); design planning and rendered audit rules are in `.agents/skills/mindwp-design/SKILL.md`.
+This doc owns page roles, information architecture intent, CTA posture, and the practical planning loop for rebuilding pages. 
 
 ## Current State
 
@@ -61,7 +61,7 @@ Industry pages must show the vertical's real working conditions: timing, behavio
 
 ## Home Planning
 
-Home is the rebuild taste gate unless the user explicitly chooses a narrower target. If explicitly requested, the old homepage spine may be used as planning or commercial reference only, never as a visual shell to copy.
+Home is the rebuild taste gate unless the user explicitly chooses a narrower target. If explicitly requested, the old homepage spine may be used as planning or commercial reference only.
 
 
 
@@ -73,7 +73,7 @@ Home must quickly answer:
 - What proof or credible work supports the claim?
 - What should the buyer do next?
 
-Home does not need to preserve the old section count. A section can be removed, merged, or reshaped if the page becomes clearer and the offer/proof/CTA arc stays intact.
+
 
 ## Service Page Planning
 
