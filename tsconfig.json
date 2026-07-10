@@ -30,5 +30,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "open-next.config.ts", ".open-next", "_dev-reference"]
+  "exclude": ["node_modules", "_dev-reference"]
 }

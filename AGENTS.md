@@ -1,35 +1,21 @@
-# MindWP Agent Guidance
+# MindWP agent guidance
 
-MindWP is a premium smart-website company for established service businesses and specialist clinics. The rebuild must solve two things together: a clear commercial idea and a distinctive visual experience. The main execution risks are generic layouts, excessive explanatory copy, repeated component patterns, weak proof presentation, and old visual shells returning.
+MindWP is rebuilding from a clean surface. Existing files are not protected merely because they exist. Remove, replace, or redesign anything that conflicts with the current strategy and approved visual direction.
 
-## Current Repo State
+## Required workflow
 
-- The repo is reset to a clean page surface.
-- Active public routes under `src/app/**/page.tsx` intentionally render `null`.
-- Old active page sections were removed.
-- Shared shell, primitives, tokens, route config, canonical config, contact code, SEO helpers, and validation scripts remain.
-- `_dev-reference/current-site/` is ignored by normal tooling. Do not read or search it unless the user explicitly asks for the reference copy.
+Use `.agents/skills/mindwp-site/SKILL.md` for all MindWP work.
+The skill owns document order and execution procedure. Each decision belongs in one authority only; do not duplicate rules across documents, skills, comments, and validators.
 
+## Repository posture
 
-## Docs Routing
-
-- Homepage standalone build brief: `docs/HOME-PLAN.md`
-- Identity and buyer truth: `docs/FOUNDATION.md`
-- Offer model, systems, proof model, conversion strategy: `docs/STRATEGY.md`
-- Page roles, IA, CTA posture, rebuild planning: `docs/PAGES.md`
-- Public language and copy validation: `docs/WRITING.md`
-- Practical design-system and CSS usage guide: `docs/DESIGN-SYSTEM.md`
-- Current code structure and technical rationale: `docs/ARCHITECTURE.md`
-
-For major visual pages, approve a page-specific visual direction before implementation. Shared tokens and primitives are foundations, not the visual thesis.
-
-
-
-## Validation
-
-- Guidance/docs-only changes: `git diff --check`.
-- Page/component/source changes: `pnpm check`, then `pnpm build`, then `pnpm test`.
-- Visual page changes also require rendered screenshots and section crops before approval: desktop `1440px` and `1280px`, mobile `400px`, and tablet `1024px` when nav, media, grids, multi-column sections, or major responsive structure change.
+- Keep `_dev-reference/current-site/` intact and isolated. Do not modify, import, or treat it as current guidance unless the user explicitly requests reference work.
+- Do not restore or preserve legacy implementations.
+- Do not publish placeholder routes or invented proof.
+- Keep personal founder information and submitted enquiry data private.
+- Treat existing components, tokens, styles, and route data as replaceable.
+- Approve a visual direction before implementing a major page.
+- Use the validation and rendered-review gates in `docs/ENGINEERING.md` and `docs/DESIGN.md`.
 
 ## Reporting
 

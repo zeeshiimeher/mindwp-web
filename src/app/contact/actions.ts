@@ -76,7 +76,10 @@ export async function submitReviewRequest(
         `Attribution: system=${data.system || "—"} source=${data.source || "—"}`,
       ].join("\n"),
     });
-    return { ok: true, message: `Thanks — your request is in. We'll reply via ${data.contactMethod}.` };
+    return {
+      ok: true,
+      message: `Thanks — your request is in. We'll reply via ${data.contactMethod}.`,
+    };
   } catch (err) {
     console.error("[contact] send failed:", err);
     return {

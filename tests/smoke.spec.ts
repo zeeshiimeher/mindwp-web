@@ -1,35 +1,27 @@
 import { expect, test } from "@playwright/test";
 
-const PAGES = ["/", "/contact", "/style-guide"];
+import { LIVE_ROUTES } from "../src/config/routes";
 
-for (const path of PAGES) {
-  test(`${path} renders cleanly`, async ({ page }) => {
+for (const route of LIVE_ROUTES) {
+  test(`${route.path} renders cleanly`, async ({ page }) => {
     const jsErrors: string[] = [];
     const brokenResources: string[] = [];
 
-    page.on("pageerror", (e) => jsErrors.push(e.message));
-    page.on("response", (r) => {
-      // Ignore speculative RSC route prefetches (`?_rsc=`) — Next prefetches nav
-      // links, some of which point at pages not built until Phase 2a. Those
-      // aren't resources THIS page actually needs.
-      if (r.status() >= 400 && !r.url().includes("_rsc=")) {
-        brokenResources.push(`${r.status()} ${r.url()}`);
+    page.on("pageerror", (error) => jsErrors.push(error.message));
+    page.on("response", (response) => {
+      if (response.status() >= 400 && !response.url().includes("_rsc=")) {
+        brokenResources.push(`${response.status()} ${response.url()}`);
       }
     });
 
-    const res = await page.goto(path);
-    expect(res?.status(), `HTTP status for ${path}`).toBeLessThan(400);
-    expect(jsErrors, `uncaught JS errors on ${path}`).toEqual([]);
-    expect(brokenResources, `broken (non-prefetch) resources on ${path}`).toEqual([]);
+    const response = await page.goto(route.path);
+    expect(response?.status(), `HTTP status for ${route.path}`).toBeLessThan(400);
+    expect(jsErrors, `uncaught JS errors on ${route.path}`).toEqual([]);
+    expect(brokenResources, `broken resources on ${route.path}`).toEqual([]);
   });
 }
 
-test("home shows the primary CTA", async ({ page }) => {
-  await page.goto("/");
-  await expect(page.getByRole("link", { name: "Request a Website Review" }).first()).toBeVisible();
-});
-
-test("skip-link is the first focusable element", async ({ page }) => {
+test("skip link is the first focusable element", async ({ page }) => {
   await page.goto("/");
   await page.keyboard.press("Tab");
   await expect(page.getByRole("link", { name: "Skip to content" })).toBeFocused();

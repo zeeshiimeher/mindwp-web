@@ -1,7 +1,6 @@
 import { z } from "zod";
 
-/** Diagnostic fields from docs/PAGES.md. Plain-language problem description —
- * never require revenue range, growth goals, or package selection. */
+/** Plain-language diagnostic fields for the website review request. */
 export const PROBLEM_AREAS = [
   { value: "missed-calls", label: "Missed calls / slow response" },
   { value: "follow-up", label: "Follow-up nobody owns" },
@@ -29,7 +28,9 @@ export const reviewRequestSchema = z.object({
   serviceArea: optionalText(120),
   problemArea: z.enum(PROBLEM_AREAS.map((p) => p.value) as [string, ...string[]]).optional(),
   afterEnquiry: optionalText(1500),
-  contactMethod: z.enum(CONTACT_METHODS.map((c) => c.value) as [string, ...string[]]).default("email"),
+  contactMethod: z
+    .enum(CONTACT_METHODS.map((c) => c.value) as [string, ...string[]])
+    .default("email"),
   // Attribution (hidden) + anti-spam
   system: optionalText(60),
   source: optionalText(120),

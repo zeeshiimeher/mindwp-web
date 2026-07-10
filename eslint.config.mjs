@@ -12,7 +12,6 @@ export default [
   {
     ignores: [
       ".next/**",
-      ".open-next/**",
       "_dev-reference/**",
       "node_modules/**",
       "next-env.d.ts",

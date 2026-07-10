@@ -8,7 +8,7 @@ export function Input({ invalid, className, ...props }: WithInvalid<ComponentPro
   return (
     <input
       aria-invalid={invalid || undefined}
-      className={cn("mw-field-control", invalid && "mw-field-control--invalid", className)}
+      className={cn("field-control", invalid && "field-control--invalid", className)}
       {...props}
     />
   );
@@ -23,8 +23,8 @@ export function Textarea({
     <textarea
       aria-invalid={invalid || undefined}
       className={cn(
-        "mw-field-control mw-field-control--textarea",
-        invalid && "mw-field-control--invalid",
+        "field-control field-control--textarea",
+        invalid && "field-control--invalid",
         className,
       )}
       {...props}
@@ -41,7 +41,7 @@ export function Select({
   return (
     <select
       aria-invalid={invalid || undefined}
-      className={cn("mw-field-control", invalid && "mw-field-control--invalid", className)}
+      className={cn("field-control", invalid && "field-control--invalid", className)}
       {...props}
     >
       {children}
@@ -51,7 +51,7 @@ export function Select({
 
 export function Label({ className, children, ...props }: ComponentProps<"label">) {
   return (
-    <label className={cn("mw-field-label type-label", className)} {...props}>
+    <label className={cn("field-label", className)} {...props}>
       {children}
     </label>
   );
@@ -59,7 +59,7 @@ export function Label({ className, children, ...props }: ComponentProps<"label">
 
 export function FieldError({ children }: { children?: ReactNode }) {
   if (!children) return null;
-  return <p className="mw-field-error type-caption">{children}</p>;
+  return <p className="field-error">{children}</p>;
 }
 
 /** Label + control + error, wired together. */
@@ -77,10 +77,10 @@ export function Field({
   children: ReactNode;
 }) {
   return (
-    <div className="mw-field">
+    <div className="field">
       <Label htmlFor={htmlFor}>
         {label}
-        {optional && <span className="mw-field-optional"> (optional)</span>}
+        {optional && <span className="field-optional"> (optional)</span>}
       </Label>
       {children}
       <FieldError>{error}</FieldError>

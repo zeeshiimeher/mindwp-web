@@ -1,152 +1,187 @@
-# STRATEGY — what MindWP sells
+# MindWP strategy
 
-This document owns the offer, delivery model, differentiation, proof model, commercial posture, and growth priorities. Identity lives in [FOUNDATION.md](./FOUNDATION.md), page roles in [PAGES.md](./PAGES.md), and public voice in [WRITING.md](./WRITING.md).
+This is the single authority for the business, audience, offer, proof, public language, conversion posture, and site information architecture. Design decisions belong in [DESIGN.md](./DESIGN.md); implementation decisions belong in [ENGINEERING.md](./ENGINEERING.md).
 
-## The business in one line
+## The business
 
-MindWP designs and builds **smart websites**: premium websites connected to the practical handling around enquiries, follow-up, bookings, and reviews.
+MindWP builds **smart websites** for established service businesses and specialist clinics in English-speaking markets.
 
-This is a move beyond design-file-to-WordPress production work. WordPress, Elementor, Bricks, Divi, WooCommerce, and the connected platform are delivery tools. The commercial product is the clearer website and better-handled customer journey.
+A smart website combines:
 
-## The flagship offer
+- a carefully designed website that explains the offer, builds trust, shows proof, and makes the next step clear;
+- connected handling around calls, forms, messages, quote requests, consultations, bookings, follow-up, and reviews.
 
-The launch offer is one flexible **Smart Website System**, not a menu of disconnected packages.
+The commercial move is from design-file-to-WordPress production work toward a builder-led website service that considers the customer journey before and after the contact form.
 
-Depending on the client's real gaps, it can include:
+WordPress, Elementor, Bricks, Divi, WooCommerce, and the connected platform are delivery tools. They are not the main public value.
+
+## Positioning
+
+MindWP sits between a traditional web-design service and a practical digital operations partner.
+
+The central difference:
+
+> The website and what happens around the enquiry are designed together.
+
+That is a meaning test, not mandatory homepage copy.
+
+MindWP is not positioned as a cheap WordPress package, generic freelancer, SaaS product, automation reseller, media-buying agency, AI-chatbot vendor, call centre, quoting/invoicing product, medical platform, or guaranteed-growth service.
+
+Do not make inflated competitor claims. The offer is distinct without pretending no other provider can offer related work.
+
+## Audience
+
+Two market lanes have equal strategic status:
+
+- **Home services:** established businesses selling considered projects such as installations, replacements, surveys, repairs, and quoted work.
+- **Specialist clinics:** practices selling trust-led treatments, consultations, appointments, and ongoing care.
+
+Neither lane is permanently primary. Real proof, enquiries, sales experience, and profitability should determine future specialisation.
+
+Good-fit buyers already have meaningful work, real activity, and enough value in each job, case, or patient relationship to care about website quality and enquiry handling.
+
+MindWP is usually not a fit for new businesses with no traction, lowest-price shoppers, decorative-only redesign buyers, or anyone expecting guaranteed rankings, leads, bookings, reviews, or revenue.
+
+## Buyer reality
+
+A client may recognise some combination of these problems:
+
+- the website looks weak or explains the business poorly;
+- service or treatment pages do not create enough confidence;
+- strong work and reviews are not used well as proof;
+- calls, forms, messages, bookings, or consultation requests are scattered;
+- response and follow-up depend on memory or individual inboxes;
+- paid or earned attention lands on a weak page or unclear next step;
+- completed work does not consistently become public proof.
+
+Do not assume every business has every problem. Diagnose first and scope only what is useful.
+
+## The offer
+
+The flagship engagement is a tailored **Smart Website System**. It may include:
 
 1. Website strategy, design, development, and responsive implementation.
-2. Clear service or treatment pages, trust, proof, and enquiry paths.
-3. Forms, calls, messages, booking, or consultation routing.
-4. Response and follow-up setup.
-5. Enquiry ownership, status, reminders, and pipeline visibility.
+2. Service or treatment-page structure, trust, proof, and enquiry paths.
+3. Call, form, message, booking, or consultation routing.
+4. First-response and missed-enquiry setup.
+5. Ownership, status, reminders, and follow-up visibility.
 6. Review-request and feedback paths.
 7. Ongoing website and handling management when retained.
 
-Not every client needs every capability. The discovery process decides what belongs in scope.
+The exact scope follows the client's real needs. It is not a fixed feature bundle.
 
-## Two delivery relationships
+## The five connected systems
 
-The same offer can end in either relationship:
+The five systems explain the complete commercial model. They are connected capabilities, not five equal packages or five identical homepage cards.
+
+| System                       | Owns                                                                                         | Recognisable problem                                                               |
+| ---------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Smart Website Systems**    | website clarity, trust, proof, conversion, enquiry capture, and the connection into handling | “The site does not explain us, prove us, or move people into the right next step.” |
+| **Local SEO Authority**      | local discovery, service-area relevance, and verification signals                            | “Nearby customers do not find or trust us early enough.”                           |
+| **Lead Response & Handling** | first response and routing after contact                                                     | “Calls, forms, and messages are missed, delayed, or scattered.”                    |
+| **Follow-Up & CRM**          | ownership, status, reminders, and next steps                                                 | “Opportunities arrive, but follow-up depends on memory.”                           |
+| **Reputation & Review**      | feedback, review timing, and visible proof                                                   | “Our public proof does not reflect the quality of the work.”                       |
+
+Smart Website Systems is the public base or hub. The other four protect moments around it. The connected model may be visualised on the homepage, but it should not make every client believe they must buy every system.
+
+Implementation services—WordPress, Elementor, Bricks, Divi, WooCommerce, and rebuild work—sit under Smart Website Systems. They can support search-intent pages later, but should lead with business fit and craft rather than builder fandom.
+
+## Delivery and ownership
+
+Every project can end in either relationship.
 
 ### Build and hand over
 
-MindWP charges a one-time project fee to design and build the website and set up the agreed handling. After launch, the website and connected account are handed over so the client can manage them.
+MindWP charges a one-time project fee, designs and builds the website, configures the agreed handling, and hands over the website and connected account for the client to manage.
 
 ### Build and manage
 
-MindWP charges the build/setup fee, then an ongoing fee to manage the agreed website and handling responsibilities. The monthly scope varies by client and must be clearly defined.
+MindWP charges the build/setup fee, then an ongoing fee to manage the responsibilities defined in the agreement.
 
-Neither option is treated as secondary. Public copy can say that ongoing management is available, while the proposal establishes ownership, access, support, platform costs, and handover details.
+Proposals must make ownership, access, platform costs, support, training, handover, and ongoing responsibilities explicit. Public copy can explain both paths without turning them into rigid packages.
 
-## Pricing posture
+## Pricing
 
-Pricing remains private and tailored because website scope, handling scope, integrations, content, and ongoing responsibility differ by client.
+Pricing is private and tailored because website scope, content, handling, integrations, and ongoing responsibility vary.
 
-- Do not publish rigid packages or tier tables.
-- Do not publish a starting price until a deliberate commercial decision is made.
-- A future "projects start from" signal is allowed if it improves qualification and reflects real minimum scope.
-- Explain that scope and cost are confirmed before work begins.
-- Avoid presenting tailored pricing as evasive or mysterious.
+- Do not publish packages or tier tables.
+- Do not publish a starting price until a real commercial minimum is deliberately approved.
+- A future “projects start from” line is allowed when it is accurate and useful for qualification.
+- Make clear that scope and cost are agreed before work begins.
 
-## Why a buyer chooses MindWP
+## Proof and privacy
 
-The primary difference is that the website and what happens around the enquiry are considered together from the beginning.
+Evidence, strongest first:
 
-Traditional website projects often focus on pages and stop at launch. MindWP can connect the site to response, ownership, follow-up, booking, and review paths, then either hand the setup over or continue managing it.
+1. The MindWP website itself as proof of taste, interaction, responsiveness, and technical craft.
+2. Strong demonstration builds, clearly labelled when they are not client work.
+3. Real client work, named with permission or anonymised honestly.
+4. Process evidence showing design and implementation decisions.
+5. Truthful WordPress experience since 2015.
 
-Supporting differentiators:
+Never invent client identities, testimonials, ratings, review counts, locations, rankings, metrics, revenue, results, or guarantees.
 
-- deep WordPress implementation experience since 2015
-- design capability demonstrated through the MindWP site and real work
-- builder flexibility rather than attachment to one page builder
-- practical diagnosis before scope is recommended
-- honest proof and no invented performance claims
+MindWP is brand-led. Do not publish the founder's personal name, photograph, location, marketplace identity, account details, email address, or biography unless explicitly approved. Do not imply a “small senior team” unless that team genuinely exists.
 
-Avoid claims such as "every other web designer" or "no agency does this." The distinction is credible without pretending competitors never provide related services.
+## Public voice
 
-## Capability map
+MindWP should sound clear, observant, confident, calm, experienced, and commercially serious.
 
-The five existing system concepts remain useful for organising expertise, content, and future search pages. They are **capabilities inside or around the flagship offer**, not five packages that must receive equal homepage weight.
+Use concrete working-day language: websites, service pages, calls, forms, messages, quotes, bookings, consultations, appointments, response, follow-up, reviews, staff pressure, trust, and proof.
 
-| Capability | Main business moment | Typical problem |
-|---|---|---|
-| **Smart Website Systems** `smart-website-systems` | clarity, trust, proof, conversion, and the website-to-handling connection | "The site does not explain us, prove us, or move people into the right next step." |
-| **Local SEO Authority** `local-seo-authority` | local discovery and verification | "Nearby customers do not find or trust us early enough." |
-| **Lead Response & Handling** `lead-response-handling` | first response and routing | "Calls, forms, and messages are missed, delayed, or scattered." |
-| **Follow-Up & CRM** `follow-up-crm` | ownership, status, reminders, and next steps | "Opportunities arrive, but follow-up depends on memory." |
-| **Reputation & Review** `reputation-review-systems` | feedback, review timing, and visible proof | "Our public proof does not reflect the quality of our work." |
+Use “smart website,” “connected handling,” “system,” “automation,” “CRM,” and “AI” only when they help the buyer understand the offer. Do not make the buyer learn the backend before understanding the business change.
 
-The canonical slugs and names remain owned by `src/content/canonical.ts`. A capability does not automatically require a launch page or navigation item.
+Avoid generic marketing filler such as “cutting-edge,” “seamless,” “robust,” “holistic,” “growth machine,” “all-in-one platform,” “skyrocket,” and “dominate.” This is a judgment rule, not a word-replacement exercise.
 
-Implementation services—WordPress, Elementor, Bricks, Divi, WooCommerce, and rebuild work—are search and delivery pathways under Smart Website Systems. They should lead with business fit and craft, not builder fandom or cheap package language.
+Copy and design share the explanation. A strong visual, interaction, or project example should not be repeated in several paragraphs. Clarity must accumulate across the page; every section does not need to restate the entire offer.
 
-## Offer boundaries
+Home-service and clinic language must reflect their real differences. Use projects, estimates, crews, and homeowner trust for home services; use treatments, consultations, appointments, practitioner credibility, and patient confidence for clinics. Avoid emergency-response framing and unsupported medical or compliance claims.
 
-MindWP does not need to present itself as:
+## Conversion posture
 
-- a paid advertising or media-buying agency
-- quoting, estimating, invoicing, or practice-management software
-- an emergency call-centre service
-- a medical, EMR, or compliance platform
-- an AI chatbot product
-- a guaranteed SEO, lead, booking, review, or revenue service
+The current primary CTA is `Request a Website Review`. The main lower-commitment action is `See the work`.
 
-The connected platform can be discussed during sales and handover when relevant. It should not dominate public positioning or visual design.
+The review is a private diagnostic conversation, not a SaaS demo or free trial. CTAs should be calm and specific. Avoid guaranteed-outcome or hype-led actions.
 
-## Market and industry strategy
+Pricing is discussed privately. Public pages should explain fit and process well enough that a serious visitor understands what conversation they are starting.
 
-MindWP serves English-speaking markets without hard-coding one country's spelling, currency, regulations, or local terminology into core brand pages.
+## Site strategy
 
-Two lanes launch with equal strategic status:
+Launch with a small set of exceptional pages rather than a large collection of thin routes:
 
-- **Home services:** considered projects such as roofing, HVAC, plumbing, foundation repair, septic, and tree work.
-- **Specialist clinics:** trust-led treatments and consultations such as dental implants, orthodontics, oral surgery, dermatology, ENT, podiatry, audiology, physiotherapy, optometry, and orthopaedics.
+```text
+Home
+├─ What we build
+├─ Work
+├─ Industries
+│  ├─ Home Services
+│  └─ Specialist Clinics
+├─ About / Process
+└─ Website Review / Contact
+```
 
-The site should not pretend to specialise equally in every listed vertical on day one. Use one credible demonstration or proof-led story from each lane, then expand pages as real work, search demand, and sales learning develop.
+Add detailed system pages, individual industries, implementation pages, pricing/process, case studies, resources, and blog content only when proof, search intent, or sales learning justify them.
 
-## Proof model
+Page roles:
 
-For a new brand, visual evidence matters more than claims:
+| Page                     | Primary job                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------- |
+| Home                     | Demonstrate taste, explain the connected offer, establish belief, and create the next step.   |
+| What we build            | Explain scope, the five systems, delivery options, and fit.                                   |
+| Work                     | Let visitors judge design and implementation quality.                                         |
+| Industries               | Demonstrate relevant understanding without false specialisation.                              |
+| About / Process          | Build trust in experience, approach, handover, and ongoing management.                        |
+| Website Review / Contact | Start a useful private conversation and qualify fit.                                          |
+| Future search page       | Answer a real industry, system, or implementation intent and route toward the flagship offer. |
 
-1. **The MindWP website itself** — proof of design taste, interaction quality, responsiveness, and technical craft.
-2. **Demonstration builds** — strong vertical-specific work, clearly labelled as demonstration work.
-3. **Real client work** — named with permission or anonymised honestly.
-4. **Process evidence** — selected screens, decisions, systems, and implementation details that show how the work is built.
-5. **Experience** — a restrained reference to building WordPress sites since 2015, without exposing private founder information.
-
-Never invent results, ratings, testimonials, client identities, rankings, revenue, or guarantees.
-
-## Conversion model
-
-The site should give visitors several natural ways to build confidence:
-
-- explore the work
-- understand the smart website offer
-- see how website and handling connect
-- recognise their industry or situation
-- request a website review or start a private conversation
-
-`Request a Website Review` is the current primary CTA and `See the work` is the main lower-commitment path. CTA labels remain owned by `src/lib/cta` and can be reconsidered after the page experience is designed and tested.
-
-Do not force every section through the same problem-copy formula. The homepage should alternate visual intrigue, clarity, proof, interaction, and commercial explanation.
+Only approved, built pages belong in navigation and the sitemap. Canonical content data may describe future possibilities without publishing empty routes.
 
 ## Growth order
 
-1. Build an exceptional homepage that proves MindWP's taste and makes the offer understandable.
-2. Add enough real or clearly labelled demonstration work to support the promise.
-3. Build the flagship offer, work, industry, about/process, and contact experiences.
-4. Add focused industry and implementation pages where there is real proof or search value.
-5. Expand capability pages, resources, and ongoing content only when they support demand.
+1. Build an exceptional long-form homepage.
+2. Build or prepare proof strong enough to support the visual promise.
+3. Add the small launch authority site.
+4. Expand industry and implementation pages where evidence or demand exists.
+5. Add resources and broader search content only when it supports the sales model.
 
-The launch should optimise for quality and coherence, not route count.
-
-## Decision test
-
-Before adding a page, section, service, or interaction, ask:
-
-- Does it make the offer easier to understand or believe?
-- Does it demonstrate design or implementation quality?
-- Does it help a good-fit buyer recognise their situation?
-- Does it create a useful next step?
-
-If not, it probably does not belong in the launch experience.
+The launch optimises for quality and coherence, not route count.

@@ -2,11 +2,7 @@
   "ci": {
     "collect": {
       "startServerCommand": "pnpm exec next start --port 3000",
-      "url": [
-        "http://localhost:3000/",
-        "http://localhost:3000/contact",
-        "http://localhost:3000/style-guide"
-      ],
+      "url": ["http://localhost:3000/"],
       "numberOfRuns": 1,
       "settings": { "preset": "desktop" }
     },

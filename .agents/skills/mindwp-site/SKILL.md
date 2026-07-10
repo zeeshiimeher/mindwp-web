@@ -1,85 +1,85 @@
 ---
 name: mindwp-site
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: Plan, build, review, or refactor the MindWP Next.js website. Use for MindWP strategy and documentation, routes, pages, visual design, CSS, React components, navigation, forms, SEO, motion, responsive work, source cleanup, testing, or rendered QA.
 ---
 
-# Mindwp Site
+# MindWP site workflow
 
-## Overview
+Use this skill as the procedure for MindWP work. Do not copy business, design, or engineering facts into this file.
 
-[TODO: 1-2 sentences explaining what this skill enables]
+## 1. Load authority in order
 
-## Structuring This Skill
+Read the complete relevant files before acting:
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+1. `docs/STRATEGY.md` for business, offer, audience, proof, voice, claims, CTA, and IA.
+2. `docs/DESIGN.md` for visual direction, custom CSS, composition, motion, responsive behavior, and rendered approval.
+3. `docs/ENGINEERING.md` for stack, source ownership, routes, privacy, performance, and validation.
+4. The page brief last when the task targets a planned page; use `docs/HOME-PLAN.md` for the homepage.
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" -> "Reading" -> "Creating" -> "Editing"
-- Structure: ## Overview -> ## Workflow Decision Tree -> ## Step 1 -> ## Step 2...
+Read all four for a major page build. For a narrow task, read the smallest complete set that owns the decision.
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" -> "Merge PDFs" -> "Split PDFs" -> "Extract Text"
-- Structure: ## Overview -> ## Quick Start -> ## Task Category 1 -> ## Task Category 2...
+## 2. Inspect before planning
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" -> "Colors" -> "Typography" -> "Features"
-- Structure: ## Overview -> ## Guidelines -> ## Specifications -> ## Usage...
+- Check `git status` and preserve unrelated user work.
+- Inspect the current source, usages, tests, and assets in scope.
+- Treat existing code as evidence, not authority. Rewrite or remove it when the approved direction benefits.
+- Do not restore deleted or ignored legacy implementations.
+- Use source files for machine facts and documents for intent.
+- Identify missing proof or assets instead of inventing them.
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" -> numbered capability list
-- Structure: ## Overview -> ## Core Capabilities -> ### 1. Feature -> ### 2. Feature...
+Do not edit during the audit pass.
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+## 3. Decide the change
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+State the outcome, source owner, affected files, and verification path.
 
-## [TODO: Replace with the first main section based on chosen structure]
+For strategy or documentation work:
 
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
+- Put each decision in one authority file only.
+- Replace contradictory guidance rather than adding another exception.
+- Update routers and source comments after renaming or deleting an authority.
 
-## Resources (optional)
+For a major visual page:
 
-Create only the resource directories this skill actually needs. Delete this section if no resources are required.
+- Define and critique the visual direction before coding.
+- Map narrative acts to semantic sections.
+- Plan the dominant asset, signature interaction, page rhythm, and mobile recomposition.
+- Confirm what is real proof, demonstration material, or explanatory interface.
 
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
+For a narrow source change:
 
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
+- Follow the existing stable contract when it still serves the approved direction.
+- Remove unused code only after proving usage.
 
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
+## 4. Implement locally first
 
-**Note:** Scripts may be executed without loading into context, but can still be read by Codex for patching or environment adjustments.
+- Keep routes thin and Server Components by default.
+- Keep unique page sections, data, and CSS local.
+- Add Client Components only for real state, browser APIs, or earned motion.
+- Share components or tokens only after repetition is proven.
+- Keep private data in server-only environment variables.
+- Keep claims, actions, and important text semantic and crawlable.
 
-### references/
-Documentation and reference material intended to be loaded into context to inform Codex's process and thinking.
+Do not create generic section factories or a speculative component system.
 
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
+## 5. Verify in two layers
 
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Codex should reference while working.
+Run the technical gates defined in `docs/ENGINEERING.md` for the files changed.
 
-### assets/
-Files not intended to be loaded into context, but rather used within the output Codex produces.
+For visual work, also follow the rendered approval process in `docs/DESIGN.md`:
 
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
+- use a real browser;
+- capture the required full-page views and section crops;
+- inspect desktop, tablet, mobile, and reduced motion where applicable;
+- iterate on visible problems before reporting completion.
 
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
+A passing build does not approve the design.
 
----
+## 6. Report clearly
 
-**Not every skill requires all three types of resources.**
+Lead with the achieved outcome. Mention important decisions, changed authorities, verification results, and any genuine remaining risk.
+
+End every report with:
+
+- `What is done`
+- `What is next`

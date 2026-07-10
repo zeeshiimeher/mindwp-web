@@ -1,42 +1,44 @@
 "use client";
 
-/**
- * Last-resort boundary — replaces the root layout, so it must render its own
- * <html>/<body> and use inline styles (the global stylesheet isn't loaded here).
- */
-export default function GlobalError({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
+export default function GlobalError({
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
   return (
     <html lang="en">
       <body
         style={{
           margin: 0,
           minHeight: "100dvh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          display: "grid",
+          placeItems: "center",
           padding: "2rem",
-          textAlign: "center",
-          background: "#071629",
-          color: "#eef2f0",
-          fontFamily: "system-ui, -apple-system, sans-serif",
+          background: "#ffffff",
+          color: "#151515",
+          fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
         }}
       >
-        <div>
-          <h1 style={{ fontSize: "1.5rem", margin: 0 }}>Something went wrong</h1>
-          <p style={{ color: "#9ba6ae", marginTop: "0.75rem" }}>
+        <div style={{ width: "min(100%, 34rem)" }}>
+          <h1 style={{ margin: 0, fontSize: "clamp(2rem, 6vw, 4rem)", lineHeight: 1 }}>
+            Something went wrong.
+          </h1>
+          <p style={{ marginTop: "1rem", color: "#5b6470", lineHeight: 1.6 }}>
             A critical error occurred. Please try again.
           </p>
           <button
-            onClick={() => reset()}
+            type="button"
+            onClick={reset}
             style={{
               marginTop: "1.5rem",
-              padding: "11px 18px",
-              borderRadius: 8,
-              border: 0,
-              background: "#2fb98c",
-              color: "#071629",
-              fontWeight: 600,
-              fontSize: 13,
+              minHeight: "44px",
+              border: "1px solid #151515",
+              borderRadius: "6px",
+              background: "#151515",
+              color: "#ffffff",
+              padding: "0.65rem 1rem",
+              fontWeight: 700,
               cursor: "pointer",
             }}
           >

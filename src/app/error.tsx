@@ -1,11 +1,7 @@
 "use client";
 
-import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/Button";
-import { Eyebrow } from "@/components/ui/Eyebrow";
+import Link from "next/link";
 
-/** Route-level error boundary (keeps header/footer; only the page area swaps). */
 export default function Error({
   reset,
 }: {
@@ -13,20 +9,20 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <Section className="flex min-h-[60vh] items-center">
-      <Container>
-        <Eyebrow>Something went wrong</Eyebrow>
-        <h1 className="type-h2 mt-3">A page slipped.</h1>
-        <p className="type-body mt-4 max-w-md">
-          An unexpected error occurred on our side. Try again, or head back home.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Button onClick={() => reset()}>Try again</Button>
-          <Button href="/" variant="secondary">
+    <section className="status-page">
+      <div className="status-page__inner">
+        <p className="status-page__kicker">Something went wrong</p>
+        <h1>A page slipped.</h1>
+        <p>An unexpected error occurred. Try again, or return to the homepage.</p>
+        <div className="status-page__actions">
+          <button type="button" className="button" onClick={reset}>
+            Try again
+          </button>
+          <Link href="/" className="button button--secondary">
             Back home
-          </Button>
+          </Link>
         </div>
-      </Container>
-    </Section>
+      </div>
+    </section>
   );
 }

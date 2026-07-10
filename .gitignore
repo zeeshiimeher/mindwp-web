@@ -21,12 +21,13 @@
 # production
 /build
 
+# Isolated old-site copy. Keep intact; never import into active source.
+/_dev-reference/
+
 # misc
 .DS_Store
 *.pem
 
-# local renderable reference snapshots
-/_dev-reference/
 /screenshots/
 # debug
 npm-debug.log*
@@ -38,10 +39,6 @@ yarn-error.log*
 .env*
 !.env.example
 .dev.vars
-
-# cloudflare / opennext
-/.open-next/
-/.wrangler/
 
 # testing
 /test-results/

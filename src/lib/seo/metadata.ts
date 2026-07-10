@@ -22,12 +22,12 @@ export function buildSEO({
   title,
   description,
   path,
-  ogImage = "/opengraph-image",
+  ogImage,
   noindex = false,
   type = "website",
 }: SeoInput): Metadata {
   const url = absoluteUrl(path);
-  const image = ogImage.startsWith("http") ? ogImage : absoluteUrl(ogImage);
+  const image = ogImage ? (ogImage.startsWith("http") ? ogImage : absoluteUrl(ogImage)) : undefined;
 
   return {
     title,
@@ -40,13 +40,13 @@ export function buildSEO({
       siteName: SITE.name,
       title,
       description,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      ...(image ? { images: [{ url: image, width: 1200, height: 630, alt: title }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      ...(image ? { images: [image] } : {}),
     },
   };
 }
