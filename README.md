@@ -10,16 +10,6 @@ The active repo is currently reset to a clean page surface: public page routes e
 
 - `AGENTS.md` is the first file to read. It explains the current repo state, task routing, non-negotiables, validation, and reporting.
 
-**Local skills**
-
-- `.agents/skills/mindwp-workflow/SKILL.md` owns task flow, page planning, rebuild sequencing, and QA planning.
-- `.agents/skills/mindwp-design/SKILL.md` owns design planning, composition, hierarchy, rhythm, and screenshot audit rules.
-- `.agents/skills/mindwp-css/SKILL.md` owns global CSS foundations, page-level CSS, semantic markup, responsive layout, forms, states, and cleanup.
-- `.agents/skills/mindwp-engineering/SKILL.md` owns Next/App Router architecture, components, typed contracts, and validation gates.
-- `.agents/skills/mindwp-components/SKILL.md` owns shell, primitives, header, footer, nav, buttons, forms, repeated UI, states, and accessibility.
-- `.agents/skills/mindwp-writing/SKILL.md` owns copy and claim guardrails.
-- `.agents/skills/mindwp-motion/SKILL.md` owns animation and interaction boundaries.
-- `.agents/skills/mindwp-qa/SKILL.md` owns rendered QA, screenshots, responsive checks, accessibility, proof/copy checks, and validation reporting.
 
 **Reference docs**
 
@@ -47,10 +37,4 @@ The active repo is currently reset to a clean page surface: public page routes e
 - Old page sections were removed from active source.
 - `_dev-reference/current-site/` is ignored by normal repo tooling and is not an active guidance source.
 
-## Principles
 
-- Skills decide execution.
-- Docs explain strategy, writing, page roles, and architecture.
-- Source files own machine facts.
-- Do not revive old visual shells from the reference copy.
-- Do not read or search `_dev-reference/` unless the user explicitly requests it.

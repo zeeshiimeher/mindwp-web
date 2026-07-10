@@ -63,6 +63,8 @@ Industry pages must show the vertical's real working conditions: timing, behavio
 
 Home is the rebuild taste gate unless the user explicitly chooses a narrower target. If explicitly requested, the old homepage spine may be used as planning or commercial reference only, never as a visual shell to copy.
 
+
+
 Home must quickly answer:
 
 - What problem does MindWP recognise?
@@ -101,22 +103,6 @@ Avoid: Book a demo, Start free trial, Get a free quote, Skyrocket my leads, Domi
 
 The approved CTA label strings are owned by `src/lib/cta`.
 
-## Rebuild Planning Loop
-
-For each page:
-
-1. Read the relevant page role here.
-2. Read the offer ownership in [STRATEGY.md](./STRATEGY.md).
-3. Read [WRITING.md](./WRITING.md) when public copy is being written or audited.
-4. Lock the page spine: section order, section jobs, proof needs, supporting media needs, and CTA posture.
-5. Use `.agents/skills/mindwp-workflow/SKILL.md` to lock workflow.
-6. Use `.agents/skills/mindwp-design/SKILL.md` to define composition, hierarchy, rhythm, and mobile behavior for major sections before code.
-7. Use `.agents/skills/mindwp-css/SKILL.md` and [DESIGN-SYSTEM.md](./DESIGN-SYSTEM.md) for CSS and page styling.
-8. Use `.agents/skills/mindwp-engineering/SKILL.md` for App Router and React implementation.
-9. Use `.agents/skills/mindwp-components/SKILL.md` when shell, primitives, forms, header, footer, or navigation are touched.
-10. Use `.agents/skills/mindwp-qa/SKILL.md` for rendered approval before visual work is accepted.
-
-Build priority is strategic, not mandatory: Home first, then Smart Website Systems, proof/work, the remaining primary systems, front-door verticals, hubs, implementation pages, About/Pricing/Contact, then resources/blog/legal.
 
 ## Proof And Claims
 

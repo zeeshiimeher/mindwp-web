@@ -1,608 +1,883 @@
-# Home Plan
+# Home Plan - Standalone Build Brief
 
-This is the Home decision pack for the next full build sprint. It defines the
-page thesis, narrative structure, section jobs, visual direction, proof use,
-interaction rules, implementation approach, and QA bar before any homepage code
-is written.
+This is the single operating brief for building the MindWP homepage. A new chat
+should be able to read this file and understand the homepage strategy, visual
+direction, copy boundaries, implementation approach, motion allowance, proof use,
+and QA bar without rereading every other project doc.
 
-Do not treat this document as component code. The section list is the content
-and planning spine, not the design.
+This file is intentionally longer than a normal page plan. It repeats the
+home-relevant strategy from the core docs so the homepage can be built from one
+place. Source files still own machine facts when implementation begins:
 
-## Page Thesis
+- `src/config/routes.ts` owns route/nav/sitemap structure.
+- `src/content/canonical.ts` owns systems and industries.
+- `src/lib/cta/labels.ts` owns approved CTA labels.
+- `src/styles/*` owns tokens, typography, layout, shell, buttons, forms, and
+  motion foundations.
 
-Work is already coming in. The weak point is what happens between attention,
-trust, enquiry, response, follow-up, and proof. MindWP builds the website and
-handling path so work does not slip away.
+Do not inspect `_dev-reference/` unless the user explicitly asks for the old
+reference copy.
 
-The homepage must feel:
+## Current Repo State
+
+The active repo is reset to a clean page surface.
+
+- Public `src/app/**/page.tsx` routes intentionally render `null`.
+- Old active page sections were removed.
+- Shared shell, primitives, tokens, route config, canonical config, contact
+  code, SEO helpers, and validation scripts remain.
+- `docs/HOME-PLAN.md` is the homepage decision pack.
+- `/screenshots` contains visual references for the homepage direction.
+- `/public/work` contains proof screenshots that may be used on Home.
+
+Home is the taste gate for the rebuild. The first implementation must be judged
+by rendered visual quality, not by whether it compiles.
+
+## Product Understanding
+
+MindWP builds smart websites for established service businesses and specialist
+clinics. A smart website is not just a set of pages. It is the website plus the
+handling path around it:
+
+- The website makes the offer clear, builds trust, and captures enquiries.
+- The handling path makes sure calls, forms, quote requests, bookings,
+  consultation requests, follow-up, and proof do not disappear.
+
+The buyer already has activity. Calls come in. People search. Forms arrive.
+Quotes and consultations happen. Reviews exist or should exist. The weak point
+is the path between attention, trust, enquiry, response, follow-up, and proof.
+
+The homepage thesis:
+
+```text
+Work comes in. Too much slips away.
+MindWP builds the website and handling path so the work keeps moving.
+```
+
+The line that must land early:
+
+```text
+A MindWP website does not just look good. It brings work in and makes sure it
+doesn't slip away.
+```
+
+The buyer should understand this simple path:
+
+```text
+Find -> Verify -> Understand -> Contact -> Land -> Respond -> Follow up -> Prove
+```
+
+Do not turn that path into backend architecture. Keep it in working-day terms.
+
+## Buyer And Market
+
+Primary buyer:
+
+- Established service-business owner or operator.
+- Specialist clinic owner, founder, or practice manager.
+- Real activity already exists.
+- The business has meaningful job, case, or patient value.
+- The buyer can feel leakage around trust, enquiries, response, follow-up, and
+  proof.
+
+Home should feel clinic-first while keeping serious service businesses included.
+Healthcare practice proof and clinic scenarios should lead the proof and market
+positioning. Service businesses remain visibly included through roofing, HVAC,
+plumbing, property, and other considered-work examples.
+
+Do not make the homepage feel like:
+
+- a generic web design agency
+- a SaaS product
+- a CRM dashboard
+- an AI chatbot vendor
+- a quote or invoice tool
+- a healthcare software, EMR, or compliance product
+- a cheap contractor lead-gen page
+- a flat template page
+
+## Offer Model
+
+There are five active systems. Smart Website Systems is the public anchor and
+the website front door. The other four protect the path around it.
+
+1. Smart Website Systems
+   - Owns website clarity, trust, conversion structure, enquiry capture, and the
+     connection from website to handling.
+   - It is the hub/base, not one equal service tile among five.
+2. Local SEO Authority
+   - Owns find, verify, service-area relevance, local trust, and nearby
+     visibility signals.
+3. Lead Response & Handling
+   - Owns first response and routing after someone reaches out.
+4. Follow-Up & CRM
+   - Owns owner, status, reminders, and next steps after the first response or
+     quote exists.
+5. Reputation & Review
+   - Owns review-request timing, feedback routing, and making good work visible
+     as proof.
+
+The public service ladder:
+
+```text
+Find work   -> Local SEO Authority
+Catch work  -> Lead Response & Handling
+Carry work  -> Follow-Up & CRM
+Prove work  -> Reputation & Review
+Repeat work -> proof supports the next find
+```
+
+Smart Website Systems is the ground the ladder stands on.
+
+## Copy Rules
+
+Write:
+
+```text
+flow -> handling -> result
+```
+
+Do not default to:
+
+```text
+pages -> design -> features
+tools -> services -> features
+```
+
+Start with the buyer's real situation. Then name what MindWP builds. Then show
+proof. Do not make the reader wait through a long philosophy section before the
+offer appears.
+
+Preferred working-day language:
+
+- calls
+- forms
+- messages
+- quotes
+- bookings
+- appointments
+- consultations
+- reviews
+- missed replies
+- scattered inboxes
+- owner memory
+- staff pressure
+- local trust
+- patient trust
+- proof not collected
+- follow-up nobody owns
+- enquiries land somewhere useful
+- the right person knows
+- owner, status, next step
+- good work becomes visible proof
+
+Protected anchor lines:
+
+- `Work Comes In. Too Much Slips Away.`
+- `The business is working. The system around it is leaking.`
+- `These aren't separate problems. They're connected.`
+- `Nothing depends on someone remembering.`
+- `Enquiries land somewhere useful.`
+
+Use protected lines deliberately. Do not repeat all of them everywhere.
+
+Hard copy boundaries:
+
+- Do not invent proof, metrics, ratings, rankings, testimonials, client names,
+  locations, dates, revenue, outcomes, or guarantees.
+- Do not name backend platforms or white-label delivery names publicly.
+- Do not say or imply `your CRM`.
+- Do not imply the client owns or operates the handling system. The website is
+  theirs; the connected handling is a service MindWP runs.
+- MindWP does not create, prepare, price, invoice, automatically send, or send
+  quotes.
+- Do not frame MindWP as SaaS, AI chatbot, CRM reseller, ads agency, SEO hype,
+  quote tool, invoice platform, healthcare software, EMR, or compliance.
+- Do not make clinic copy contain unsupported medical, treatment, compliance, or
+  patient-result claims.
+- Do not use emergency, urgent, same-day, storm, no-heat, burst-pipe, or
+  within-the-hour framing. MindWP targets considered work.
+
+CTA rules:
+
+- Primary CTA: `Request a Website Review`
+- Secondary CTA: `See the work`
+- Use `See the work` only where proof/work makes sense.
+- Final CTA has one action only: `Request a Website Review`.
+- Avoid `Book a demo`, `Start free trial`, `Get a free quote`, `Dominate
+  Google`, and guaranteed-outcome CTA language.
+
+## Critical Design/Content Separation
+
+Do not judge screenshot references by their placeholder copy, labels, numbers,
+claims, fake metrics, or fake UI text. The screenshots are visual references
+first.
+
+When reviewing or building from screenshots, separate three layers:
+
+1. Visual design
+   - layout
+   - scale
+   - section rhythm
+   - surfaces
+   - depth
+   - typography hierarchy
+   - artifact shape
+   - motion opportunity
+2. Content replacement
+   - headings
+   - labels
+   - states
+   - examples
+   - CTA copy
+   - proof captions
+3. Compliance check
+   - no fake proof
+   - no banned claims
+   - no backend names
+   - no `your CRM`
+   - approved CTAs only
+
+Do not reject a visual design because the reference screenshot contains fake
+metrics or unsafe wording. Replace the content. Keep the composition if the
+visual form is strong.
+
+Design-level concerns are different:
+
+- If an artifact visually feels too much like a SaaS dashboard, it can still be
+  adapted by changing the surface language into an editorial artifact, evidence
+  board, working-day stack, or operating diagram.
+- If a section relies on tiny cards, repeated grids, or flat rows, the visual
+  composition itself is weak and should be changed.
+
+## Visual Direction
+
+The homepage should feel:
 
 - modern
 - premium
-- interactive where useful
 - editorial
-- proof-led
-- clinic-first
-- commercially serious
 - visually confident
+- clinic-first
+- proof-led
+- commercially serious
+- interactive only where useful
 
-It must not feel like:
+The homepage should not feel:
 
-- a flat text-only page
-- a generic agency homepage
-- a SaaS product
-- a CRM dashboard
-- an AI chatbot site
-- a simple card-grid page
-- an intern-built practice layout
+- flat
+- text-only
+- generic agency
+- simple card grid
+- SaaS dashboard
+- cheap contractor lead-gen
+- intern-built practice page
+- decorative without commercial meaning
 
-## Non-Negotiable Guardrails
+Global design language:
 
-- Do not build from old homepage screenshots.
-- Do not inspect `_dev-reference`.
-- Do not use fake metrics, fake ratings, fake reports, fake audit scores, fake
-  testimonials, invented client names, invented locations, invented dates, or
-  invented outcomes.
-- Do not name backend platforms publicly.
-- Do not say or imply "your CRM".
-- Do not frame MindWP as SaaS, a CRM product, an AI chatbot vendor, an ads
-  agency, a quote tool, an invoice tool, healthcare software, EMR, or a
-  compliance company.
-- Use `Request a Website Review` as the primary CTA.
-- Use `See the work` only in the hero and/or Work proof section.
-- The final CTA has one action only: `Request a Website Review`.
+- Dark navy peaks with subtle grid texture and glass-like raised artifacts.
+- Pale paper and pale mint editorial sections between dark peaks.
+- Emerald as sparse signal, not the whole palette.
+- Fraunces for page-level and major section statements.
+- Inter for operational labels, captions, UI, and dense details.
+- Large artifacts over many small cards.
+- Strong asymmetry and varied density.
+- Fewer, more memorable acts instead of 16 equal sections.
+- Proof screenshots large enough to inspect.
+
+The homepage must read as a sequence of acts, not as a long list of separate
+sections.
+
+## Screenshot Reference Map
+
+Use `/screenshots` as visual reference material. Treat all screenshot copy as
+replaceable.
+
+High-priority visual references:
+
+- `hero-artificat-sample.png`
+  - Best hero direction.
+  - Use dark grid, big headline, right-side working-day artifact, and subtle
+    depth.
+- `home-hero-inspiratiopn.png`
+  - Good hero split with outcome contrast and bottom timeline.
+  - Use for structure, not literal copy.
+- `hero-right-side-inspiration.png`
+  - Strong dark atmosphere and large headline scale.
+  - Borrow visual mood and artifact placement.
+- `five-systems-section-inspiraton.png`
+  - Best five-system hierarchy.
+  - Smart Website Systems is visibly the hub/base.
+- `glmp5.2-26june.png`
+  - Best dark rhythm and the strongest handoff + systems act.
+  - Best candidate for GSAP step highlighting.
+- `home-v5.png`
+  - Most polished full-home draft.
+  - Strong clinic scenario and final CTA.
+  - Watch for too many small cards if copied literally.
+- `home-v1.png`
+  - Best narrative variety.
+  - Useful for proof, compounding, review, fit, and footer pacing.
+- `gpt5.2-june15.png`
+  - Best clean editorial proof direction.
+  - Use for `Website work you can inspect`.
+- `glm5.524june.png`
+  - Strong premium polish and review/diagnostic card direction.
+  - Avoid literal fake report/score framing in final content.
+- `glm5.2-27june.png`
+  - Good editorial restraint and service ladder ideas.
+  - Softer visually than the stronger dark references.
+
+Standalone section references:
+
+- `Screenshot Tool by cloudHQ 29_06_2026 17_48_48.png`
+  - Local visibility artifact: map/radius plus operational list.
+- `Screenshot Tool by cloudHQ 29_06_2026 17_49_23.png`
+  - Scenario/correction structure.
+  - Good model for clinic or review section.
+- `Screenshot Tool by cloudHQ 29_06_2026 17_50_10.png`
+  - Strong dark CTA/review composition with oversized headline and glass
+    checklist.
 
 ## Page Rhythm
 
-The homepage runs as five acts, not as disconnected sections.
+The old 16-section list is not the design. The page should be built as seven
+acts.
 
-### Act 1 - Recognition
+Act rhythm:
 
-Sections 01-03 make the buyer feel seen. The job is to show that the business
-is not quiet; work is arriving, but important moments leak between attention,
-trust, enquiry, response, follow-up, and proof.
-
-### Act 2 - Offer
-
-Sections 04-06 make the offer concrete. MindWP builds the smart website and the
-handling path around it so enquiries land somewhere useful and keep moving.
-
-### Act 3 - System
-
-Sections 07-08 explain the connected path without becoming a services menu. The
-website is the front door and the systems protect the handoffs where work
-usually slips.
-
-### Act 4 - Proof And Market Fit
-
-Sections 09-11 prove the work and make the market focus clear. Clinics lead the
-proof and positioning. Serious service businesses remain visibly included but
-secondary.
-
-### Act 5 - Decision And Close
-
-Sections 12-16 reduce risk, explain the review, clarify fit, answer objections,
-and close with one action.
-
-## Visual Emphasis
+1. Dark first impression
+   - Hero with working-day artifact.
+2. Light observed evidence
+   - Work slips evidence board.
+3. Dark connected mechanism
+   - Contact form contrast, handoff path, and five systems in one large act.
+4. Light market and local trust
+   - Local trust plus clinic-first scenario.
+5. Proof
+   - Large inspectable work screenshots.
+6. Credibility and review
+   - Builder-led fit, diagnostic review, FAQ.
+7. Dark close
+   - One final CTA.
 
 Visual peaks:
 
-- 01 Hero
-- 04 What MindWP actually builds
-- 07 Five systems, one connected site
-- 09 Work proof
-- 16 Final CTA
+- Hero
+- Combined handoff + five systems
+- Work proof
+- Clinic scenario
+- Final CTA
 
-Secondary strong sections:
+Secondary sections:
 
-- 03 Contact form is not the finish line
-- 08 Local trust: found and verified
-- 10 Specialist clinics
-- 13 The review finds where work slips
+- Work slips evidence board
+- Local trust
+- Review/diagnostic section
+- Built by builders / fit
 
-Quiet/supporting sections:
+Quiet support:
 
-- 02 Where work slips
-- 05 Certainty before enquiry
-- 06 The next step stays visible
-- 11 Serious service businesses
-- 12 Nothing depends on memory
-- 14 Built by builders / honest fit
-- 15 FAQ
+- FAQ
+- Short memory/operational payoff statements
+- Small connective text strips
 
-The review section is commercially important, but it is a conversion/planning
-peak, not a heavy visual-object section.
+If implementation starts to look like 12 to 16 equal bands, stop and redesign
+the rhythm before continuing.
 
-## Interaction Rules
+## Final Homepage Blueprint
 
-Interaction is allowed only where it improves meaning:
+This is the recommended build shape. It intentionally merges the old 16
+sections into fewer stronger acts.
 
-- Hero enquiry stack - subtle state/highlight movement.
-- Systems section - stepper or progressive path highlight.
-- Work section - gallery/filter only if useful.
-- FAQ - accessible accordion.
+### 01 - Hero: Work Comes In
 
-No interaction should be required to understand essential content. Hover-only
-meaning is not allowed. Interactions must preserve reduced-motion behavior and
-keyboard access.
+Purpose:
 
-## Proof And Media Plan
+- Establish the core problem immediately.
+- Show that work already arrives but leaks between moments.
+- Make MindWP feel premium, modern, and operational.
 
-Use `/public/work` proof carefully and label it honestly.
+Visual references:
+
+- `hero-artificat-sample.png`
+- `home-hero-inspiratiopn.png`
+- `hero-right-side-inspiration.png`
+
+Composition:
+
+- Full dark navy opening.
+- Subtle grid texture across the hero.
+- Left side: large headline, short recognition paragraph, primary CTA, small
+  secondary proof/work link only if it does not weaken the primary CTA.
+- Right side: floating working-day artifact.
+- Bottom: slim timeline/status rail showing the path from find/contact to next
+  step/proof.
+
+Artifact direction:
+
+- Use stacked concrete moments:
+  - missed call
+  - form enquiry
+  - consultation request
+  - quote follow-up
+  - review request
+  - next step assigned
+- The artifact should feel like observed business pressure, not product UI.
+- It may use chips, rows, status dots, layered paper, dark glass, and subtle
+  linework.
+
+Motion:
+
+- Allowed: subtle row highlight cycling through the stack.
+- Allowed: slight 3D tilt/parallax on the artifact.
+- Do not delay headline or CTA.
+- The hero must work statically.
+
+Mobile:
+
+- Headline first.
+- Primary CTA visible before artifact.
+- Artifact becomes compact stacked sequence.
+- Timeline can become a short horizontal scroller or a compressed ordered list
+  if needed.
+
+Failure conditions:
+
+- Generic agency hero.
+- Hero only says MindWP builds websites.
+- Right artifact becomes a fake SaaS app.
+- Too many tiny unreadable labels.
+
+### 02 - Evidence Board: Where Work Slips
+
+Purpose:
+
+- Show the buyer that MindWP understands their working day.
+- Make leakage specific before explaining the system.
+
+Visual references:
+
+- `home-v5.png`
+- `gpt5.2-june15.png`
+- `glm5.2-27june.png`
+
+Composition:
+
+- Light editorial section.
+- Strong heading block offset from an evidence board.
+- Evidence board uses varied block sizes and emphasis.
+- Do not use six equal cards.
+- Some blocks can be pale mint, some white, some line-only, some larger.
+
+Visual content slots:
+
+- missed call
+- waiting form
+- quiet quote
+- consultation request
+- review never asked
+- unclear next step
+- local trust gap
+
+Mobile:
+
+- Evidence stack with varied visual weights.
+- Keep labels short.
+- Avoid cramped grids.
+
+Failure conditions:
+
+- Six same-size cards.
+- Repeated "missed leads" wording.
+- Over-explaining the whole system too early.
+
+### 03 - Connected Mechanism: Form Is Not The Finish Line
+
+Purpose:
+
+- Reframe the normal website endpoint as the start of handling.
+- Introduce the connected path without making it feel like software.
+
+Visual references:
+
+- `Screenshot Tool by cloudHQ 29_06_2026 17_49_23.png`
+- `glm5.524june.png`
+- `home-v1.png`
+
+Composition:
+
+- A split contrast block.
+- One side shows the normal endpoint: call, form, request, or consultation.
+- The other side shows what happens when the path continues.
+- Use strong typography and a dark raised panel.
+- This should be a visual moment, not a plain paragraph section.
+
+Important:
+
+- The visual can resemble before/after or chance/handled.
+- The final content must avoid fake outcomes, but the design may borrow the
+  visual contrast freely.
+
+Mobile:
+
+- Stack contrast statements.
+- Keep both sides immediately visible.
+
+Failure conditions:
+
+- Plain heading plus paragraph.
+- Product dashboard.
+- Generic process diagram.
+
+### 04 - Handoff + Five Systems: One Connected Site
+
+Purpose:
+
+- Show the full MindWP model as one connected path.
+- Make Smart Website Systems the base/hub.
+- Explain the supporting systems without making a service grid.
+
+Visual references:
+
+- `glmp5.2-26june.png`
+- `five-systems-section-inspiraton.png`
+- `glm5.524june.png`
+
+Composition:
+
+- One large dark act.
+- Top: handoff path with sequence markers.
+- Bottom: five-system model.
+- Smart Website Systems appears as a large base, hub, or front-door layer.
+- Local SEO, Lead Response, Follow-Up, and Reputation connect around or below
+  the hub.
+- Use lines, rails, layered panels, and progressive emphasis.
+
+Suggested handoff sequence:
+
+```text
+Lands -> Right person knows -> Next step visible -> Follow-up stays visible -> Proof returns
+```
+
+Suggested system path:
+
+```text
+Find -> Catch -> Carry -> Prove -> Repeat
+```
+
+Motion:
+
+- This is the best place for GSAP.
+- Scroll-linked or viewport-triggered step highlight is allowed.
+- All states must remain visible without interaction.
+- Reduced motion must show final readable state.
+
+Mobile:
+
+- Preserve sequence.
+- Use vertical ordered path.
+- Do not hide core systems behind tabs unless the key relationship remains
+  visible.
+
+Failure conditions:
+
+- Five equal cards.
+- Flat service grid.
+- Smart Website Systems looks like just another tile.
+- Motion becomes the only way to understand the section.
+
+### 05 - Local Trust: Found And Verified
+
+Purpose:
+
+- Connect visibility to verification and trust before contact.
+- Show that local attention still needs the website and proof path.
+
+Visual references:
+
+- `Screenshot Tool by cloudHQ 29_06_2026 17_48_48.png`
+- `Screenshot Tool by cloudHQ 29_06_2026 17_50_10.png`
+- `gpt5.2-june15.png`
+
+Composition:
+
+- Split editorial section.
+- Left: strong heading and short explanation slot.
+- Right: local trust artifact.
+- Artifact can show map lines, radius, dots, service area, review/proof
+  placement, listing/page agreement, and next-step markers.
+
+Design/content separation:
+
+- The artifact may borrow visual forms from SEO screenshots.
+- Replace any unsafe literal metrics or ranking claims later.
+- Do not reject the map/radius/checklist design because a reference uses fake
+  metrics.
+
+Mobile:
+
+- Text first, artifact second.
+- Artifact must remain readable.
+
+Failure conditions:
+
+- The artifact dominates the buyer message.
+- Tiny unreadable map UI.
+- A basic two-column text section with no visual point.
+
+### 06 - Clinic Scenario: Practice Front Door
+
+Purpose:
+
+- Make clinic-first priority visible and credible.
+- Show the website as the practice front door.
+
+Visual references:
+
+- `home-v5.png`
+- `Screenshot Tool by cloudHQ 29_06_2026 17_49_23.png`
+
+Composition:
+
+- Light premium section.
+- Large scenario card.
+- Left column: situation/evidence.
+- Right column: dark correction/connection panel.
+- Bottom strip: shared handoff path.
+- The scenario should feel observed and practical.
+
+Visual content slots:
+
+- treatment clarity
+- patient trust
+- consultation confidence
+- proof near decision
+- request lands
+- someone owns it
+- proof returns
+
+Mobile:
+
+- Lead with clinic positioning.
+- Scenario card stacks cleanly.
+- Dark correction panel remains readable.
+
+Failure conditions:
+
+- Generic healthcare landing page.
+- EMR/compliance/software feel.
+- Medical claims or treatment-result claims in final copy.
+
+### 07 - Work Proof: Website Work You Can Inspect
+
+Purpose:
+
+- Prove craft and credibility with visible work.
+- Avoid invented numbers.
+- Let screenshots carry proof.
+
+Visual references:
+
+- `gpt5.2-june15.png`
+- `home-v5.png`
+- `home-v1.png`
+
+Composition:
+
+- One dominant inspectable screenshot.
+- Smaller supporting previews beside it or below it.
+- Use browser-frame treatment only if it improves clarity.
+- Avoid a simple thumbnail grid.
+- Screenshots must be large enough to inspect at desktop and mobile.
+
+Approved available assets:
+
+- `public/work/work-healthcare-service-page.png`
+- `public/work/work-home-services-site.png`
+- `public/work/work-optical-retail-site.png`
+- `public/work/work-property-management-site.png`
+- `public/work/work-support-program-site.png`
+- `public/work/work-tourism-service-site.png`
+- `public/work/work-saas-product-site.png`
 
 Asset priority:
 
-- `work-healthcare-service-page.png` - primary healthcare/practice proof.
-- `work-home-services-site.png` - primary service-business proof.
-- `work-optical-retail-site.png` - optional secondary healthcare/retail-adjacent
-  proof only if it fits visually.
-- `work-property-management-site.png` - optional serious service-business proof.
-- `work-support-program-site.png` - lower priority.
-- `work-tourism-service-site.png` - lower priority.
-- `work-saas-product-site.png` - exclude from Home unless the user explicitly
-  approves it later.
+1. `work-healthcare-service-page.png`
+2. `work-home-services-site.png`
+3. `work-optical-retail-site.png`
+4. `work-property-management-site.png`
+5. `work-support-program-site.png`
+6. `work-tourism-service-site.png`
 
-Proof labels must be neutral and honest. Do not invent client names, outcomes,
-locations, dates, ratings, metrics, or testimonials. If the proof type is
-unclear, mark it as needing user confirmation before final copy.
+Exclude `work-saas-product-site.png` from Home unless the user explicitly
+approves it.
 
-## Section Plan
+Proof labels:
 
-### 01 - Hero
+- Keep labels neutral and honest.
+- Do not invent client names, results, dates, metrics, rankings, review counts,
+  or testimonials.
+- If proof type is uncertain, label it as demonstration or ask the user before
+  final copy.
 
-**Heading:** Work comes in. Too much slips away.
+CTA:
 
-**Section job:** Establish immediate recognition and name the core MindWP
-promise: work is arriving, but the path around the website is where it leaks.
+- `See the work` may appear here as secondary action.
 
-**Starter content / copy direction:** Calls, forms, quote requests, and
-consultation enquiries already arrive. The problem is what happens next. MindWP
-builds smart websites with the handling path around them, so enquiries land
-somewhere useful and keep moving.
+Mobile:
 
-**Visual design direction:** Dark navy editorial hero. Strong left-side copy.
-Right side shows a working-day enquiry stack with concrete states:
+- Keep the main screenshot large enough to understand.
+- Supporting previews can stack.
 
-- Missed call
-- Form enquiry
-- Consultation request
-- Quote follow-up
-- Review request
-- Next step assigned
+Failure conditions:
 
-The stack should feel like observed business pressure, not like software UI.
+- Tiny gallery grid.
+- Too many proof items.
+- Fake labels or fake results.
+- SaaS product proof without user approval.
 
-**Hierarchy/dominance:** Primary page peak. Highest dominance.
+### 08 - Compounding / Operational Payoff
 
-**Possible interaction:** Subtle state/highlight movement across the enquiry
-stack is allowed. It must not become product UI.
+Purpose:
 
-**Mobile behaviour:** Lead with the heading and primary CTA. Follow with the
-stack as a compact, readable sequence. Keep any motion optional and nonessential.
+- Show that this is not a one-time launch.
+- Land the operational idea that repeated good handling becomes better proof.
 
-**Fail conditions:** Dashboard, CRM panel, fake app screen, fake metrics, fake
-ratings, vague agency hero, or a hero that only says MindWP builds websites.
+Visual references:
 
-### 02 - Where Work Slips
+- `home-v1.png`
+- `glmp5.2-26june.png`
 
-**Heading:** The work is already there. These are the leaks.
+Composition:
 
-**Section job:** Show that the buyer's business is active and that leakage
-happens in ordinary working-day moments.
+- Editorial heading with large illustrated system artifact.
+- Artifact can use connected documents, calendar, message, review/proof, and
+  follow-up objects.
+- This is one of two allowed places for light 3D/depth.
 
-**Starter content / copy direction:** The business is not quiet. Calls come in
-while the team is busy. Forms wait in inboxes. Consultation requests sit too
-long. Quotes go out and nobody knows who followed up. Good work finishes, but
-proof never makes it back to the website.
+Motion:
 
-**Visual design direction:** Editorial evidence board. It should feel observed
-and specific, not like generic pain cards.
+- Subtle parallax or layered float is allowed.
+- Avoid ambient loops that distract.
 
-Useful content blocks:
+Mobile:
 
-- The missed call
-- The waiting form
-- The quiet quote
-- The forgotten review
-- The unclear next step
-- The local trust gap
+- Illustration simplifies.
+- Keep the payoff line visible.
 
-**Hierarchy/dominance:** Quiet/supporting, but visually shaped enough to avoid
-flatness.
+Failure conditions:
 
-**Possible interaction:** None required. If used, a simple progressive reveal
-can sequence the leak examples.
+- Fake workflow product UI.
+- Too many panels.
+- Repeating the five systems explanation again.
 
-**Mobile behaviour:** Present as a readable evidence stack with varied emphasis.
-Avoid six identical blocks.
+### 09 - Built By Builders / Fit
 
-**Fail conditions:** Six equal feature cards, repeated "missed leads" wording,
-generic agency pain points, or over-explaining the whole system too early.
+Purpose:
 
-### 03 - Contact Form Is Not The Finish Line
+- Establish credibility without vanity.
+- Filter out poor-fit buyers.
 
-**Heading:** The contact form is not the finish line.
+Visual references:
 
-**Section job:** Reframe the normal website endpoint as the start of real
-handling.
+- `home-v1.png`
+- `home-v5.png`
+- `glm5.524june.png`
 
-**Starter content / copy direction:** Most websites stop when someone calls,
-clicks, or submits. That is exactly where the real handling starts. A MindWP
-website carries the enquiry forward - answered, owned, followed up, and turned
-into proof.
+Composition:
 
-**Visual design direction:** Strong contrast section:
+- Calm editorial split.
+- One side: builder-led credibility.
+- Other side: good fit / not fit.
+- Can include a compact timeline from 2015 to now.
 
-- Most websites stop here.
-- MindWP carries the enquiry forward.
+Content facts allowed:
 
-This should be a visual and typographic moment, not a plain paragraph section.
+- Building WordPress/service-business websites since 2015.
+- Small senior team.
+- Builder-led.
+- Good fit: established, active, meaningful enquiry value, leakage around trust,
+  response, follow-up, proof.
+- Not fit: brand-new business with no traction, cheapest-site shopper,
+  brochure-only redesign, hype seeker, guarantee buyer.
 
-**Hierarchy/dominance:** Secondary strong section.
+Mobile:
 
-**Possible interaction:** A small before/after transition or scroll reveal can
-help, but the contrast must read without interaction.
+- Stack into clear good-fit/not-fit groups.
 
-**Mobile behaviour:** Keep the contrast immediate. Use stacked statements with
-clear visual separation.
+Failure conditions:
 
-**Fail conditions:** CRM language, workflow software, dashboard panels, generic
-process diagram, or a plain heading-paragraph treatment.
+- Founder vanity.
+- Fake team proof.
+- Aggressive exclusion.
+- Generic agency about copy.
 
-### 04 - What MindWP Actually Builds
+### 10 - Review: Find Where Work Slips
 
-**Heading:** A smart website with the handling built in.
+Purpose:
 
-**Section job:** Make the offer tangible and decisive.
+- Make the next step practical and low-pressure.
+- Explain the diagnostic review without turning it into a fake score/report.
 
-**Starter content / copy direction:** The page explains the offer clearly. Trust
-appears where decisions happen. Calls, forms, messages, quote requests, and
-consultation enquiries land somewhere useful. The next step stays visible. Good
-work becomes proof.
+Visual references:
 
-**Visual design direction:** Major offer peak. It should feel tangible,
-specific, and built. It can combine strong typography, proof/media, and a
-structured path, but it must not collapse into a small feature grid.
+- `glm5.524june.png`
+- `Screenshot Tool by cloudHQ 29_06_2026 17_50_10.png`
+- `home-v1.png`
 
-Content groups:
+Composition:
 
-- Clear offer
-- Trust before contact
-- Enquiry landing
-- Response path
-- Follow-up ownership
-- Proof loop
+- Dark background.
+- One large paper-like diagnostic artifact.
+- Artifact can show categories, checklist groups, or review areas.
+- It should feel like a senior written review, not a software report or audit
+  score.
 
-**Hierarchy/dominance:** Primary visual peak.
+Review areas:
 
-**Possible interaction:** Optional focused highlights across content groups if
-they clarify the connected offer.
+- clarity
+- trust
+- enquiry path
+- response
+- follow-up
+- proof
+- priority
 
-**Mobile behaviour:** Keep the offer visible early. Stack content groups in a
-deliberate sequence, not equal cards.
+CTA:
 
-**Fail conditions:** Small generic feature cards, SaaS feature language,
-platform setup language, or abstract web-design claims.
+- Primary CTA: `Request a Website Review`
 
-### 05 - Certainty Before Enquiry
+Mobile:
 
-**Heading:** They do not need more information. They need enough certainty to
-ask.
+- Artifact remains readable or simplifies to stacked review groups.
 
-**Section job:** Explain the pre-enquiry trust problem without pressure or hype.
+Failure conditions:
 
-**Starter content / copy direction:** A serious buyer or patient is not only
-reading. They are checking whether they understand the service, trust the
-provider, and know what to do next.
+- Fake audit score.
+- Fake report metrics.
+- Dashboard.
+- Quote tool.
+- Pressure-selling.
 
-**Visual design direction:** Quiet premium editorial section. Strong typography,
-calm spacing, and minimal support. This section should slow the page down after
-the offer peak.
+### 11 - FAQ
 
-**Hierarchy/dominance:** Quiet/supporting.
+Purpose:
 
-**Possible interaction:** None.
+- Remove practical objections before the close.
 
-**Mobile behaviour:** Keep the line breaks elegant and the reading measure
-tight. Avoid long paragraphs.
+Visual references:
 
-**Fail conditions:** Conversion-rate language, medical claims, aggressive CTA
-pressure, or filler copy that sounds like a marketing blog.
+- `home-v5.png`
+- `gpt5.2-june15.png`
 
-### 06 - The Next Step Stays Visible
+Composition:
 
-**Heading:** The enquiry arrives. The next step has to stay visible.
-
-**Section job:** Show the post-enquiry handoff in plain operational language.
-
-**Starter content / copy direction:** The enquiry should not depend on whoever
-remembers to check the inbox. The right person needs to know. The next step
-needs to be clear. Follow-up should not disappear into memory.
-
-**Visual design direction:** Clean handoff structure. A horizontal flow can work
-on desktop and become vertical on mobile.
-
-Content steps:
-
-- Lands somewhere useful
-- Right person knows
-- Next step is clear
-- Follow-up stays visible
-
-**Hierarchy/dominance:** Quiet/supporting with enough structure to carry the
-handoff idea.
-
-**Possible interaction:** None required. A subtle active step may help if
-implemented with accessible states.
-
-**Mobile behaviour:** Vertical handoff. Keep step labels short and readable.
-
-**Fail conditions:** "Your CRM", quote/invoice tool framing, automation-product
-feel, or fake task-management UI.
-
-### 07 - Five Systems, One Connected Site
-
-**Heading:** Five systems. One connected site.
-
-**Subheading:** Find. Catch. Carry. Prove. Repeat.
-
-**Section job:** Explain the connected MindWP model as one path that protects
-where work usually slips.
-
-**Starter content / copy direction:** MindWP protects the places where work
-usually slips.
-
-System spine:
-
-- Find - nearby customers can find and verify you.
-- Catch - enquiries are caught and answered.
-- Carry - follow-up has an owner, status, and next step.
-- Prove - good work becomes visible proof.
-- Repeat - proof supports the next find.
-
-Smart Website Systems is the base/front door connecting the path, not one equal
-card among five.
-
-**Visual design direction:** One of the strongest sections. It should feel like
-a connected system, not a services menu.
-
-**Hierarchy/dominance:** Primary visual peak.
-
-**Possible interaction:** A stepper or progressive highlight can work if it
-helps the reader understand the path.
-
-**Mobile behaviour:** Preserve sequence and relationship. Use an ordered path or
-accordion-like reveal only if all essentials remain visible.
-
-**Fail conditions:** Five equal cards, flat table, generic services grid, or a
-design that makes Smart Website Systems look like just another service tile.
-
-### 08 - Local Trust: Found And Verified
-
-**Heading:** Found nearby. Trusted before they call.
-
-**Section job:** Connect visibility to verification and trust before contact.
-
-**Starter content / copy direction:** Visibility only helps when people can
-verify the business, understand the service, and see a clear next step. Local
-trust starts before the call.
-
-**Visual design direction:** Split section. Strong text left, local trust visual
-right. A local/map/trust treatment is allowed here when it stays honest and
-non-fake.
-
-**Hierarchy/dominance:** Secondary strong section.
-
-**Possible interaction:** None required.
-
-**Mobile behaviour:** Text first, supporting visual second. Do not let the local
-visual dominate or become unreadable.
-
-**Fail conditions:** Ranking guarantees, fake map-pack result, fake ratings,
-"dominate Google", or SEO hype language.
-
-### 09 - Work Proof
-
-**Heading:** Real work, shown clearly.
-
-**Section job:** Prove craft and credibility with visible work, not invented
-numbers.
-
-**Starter content / copy direction:** MindWP earns trust with visible work, not
-invented numbers. Start with healthcare/practice proof, then show serious
-service-business work.
-
-**Visual design direction:** True proof showcase, not a basic screenshot grid.
-Screenshots must be large enough to prove craft. Use fewer, larger proof moments
-over many small thumbnails.
-
-Proof asset priority:
-
-- Primary: `work-healthcare-service-page.png`
-- Primary service-business: `work-home-services-site.png`
-- Optional: `work-optical-retail-site.png`
-- Optional: `work-property-management-site.png`
-- Lower priority: `work-support-program-site.png`
-- Lower priority: `work-tourism-service-site.png`
-- Exclude: `work-saas-product-site.png` unless later approved
-
-Labels must be neutral and honest. Do not invent client names, outcomes,
-locations, dates, ratings, metrics, or testimonials. If proof type is unclear,
-mark it as needing user confirmation before final copy.
-
-**Hierarchy/dominance:** Primary visual peak.
-
-**Possible interaction:** Gallery/filter only if it helps comparison and does
-not hide essential proof. `See the work` may appear here as a secondary action.
-
-**Mobile behaviour:** Keep screenshots large enough to inspect. Use stacked
-proof stories or a usable gallery with visible captions.
-
-**Fail conditions:** Basic screenshot grid, tiny unreadable screenshots, fake
-results, fake labels, SaaS product proof, or overusing lower-priority assets.
-
-### 10 - Specialist Clinics
-
-**Heading:** What this looks like for a specialist clinic.
-
-**Section job:** Make the clinic-first audience priority explicit and credible.
-
-**Starter content / copy direction:** For a specialist clinic, the website is
-the practice front door. Patients need treatment clarity, trust, proof, and a
-safe next step into a consultation or booking path.
-
-Content points:
-
-- Treatment clarity
-- Patient trust
-- Consultation confidence
-- Proof near the decision
-- Follow-up path
-
-**Visual design direction:** Clinic-first, premium, specific. This should feel
-like a strong market-positioning section and should not look like a generic
-healthcare landing page.
-
-**Hierarchy/dominance:** Secondary strong section.
-
-**Possible interaction:** Optional market-fit tabs or decision-moment highlights
-only if they clarify the clinic path.
-
-**Mobile behaviour:** Keep clinic positioning and patient trust visible before
-any supporting detail.
-
-**Fail conditions:** Healthcare software, EMR, compliance framing, medical
-claims, patient-result claims, or generic clinic stock-page tone.
-
-### 11 - Serious Service Businesses
-
-**Heading:** Serious service businesses need the same path.
-
-**Section job:** Keep service businesses included without taking over the
-homepage.
-
-**Starter content / copy direction:** For roofers, HVAC firms, plumbers, and
-other serious service businesses, the leak is often the considered job that goes
-quiet - the quote nobody followed up, the service area that is unclear, the
-proof that sits unused.
-
-Content points:
-
-- Quote requested
-- Survey discussed
-- Replacement considered
-- Follow-up missed
-- Proof not visible
-
-**Visual design direction:** Companion section to clinics, but visually
-different. It should feel practical and commercially serious, not like cheap
-contractor lead generation.
-
-**Hierarchy/dominance:** Quiet/supporting.
-
-**Possible interaction:** None required.
-
-**Mobile behaviour:** Keep compact and confident. Avoid making this section
-feel larger than the clinic section.
-
-**Fail conditions:** Emergency call-out framing, cheap contractor lead-gen tone,
-or a sudden shift into broad agency positioning.
-
-### 12 - Nothing Depends On Memory
-
-**Heading:** Nothing depends on someone remembering.
-
-**Section job:** Land the operational payoff in one strong idea.
-
-**Starter content / copy direction:** Important work should not rely on
-scattered inboxes, owner memory, or someone checking later. The next step needs
-somewhere to live.
-
-**Visual design direction:** Short dark statement band. Mostly typography.
-Strong and simple.
-
-**Hierarchy/dominance:** Quiet/supporting with strong tonal contrast.
-
-**Possible interaction:** None.
-
-**Mobile behaviour:** Keep concise. One idea only.
-
-**Fail conditions:** Over-explaining systems again, fake workflow UI, or turning
-the moment into another feature section.
-
-### 13 - The Review Finds Where Work Slips
-
-**Heading:** The review finds where work slips.
-
-**Section job:** Explain the diagnostic next step and make the CTA feel useful,
-practical, and low-risk.
-
-**Starter content / copy direction:** Before we prescribe, we look at the
-current website and handling path.
-
-Content groups:
-
-- Clarity - can people understand what you do?
-- Trust - is proof placed where decisions happen?
-- Enquiry path - do calls, forms, and messages land somewhere useful?
-- Response - what happens after contact?
-- Follow-up - who owns the next step?
-- Proof - does good work become visible?
-- Priority - what should be fixed first?
-
-**Visual design direction:** Conversion/planning peak, not a heavy visual-object
-section. Keep it simple, practical, multi-content, and diagnostic. It should
-feel like a clear next step, not a product feature.
-
-**Hierarchy/dominance:** Secondary strong section and conversion/planning peak.
-It is not a primary visual peak.
-
-**Possible interaction:** Optional checklist expansion if useful, but all
-diagnostic categories must remain understandable without interaction.
-
-**Mobile behaviour:** Use compact diagnostic groups with a clear CTA path.
-
-**Fail conditions:** Review document visual, audit score, fake report,
-dashboard, quote tool, heavy visual-object treatment, or pressure-selling.
-
-### 14 - Built By Builders / Honest Fit
-
-**Heading:** Built by the people who actually build it.
-
-**Section job:** Establish credible fit without vanity or fake proof.
-
-**Starter content / copy direction:** MindWP is builder-led, with
-service-business website craft going back to 2015 and a small senior team. This
-is for established businesses and clinics with real activity and real leakage -
-not cheap-site shoppers, brochure-only redesigns, or hype seekers.
-
-Content groups:
-
-- Built by builders
-- Good fit
-- Not fit
-
-**Visual design direction:** Calm editorial split. Keep tone direct and
-measured.
-
-**Hierarchy/dominance:** Quiet/supporting.
-
-**Possible interaction:** None.
-
-**Mobile behaviour:** Stack content groups and keep the "good fit / not fit"
-distinction clear.
-
-**Fail conditions:** Fake team proof, founder vanity, aggressive exclusion, or
-generic about-agency copy.
-
-### 15 - FAQ
-
-**Heading:** Questions before the review.
-
-**Section job:** Remove common objections before the final close.
-
-**Starter content / copy direction:** Answers should be practical, calm, short,
-and aligned with service boundaries.
+- Quiet light section.
+- Clean accordion or open list.
+- Large tap targets.
+- Visible focus states.
 
 FAQ topics:
 
@@ -614,88 +889,224 @@ FAQ topics:
 - Is this only for clinics?
 - What happens after the review?
 
-**Visual design direction:** Clean FAQ. Accessible accordion later is fine, but
-answers should not hide core claims needed for trust.
+Failure conditions:
 
-**Hierarchy/dominance:** Quiet/supporting.
+- Overlong answers.
+- Backend platform names.
+- `your CRM`.
+- Guarantee language.
 
-**Possible interaction:** Accessible accordion.
+### 12 - Final CTA
 
-**Mobile behaviour:** Accordion rows need large tap targets, visible focus
-states, and readable open content.
+Purpose:
 
-**Fail conditions:** Backend platform names, "your CRM", guarantees,
-overlong answers, or vague agency positioning.
+- Close with one clear diagnostic action.
 
-### 16 - Final CTA
+Visual references:
 
-**Heading:** If the website is not carrying the work, find out where it slips.
+- `home-v5.png`
+- `glm5.524june.png`
+- `Screenshot Tool by cloudHQ 29_06_2026 17_50_10.png`
 
-**Section job:** Close with one clear diagnostic action.
+Composition:
 
-**Starter content / copy direction:** Request a calm review of the website and
-the handling path around it.
+- Strong dark close.
+- Centered message.
+- One action only.
+- Optional small path/status line underneath.
 
-**CTA:** Request a Website Review
+CTA:
 
-**Visual design direction:** Strong dark final close. One action only.
+- `Request a Website Review`
 
-**Hierarchy/dominance:** Primary visual peak.
+Mobile:
 
-**Possible interaction:** None.
+- Keep heading and CTA visible without competing links.
 
-**Mobile behaviour:** Keep the message and one CTA visible without a cluster of
-secondary links.
+Failure conditions:
 
-**Fail conditions:** `See the work`, book a demo, get a free quote, start
-trial, CTA cluster, or pressure language.
+- CTA cluster.
+- `See the work` in the final close.
+- Book demo / free quote / free trial language.
+- Pressure language.
 
-## Later Implementation Notes
+## Anti-Flat Rules
 
-- Keep the Home route thin.
-- Build a fresh Home surface during the implementation sprint; do not restore a
-  failed draft or copy old visual shells.
-- Use existing shared primitives where they help: `Section`, `Container`,
-  `Button`, `Badge`, `Eyebrow`, reveal hooks, and existing media foundations.
-- Prefer readable page-level CSS for Home-specific composition and responsive
-  behavior.
-- Use isolated modules only for genuinely isolated interactive islands, unusual
-  state styling, or selector-risk containment.
-- Do not change tokens, shared shell, header, footer, or global primitives
-  unless the implementation scope explicitly allows it or the current foundation
-  blocks the page from working.
+These rules exist because previous drafts failed by turning strategy into flat
+sections.
 
-## QA And Validation Plan For The Build Sprint
-
-Before approving the future homepage build:
-
-- Confirm first-glance commercial meaning at desktop and mobile sizes.
-- Confirm the page reads as five acts, not 16 repeated sections.
-- Confirm visual peaks and quiet sections are distinguishable.
-- Confirm clinics lead proof and market positioning while service businesses
-  remain included.
-- Confirm proof screenshots are large enough to inspect.
-- Confirm all proof labels are honest and uninflated.
-- Confirm no backend platform names, "your CRM", fake proof, fake metrics,
-  ratings, testimonials, guarantees, or SaaS/product framing appear.
-- Confirm CTAs use approved language and the final CTA has one action only.
-- Confirm interactions are keyboard accessible and nonessential to
-  comprehension.
-- Confirm reduced-motion behavior.
-- Run source validation after implementation: `pnpm check`, `pnpm build`, and
-  `pnpm test`.
-- Capture rendered desktop screenshots at 1440px and 1280px.
-- Capture mobile at 400px.
-- Capture tablet at 1024px when nav, media, grids, multi-column sections, or
-  major responsive structure changes.
-- Capture important section crops.
-- Passing build is not visual approval; rendered quality must prove the plan.
-
-## Failed Draft Warning
-
-- Do not make 16 flat sections.
+- Do not build 16 equal sections.
 - Do not treat the section list as the design.
-- Do not let simplified guidance become visually empty.
-- Do not make every section heading plus paragraph plus rows.
-- Do not use small repeated cards as the default visual answer.
-- Do not stop at passing build; visual quality must be proven in rendered QA.
+- Do not use repeated equal card grids as the default answer.
+- Do not make every section heading + paragraph + rows.
+- Do not make all sections the same width, density, or rhythm.
+- Do not use small cards when one large artifact would carry the point better.
+- Do not let light sections become blank white space with tiny content.
+- Do not let dark sections become decorative only.
+- Do not make proof screenshots too small to inspect.
+- Do not ship a first draft because it passes build.
+
+When a section feels flat, fix in this order:
+
+1. Clarify section job.
+2. Change composition.
+3. Change hierarchy and scale.
+4. Add or strengthen the artifact.
+5. Rewrite copy.
+6. Add motion only if the static design already works.
+
+## Motion And 3D Allowance
+
+Motion is allowed, but only where it clarifies meaning.
+
+Allowed motion:
+
+- Hero artifact row highlight.
+- Hero artifact subtle 3D tilt/parallax.
+- Handoff + five systems step highlight.
+- Compounding artifact subtle layered float.
+- FAQ accordion.
+- Normal hover/focus/pressed states.
+
+GSAP is allowed if it improves sequence or handoff. Use it only in an isolated
+client island. Do not convert the full page to a client component.
+
+Motion requirements:
+
+- Static design must work first.
+- No reveal-gating hero heading, primary CTA, LCP content, or core proof.
+- Reduced motion must keep content visible and understandable.
+- No hover-only meaning.
+- No ambient background loops.
+- No scroll hijacking unless the section itself earns it and remains accessible.
+
+## Implementation Approach
+
+Do not implement until the section composition is clear.
+
+Suggested file shape:
+
+- Keep `src/app/page.tsx` thin.
+- Add a Home page component or local section components near the route.
+- Use readable page-level CSS for Home-specific composition.
+- Use existing global primitives when they help:
+  - `Section`
+  - `Container`
+  - `Button`
+  - `Badge`
+  - `Eyebrow`
+  - `Reveal`
+  - `RevealMotion`
+- Keep section-specific components local until repeated need is proven.
+- Use isolated client components only for hero motion, systems motion, or FAQ.
+- Do not create generic marketing section factories.
+
+CSS approach:
+
+- Use existing tokens and typography roles.
+- Prefer role-backed color tokens over raw values.
+- Page CSS can own local composition, grids, artifacts, responsive rules, and
+  section rhythm.
+- Section CSS modules are optional only for isolated interactive islands or
+  selector-risk containment.
+- Reserve display scale for hero and major visual peaks.
+- Use `aspect-ratio` for artifacts and proof media.
+- Use `min-width: 0` where text lives inside flex/grid.
+- Avoid fixed heights unless a visual artifact needs stable framing.
+
+Shell/global changes:
+
+- Do not change tokens, shared shell, header, footer, or global primitives
+  casually.
+- They may be changed only if scoped or if the homepage cannot work well without
+  the change. Report why.
+
+## Accessibility And SEO Requirements
+
+- Use real semantic HTML.
+- Important headings, claims, CTAs, and proof labels must be crawlable text.
+- Use logical heading order.
+- Preserve keyboard order.
+- Keep focus states visible.
+- Keep touch targets usable.
+- Do not rely on color alone for meaning.
+- Respect reduced motion.
+- Reserve media space to avoid layout shift.
+- Do not create fake or unsupported structured data.
+
+## Validation And QA
+
+Docs-only changes:
+
+```bash
+git diff --check
+```
+
+Source/page/component changes:
+
+```bash
+pnpm check
+pnpm build
+pnpm test
+```
+
+Visual homepage work also requires rendered QA:
+
+- Desktop screenshot at `1440px`.
+- Desktop screenshot at `1280px`.
+- Mobile screenshot at `400px`.
+- Tablet screenshot at `1024px` when nav, media, grids, multi-column sections,
+  or major responsive structure changes.
+- Capture section crops for:
+  - hero
+  - evidence board
+  - handoff + systems
+  - local trust
+  - clinic scenario
+  - work proof
+  - review
+  - final CTA
+
+Rendered audit checklist:
+
+- First-glance commercial meaning is clear.
+- Offer appears early enough.
+- Page reads as acts, not flat bands.
+- Visual peaks and quiet sections are distinguishable.
+- Clinic-first proof and positioning are visible.
+- Service businesses remain included.
+- Proof screenshots are large enough to inspect.
+- CTAs use approved labels.
+- Final CTA has one action only.
+- No overlap, overflow, cramped labels, or button text clipping.
+- Mobile hierarchy is not just desktop stacked.
+- Motion is nonessential and reduced-motion safe.
+- Copy boundaries are clean before approval.
+- Passing build is not visual approval.
+
+## Build Decision Checklist
+
+Before writing code, answer:
+
+- Which act is being built?
+- What buyer moment does it own?
+- What visual reference is it using?
+- What is the artifact?
+- What text is real copy and what is placeholder?
+- What proof/media does it need?
+- What does it become on mobile?
+- Does it rely on motion?
+- What would make it feel flat?
+
+If any answer is unclear, keep planning before implementation.
+
+## One-Screen Summary For Future Chats
+
+Build the MindWP homepage as a premium, dark/editorial, clinic-first page about
+work slipping between attention, trust, enquiry, response, follow-up, and proof.
+Use the screenshots as visual references only; replace their content later.
+Separate visual design from copy compliance. Build seven strong acts, not 16
+flat sections. Hero uses a dark working-day artifact. The core mechanism is one
+combined dark handoff + five-systems act. Proof uses large inspectable work
+screenshots. Clinic scenario leads market specificity. Review is the diagnostic
+entry point. Final CTA has one action: `Request a Website Review`.

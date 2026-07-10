@@ -27,7 +27,7 @@
 
 # local renderable reference snapshots
 /_dev-reference/
-
+/screenshots/
 # debug
 npm-debug.log*
 yarn-debug.log*

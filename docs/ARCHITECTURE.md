@@ -1,6 +1,6 @@
 # ARCHITECTURE — current code shape and technical rationale
 
-This doc explains the current repo shape and technical rationale. It is reference material, not the implementation checklist. Use `.agents/skills/mindwp-engineering/SKILL.md` for App Router/React architecture, `.agents/skills/mindwp-components/SKILL.md` for shell/primitives/header/footer/forms, `.agents/skills/mindwp-css/SKILL.md` for CSS/layout rules, `docs/DESIGN-SYSTEM.md` for practical CSS-system usage, and `.agents/skills/mindwp-workflow/SKILL.md` for page workflow.
+This doc explains the current repo shape and technical rationale. It is reference material, not the implementation checklist. Use `.agents/skills/mindwp-engineering/SKILL.md` for App Router/React architecture, `.agents/skills/mindwp-components/SKILL.md` for shell/primitives/header/footer/forms, `.agents/skills/mindwp-css/SKILL.md` for CSS/layout rules, `docs/DESIGN-SYSTEM.md` for practical CSS-system usage.
 
 ## Current State
 
