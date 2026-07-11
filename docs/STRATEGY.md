@@ -4,7 +4,7 @@ This is the single authority for the business, audience, offer, proof, public la
 
 ## The business
 
-MindWP builds **smart websites** for established service businesses and specialist clinics in English-speaking markets.
+MindWP builds **smart websites** for established service businesses and specialist clinics in English-speaking markets. targets or micro niche businesses. 
 
 A smart website combines:
 

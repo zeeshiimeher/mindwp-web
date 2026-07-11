@@ -7,6 +7,8 @@ MindWP is rebuilding from a clean surface. Existing files are not protected mere
 Use `.agents/skills/mindwp-site/SKILL.md` for all MindWP work.
 The skill owns document order and execution procedure. Each decision belongs in one authority only; do not duplicate rules across documents, skills, comments, and validators.
 
+Claude Code discovers skills under `.claude/skills/`, not `.agents/skills/`. `.claude/skills/mindwp-site/SKILL.md` is a thin shim that points back here so `/mindwp-site` resolves in Claude Code — it must never carry its own copy of the procedure.
+
 ## Repository posture
 
 - Keep `_dev-reference/current-site/` intact and isolated. Do not modify, import, or treat it as current guidance unless the user explicitly requests reference work.

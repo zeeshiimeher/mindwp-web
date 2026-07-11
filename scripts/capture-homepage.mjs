@@ -5,8 +5,12 @@ import { join, relative, resolve } from "node:path";
 import { tmpdir } from "node:os";
 import { chromium } from "playwright";
 
-const url = process.argv[2] ?? "http://localhost:3000/";
-const outputDir = resolve(process.argv[3] ?? join(tmpdir(), "mindwp-homepage-screenshots"));
+const args = process.argv.slice(2);
+const flags = new Set(args.filter((arg) => arg.startsWith("--")));
+const positional = args.filter((arg) => !arg.startsWith("--"));
+
+const url = positional[0] ?? "http://localhost:3000/";
+const outputDir = resolve(positional[1] ?? join(tmpdir(), "mindwp-homepage-screenshots"));
 const outputRelation = relative(process.cwd(), outputDir);
 
 if (!outputRelation || !outputRelation.startsWith("..")) {
@@ -51,11 +55,14 @@ async function capture(name, width, height, reducedMotion = false) {
 }
 
 await capture("1440", 1440, 1100);
-await capture("1280", 1280, 960);
-await capture("1024", 1024, 900);
 await capture("400", 400, 860);
-await capture("1440-reduced-motion", 1440, 1100, true);
-await capture("400-reduced-motion", 400, 860, true);
+
+if (flags.has("--full")) {
+  await capture("1280", 1280, 960);
+  await capture("1024", 1024, 900);
+  await capture("1440-reduced-motion", 1440, 1100, true);
+  await capture("400-reduced-motion", 400, 860, true);
+}
 
 await browser.close();
 console.log(outputDir);

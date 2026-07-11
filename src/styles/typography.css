@@ -1,0 +1,73 @@
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5.625rem);
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+}
+
+h2 {
+  font-size: clamp(2.75rem, 5vw, 4.75rem);
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.25vw, 2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+p,
+li {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+small {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+strong,
+b {
+  color: inherit;
+  font-weight: 650;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-emerald-deep);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1px;
+  background: currentcolor;
+}
+
+.on-dark .eyebrow {
+  color: var(--color-emerald);
+}

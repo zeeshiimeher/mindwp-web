@@ -163,10 +163,8 @@ Responsive design is recomposition, not shrinking.
 
 Required visual widths:
 
-- `1440px` desktop;
-- `1280px` desktop;
-- `1024px` tablet for all major page work;
-- `400px` mobile.
+- `1440px` desktop and `400px` mobile for every review (`pnpm capture:home` default);
+- `1280px` and `1024px`, plus a reduced-motion pass, when a composition change risks tablet breakage or the work is animated (`pnpm capture:home -- --full`).
 
 Check below `400px` when a specific composition risks overflow.
 

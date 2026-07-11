@@ -15,10 +15,10 @@ export default function Error({
         <h1>A page slipped.</h1>
         <p>An unexpected error occurred. Try again, or return to the homepage.</p>
         <div className="status-page__actions">
-          <button type="button" className="button" onClick={reset}>
+          <button type="button" className="btn" onClick={reset}>
             Try again
           </button>
-          <Link href="/" className="button button--secondary">
+          <Link href="/" className="btn btn-outline">
             Back home
           </Link>
         </div>

@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1>Page not found.</h1>
         <p>The page you requested does not exist or is not public yet.</p>
         <div className="status-page__actions">
-          <Link href="/" className="button">
+          <Link href="/" className="btn">
             Back home
           </Link>
         </div>
