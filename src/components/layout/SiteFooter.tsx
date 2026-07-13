@@ -16,11 +16,8 @@ const COLUMNS = [
   {
     title: "Industries",
     links: [
-      { href: "#clinic-scenario", label: "Healthcare Practices" },
-      { href: "#clinic-scenario", label: "Dental Implant Clinics" },
+      { href: "#clinic-scenario", label: "Specialist Clinics" },
       { href: "#work", label: "Home Services" },
-      { href: "#work", label: "Roofing" },
-      { href: "#work", label: "HVAC" },
     ],
   },
   {
@@ -28,7 +25,6 @@ const COLUMNS = [
     links: [
       { href: "#work", label: "Work" },
       { href: "#builders", label: "About" },
-      { href: "#review", label: "Pricing" },
       { href: "#review", label: "Contact" },
     ],
   },
@@ -63,11 +59,6 @@ export function SiteFooter() {
         <p>
           &copy; {year} MindWP. Building service-business websites since 2015.
         </p>
-        <div className="site-footer__legal">
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <a href="/cookies">Cookies</a>
-        </div>
       </div>
     </footer>
   );

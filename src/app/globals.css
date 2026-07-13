@@ -3,7 +3,6 @@
 @import "../styles/layout.css";
 @import "../styles/buttons.css";
 @import "../styles/form.css";
-@import "../styles/pages/home.css";
 
 :root {
   color-scheme: light;
@@ -102,6 +101,10 @@ svg {
 
 .on-dark :focus-visible {
   outline-color: var(--color-emerald);
+}
+
+.on-bone {
+  background: var(--color-bone);
 }
 
 .status-page {

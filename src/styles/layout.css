@@ -146,16 +146,3 @@
   color: var(--color-text-inverse-muted);
 }
 
-.site-footer__legal {
-  display: flex;
-  gap: var(--space-5);
-}
-
-.site-footer__legal a {
-  color: var(--color-text-inverse-muted);
-  text-decoration: none;
-}
-
-.site-footer__legal a:hover {
-  color: var(--color-white);
-}

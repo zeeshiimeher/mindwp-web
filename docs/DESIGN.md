@@ -18,6 +18,8 @@ The visual experience should demonstrate:
 
 Avoid the repeated agency template of centred heading, paragraph, three equal cards, and CTA. Cards and grids are valid only when the content needs them.
 
+MindWP builds a working website, not a software product. Do not borrow SaaS-dashboard furniture — status chips, segmented pill tabs, dashboard rows, or fake analytics counters — to illustrate a point that plain typography or a diagram can carry honestly.
+
 ## Design before implementation
 
 For every major page, decide before coding:
@@ -51,6 +53,8 @@ Short principle strips should behave as transitions, not full template sections.
 
 Do not give every section the same container, top padding, heading placement, media ratio, border radius, or reveal animation.
 
+A consistent header shell (eyebrow, heading, lead — centred or split, whichever that section already uses) is connective tissue, not repetition, and does not need to be forced into different alignments for variety. Repetition lives in what gets built *below* the header: if three sections each resolve into a numbered three-item row, or every card grid uses the same tint-and-icon pattern, that inner composition is what must diversify — cards here, a two-column split there, a diagram, a spine, a signed note, plain prose. Judge sameness by the inner device, not by whether two headings share an alignment.
+
 ## CSS decision
 
 MindWP uses **custom CSS**, not Tailwind, as its visual authoring system.
@@ -58,6 +62,9 @@ MindWP uses **custom CSS**, not Tailwind, as its visual authoring system.
 - Global CSS owns reset behavior, shared accessibility states, true brand tokens, and stable shell/form foundations.
 - Page CSS owns art direction, composition, local variables, responsive behavior, and signature visuals.
 - Component CSS owns an isolated interaction or genuinely reused behavior.
+- Bem class system 
+- Shared global css 
+- Page specific css file 
 
 Use local custom properties and one-off values when they express a deliberate page concept. Promote a value to a global token only after it becomes a stable repeated role.
 
@@ -83,6 +90,8 @@ Page-specific gradients, masks, perspective, project accents, textures, and chor
 
 Typography carries much of the brand personality.
 
+- for main heading h1,h2,h3 body text or etc do not add custom font sizes into bem classes try to use the global typography like h1{},h2{},body etc.
+- you are allowed to use the typo tokens if in some places you need h3 smaller than global you can use the global tokens.
 - Choose the display and body families for the approved art direction, not because they already exist in the repository.
 - Use display scale, weight, width, italic, contrast, and line breaks intentionally.
 - Allow different section headings to have different roles and compositions.
@@ -95,7 +104,7 @@ Avoid using viewport scaling as a substitute for a coherent type system. Test im
 ## Color and material
 
 Choose a compact palette with named roles and verified contrast. Brand color should guide attention rather than cover every component.
-
+- Follow the global css and global tokens.
 Depth may come from:
 
 - tonal variation;
@@ -107,6 +116,8 @@ Depth may come from:
 - high-contrast scene changes.
 
 Do not use effects simply to imitate a trend. Status colors retain actual state meaning.
+
+The homepage's three surfaces each carry a distinct role: paper (default light), navy (dark, high-conviction moments), and a warm bone tone (real-work proof galleries — an editorial print environment, not another light-mode paper). A brand accent (emerald) stays a guide for attention — lines, icons, active states — and should not become a background fill or tint. A pastel wash of the accent color reads as a SaaS onboarding screen; a tonal shift between paper, bone, and navy reads as art direction.
 
 ## Layout
 
@@ -138,11 +149,12 @@ Do not create fake analytics, fabricated client interfaces, invented maps, fake 
 
 ## Motion
 
-Use motion at three levels:
+Use motion at:
 
 1. **Feedback:** CSS transitions for hover, focus, active, selected, and control states.
 2. **Choreography:** coordinated CSS or GSAP sequences for handoff, contrast, connection, or proof.
 3. **Atmosphere:** restrained ambient movement, parallax, or pointer response that adds depth without carrying essential meaning.
+4. Entry page load Animations on section in view.
 
 Concentrate choreography into a few authored moments instead of revealing every block the same way.
 
@@ -163,8 +175,9 @@ Responsive design is recomposition, not shrinking.
 
 Required visual widths:
 
-- `1440px` desktop and `400px` mobile for every review (`pnpm capture:home` default);
-- `1280px` and `1024px`, plus a reduced-motion pass, when a composition change risks tablet breakage or the work is animated (`pnpm capture:home -- --full`).
+- `1640px` desktop tablet `1024` and `400px` mobile for every review (`pnpm capture:home` default);
+- `1280px` and `766`, plus a reduced-motion pass, when a composition change risks tablet breakage or the work is animated (`pnpm capture:home -- --full`).
+- most of the times mindwp-web already running dev server on localhost.you dont need to close the server you can keep loading the localhost so i can see the live.
 
 Check below `400px` when a specific composition risks overflow.
 
@@ -187,3 +200,18 @@ Review:
 - whether the result feels specific to MindWP.
 
 Revise from rendered evidence until both technical and visual standards are met.
+
+
+Web developer Intsructions 
+Once rebuild the page htlm and css.
+
+- Follow section>container 
+- Follow proper flex system 
+- if a section have two inner div make sure to give .container class to both.
+- use the gap system try to use the .container default gap mostly as well.
+- you can use the grid and try to use minmax way so it stays proper responsive.
+- keep the responsive behaviour in mind while layouting the html and writing the css.
+- dont use seperate html for desktop or for mobile for a section.
+- follow the section alternate bg rythm 
+- use proper est html,css,flexbox and grid practices.
+- add hover styles and hover little interactions.

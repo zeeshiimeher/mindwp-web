@@ -8,7 +8,7 @@ import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
-  const [solid, setSolid] = useState(false);
+  const [solid, setSolid] = useState(true);
 
   useEffect(() => {
     const hero = document.getElementById("hero");
