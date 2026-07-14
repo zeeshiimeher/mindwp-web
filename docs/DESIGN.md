@@ -117,7 +117,7 @@ Depth may come from:
 
 Do not use effects simply to imitate a trend. Status colors retain actual state meaning.
 
-The homepage's three surfaces each carry a distinct role: paper (default light), navy (dark, high-conviction moments), and a warm bone tone (real-work proof galleries — an editorial print environment, not another light-mode paper). A brand accent (emerald) stays a guide for attention — lines, icons, active states — and should not become a background fill or tint. A pastel wash of the accent color reads as a SaaS onboarding screen; a tonal shift between paper, bone, and navy reads as art direction.
+The homepage's three surfaces each carry a distinct role: paper (default light), navy (dark, high-conviction moments), and a cool mist tint (quiet secondary sections and real-work proof galleries — an editorial print environment, not another light-mode paper). Mist shares an undertone with the emerald accent rather than fighting it; an earlier warm "bone" tone was tried and dropped for clashing with navy's cool blue-dark. A brand accent (emerald) stays a guide for attention — lines, icons, active states — and should not become a background fill or tint. A pastel wash of the accent color reads as a SaaS onboarding screen; a tonal shift between paper, mist, and navy reads as art direction.
 
 ## Layout
 
@@ -126,6 +126,7 @@ Use containers as alignment anchors, not cages. Full-bleed media, controlled ove
 Use grid for deliberate two-dimensional composition and flex for rows, clusters, and alignment. Prefer intrinsic sizing. Reserve absolute positioning for controlled layers, annotations, and decoration rather than normal content flow.
 
 Section spacing should express relationship and pacing. Adjacent parts of one act may sit close; a major change of argument or atmosphere may need more space.
+Section header like eyebrow ,heading paragpah is not a pattern. eyebrow can be option but we need h2 and paragraph atleast for each section so the main thing is inner content that can be designed in any way.we can take new container inside the section.
 
 ## Components
 
@@ -215,3 +216,4 @@ Once rebuild the page htlm and css.
 - follow the section alternate bg rythm 
 - use proper est html,css,flexbox and grid practices.
 - add hover styles and hover little interactions.
+- Use display flex as possible as you can and also avoid adding max width first natuarrly fall everything then optimize.

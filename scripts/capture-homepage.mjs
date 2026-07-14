@@ -55,11 +55,11 @@ async function capture(name, width, height, reducedMotion = false) {
 }
 
 await capture("1440", 1440, 1100);
+  await capture("1024", 1024, 900);
 await capture("400", 400, 860);
 
 if (flags.has("--full")) {
   await capture("1280", 1280, 960);
-  await capture("1024", 1024, 900);
   await capture("1440-reduced-motion", 1440, 1100, true);
   await capture("400-reduced-motion", 400, 860, true);
 }

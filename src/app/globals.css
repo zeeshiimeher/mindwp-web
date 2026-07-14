@@ -3,6 +3,9 @@
 @import "../styles/layout.css";
 @import "../styles/buttons.css";
 @import "../styles/form.css";
+@import "../styles/sections.css";
+@import "../styles/pages/home.css";
+@import "../styles/pages/local-seo.css";
 
 :root {
   color-scheme: light;
@@ -91,7 +94,7 @@ svg {
 .on-dark h2,
 .on-dark h3,
 .on-dark h4 {
-  color: var(--color-white);
+  color: var(--text-inverse);
 }
 
 .on-dark p,
@@ -103,8 +106,8 @@ svg {
   outline-color: var(--color-emerald);
 }
 
-.on-bone {
-  background: var(--color-bone);
+.on-mist {
+  background: var(--surface-mist);
 }
 
 .status-page {
@@ -145,6 +148,8 @@ svg {
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }

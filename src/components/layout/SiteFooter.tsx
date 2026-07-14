@@ -7,7 +7,7 @@ const COLUMNS = [
     title: "What we build",
     links: [
       { href: "#five-systems", label: "Smart Website Systems" },
-      { href: "#found-nearby", label: "Local SEO Authority" },
+      { href: "/services/local-seo-authority", label: "Local SEO Authority" },
       { href: "#five-systems", label: "Lead Response & Handling" },
       { href: "#five-systems", label: "Follow-Up & CRM" },
       { href: "#five-systems", label: "Reputation & Review" },
@@ -16,7 +16,7 @@ const COLUMNS = [
   {
     title: "Industries",
     links: [
-      { href: "#clinic-scenario", label: "Specialist Clinics" },
+      { href: "#scenario", label: "Specialist Clinics" },
       { href: "#work", label: "Home Services" },
     ],
   },

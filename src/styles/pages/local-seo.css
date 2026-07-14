@@ -1,0 +1,699 @@
+/* ==========================================================================
+   Local SEO Authority — page-unique sections. Shared blocks (.fit, .faq,
+   .final-cta, .label-caps, .eyebrow--split) live in styles/sections.css.
+   ========================================================================== */
+
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.lsa-hero {
+  background: var(--surface-navy);
+  padding-top: calc(var(--header-height) + var(--space-9));
+}
+
+.lsa-hero__top {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-9);
+  align-items: center;
+  padding-bottom: var(--space-10);
+}
+
+.lsa-hero__headline-muted {
+  font-style: italic;
+  color: var(--text-inverse-muted);
+}
+
+.lsa-hero__lede {
+  margin-top: var(--space-6);
+  max-width: 38ch;
+  font: var(--body-lg);
+  color: var(--text-inverse-muted);
+}
+
+.lsa-hero__actions {
+  margin-top: var(--space-7);
+}
+
+.lsa-hero__artifact {
+  display: flex;
+  justify-content: center;
+}
+
+.lsa-pack {
+  position: relative;
+  width: 100%;
+  max-width: 21rem;
+  background: var(--surface-navy-panel);
+  border: 1px solid var(--border-navy-hairline);
+  border-radius: 1.75rem;
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  box-shadow: var(--shadow-card-lg);
+}
+
+.lsa-pack__notch {
+  position: absolute;
+  top: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--border-navy-hairline);
+}
+
+.lsa-pack__query {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--surface-navy-raised);
+  border: 1px solid var(--border-navy-hairline);
+  color: var(--color-emerald);
+  margin-bottom: var(--space-5);
+}
+
+.lsa-pack__query span {
+  font: var(--body-sm);
+  color: var(--text-inverse);
+}
+
+.lsa-pack__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lsa-pack__row {
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-navy-hairline);
+}
+
+.lsa-pack__row--featured {
+  background: var(--surface-navy-raised);
+  border-color: var(--color-emerald);
+}
+
+.lsa-pack__row--dim {
+  opacity: 0.78;
+}
+
+.lsa-pack__row-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.lsa-pack__row-name {
+  margin: 0;
+  font: 600 0.9375rem/1.3 var(--font-body);
+  color: var(--text-inverse);
+}
+
+.lsa-pack__row-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: var(--body-xs);
+  font-weight: 400;
+  color: var(--text-inverse-muted);
+  white-space: nowrap;
+}
+
+.lsa-pack__signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-navy-hairline);
+}
+
+.lsa-pack__signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: rgb(47 185 140 / 14%);
+  color: var(--color-emerald);
+  font: var(--body-xs);
+  font-weight: 500;
+  opacity: 0;
+  animation: chip-in 420ms var(--ease-out) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lsa-pack__signal {
+    animation: none;
+    animation-delay: 0s;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 64rem) {
+  .lsa-hero__top {
+    grid-template-columns: 1fr;
+  }
+
+  .lsa-hero__artifact {
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
+   Before the click
+   ========================================================================== */
+
+.lsa-before {
+  padding-block: var(--space-10);
+}
+
+.lsa-before__heading {
+  max-width: 20ch;
+}
+
+.lsa-before__lede {
+  margin-top: var(--space-5);
+  max-width: 60ch;
+}
+
+.lsa-before__grid {
+  margin-top: var(--space-9);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
+}
+
+.lsa-before__item {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-5);
+}
+
+.lsa-before__num {
+  display: block;
+  font: var(--display-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.lsa-before__label {
+  margin: 0 0 var(--space-2);
+  font: 600 1.125rem/1.3 var(--font-display);
+  color: var(--text-primary);
+}
+
+.lsa-before__body {
+  margin: 0;
+}
+
+@media (max-width: 56rem) {
+  .lsa-before__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Four places local trust is built
+   ========================================================================== */
+
+.lsa-places {
+  padding-block: var(--space-10);
+}
+
+.lsa-places__headline-muted {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.lsa-places__lede {
+  margin-top: var(--space-5);
+  max-width: 56ch;
+}
+
+.lsa-places__grid {
+  margin-top: var(--space-8);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--border-mist-hairline);
+  border-left: 1px solid var(--border-mist-hairline);
+}
+
+.lsa-places__cell {
+  padding: var(--space-6);
+  border-right: 1px solid var(--border-mist-hairline);
+  border-bottom: 1px solid var(--border-mist-hairline);
+}
+
+.lsa-places__cell-label {
+  margin: var(--space-3) 0 var(--space-2);
+  font: 600 1.125rem/1.3 var(--font-display);
+  color: var(--text-primary);
+}
+
+.lsa-places__cell-body {
+  margin: 0;
+  font: var(--body-sm);
+}
+
+@media (max-width: 48rem) {
+  .lsa-places__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================================
+   It builds on the website
+   ========================================================================== */
+
+.lsa-website {
+  background: var(--surface-navy);
+}
+
+.lsa-website__inner {
+  padding-block: var(--space-10);
+  text-align: center;
+}
+
+.lsa-website__headline-muted {
+  font-style: italic;
+  color: var(--text-inverse-muted);
+}
+
+.lsa-website__body {
+  margin: var(--space-6) auto 0;
+  max-width: 56ch;
+  color: var(--text-inverse-muted);
+}
+
+.lsa-website__links {
+  margin: var(--space-5) auto 0;
+  max-width: 56ch;
+  font: var(--body-sm);
+  color: var(--text-inverse-muted);
+}
+
+.lsa-website__links a {
+  color: var(--color-emerald);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.lsa-website__links a:hover {
+  color: var(--text-inverse);
+}
+
+/* ==========================================================================
+   Why local SEO disappoints
+   ========================================================================== */
+
+.lsa-disappoints {
+  padding-block: var(--space-10);
+}
+
+.lsa-disappoints__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-9);
+  align-items: center;
+}
+
+.lsa-disappoints__body {
+  margin-top: var(--space-5);
+  max-width: 46ch;
+}
+
+.lsa-disappoints__card {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lsa-disappoints__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lsa-disappoints__row + .lsa-disappoints__row {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.lsa-disappoints__field {
+  color: var(--text-secondary);
+}
+
+.lsa-disappoints__facts {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.lsa-disappoints__fact {
+  font: var(--body-sm);
+  color: var(--text-primary);
+}
+
+.lsa-disappoints__x {
+  display: flex;
+  flex: 0 0 auto;
+  color: var(--color-danger);
+}
+
+@media (max-width: 56rem) {
+  .lsa-disappoints__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   The visibility cycle
+   ========================================================================== */
+
+.lsa-cycle {
+  padding-block: var(--space-10);
+}
+
+.lsa-cycle__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-9);
+  align-items: center;
+}
+
+.lsa-cycle__body {
+  margin-top: var(--space-5);
+  max-width: 46ch;
+}
+
+.lsa-cycle__diagram {
+  position: relative;
+  width: 100%;
+  max-width: 21rem;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+
+.lsa-cycle__ring {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lsa-cycle__stage {
+  position: absolute;
+  width: 9.5rem;
+  text-align: center;
+}
+
+.lsa-cycle__stage-label {
+  margin: 4px 0 0;
+  font: 600 0.9375rem/1.3 var(--font-body);
+  color: var(--text-primary);
+}
+
+.lsa-cycle__stage--top {
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lsa-cycle__stage--right {
+  top: 50%;
+  right: -2.5rem;
+  transform: translateY(-50%);
+}
+
+.lsa-cycle__stage--bottom {
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lsa-cycle__stage--left {
+  top: 50%;
+  left: -2.5rem;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 56rem) {
+  .lsa-cycle__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lsa-cycle__diagram {
+    margin-top: var(--space-6);
+  }
+}
+
+@media (max-width: 32rem) {
+  .lsa-cycle__stage {
+    width: 7rem;
+    font-size: 0.875em;
+  }
+
+  .lsa-cycle__stage--right {
+    right: -0.5rem;
+  }
+
+  .lsa-cycle__stage--left {
+    left: -0.5rem;
+  }
+}
+
+/* ==========================================================================
+   The work · aligned (toggle) + what it earns
+   ========================================================================== */
+
+.lsa-aligned {
+  background: var(--surface-navy);
+}
+
+.lsa-aligned__intro {
+  padding-top: var(--space-10);
+  text-align: center;
+}
+
+.lsa-aligned__lede {
+  margin: var(--space-5) auto 0;
+  max-width: 52ch;
+  color: var(--text-inverse-muted);
+}
+
+.lsa-aligned__toggle {
+  display: inline-flex;
+  gap: 4px;
+  margin: var(--space-7) auto 0;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-navy-raised);
+  border: 1px solid var(--border-navy-hairline);
+}
+
+.lsa-aligned__toggle-btn {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font: 600 0.875rem/1 var(--font-body);
+  color: var(--text-inverse-muted);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.lsa-aligned__toggle-btn:hover {
+  color: var(--text-inverse);
+}
+
+.lsa-aligned__toggle-btn--active,
+.lsa-aligned__toggle-btn--active:hover {
+  background: var(--color-emerald);
+  color: var(--surface-navy);
+}
+
+.lsa-aligned__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  padding: var(--space-8) 0 var(--space-9);
+}
+
+.lsa-aligned__card {
+  background: var(--surface-navy-panel);
+  border: 1px dashed var(--color-danger);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  transition: border-color var(--duration-base) var(--ease-out);
+  animation: fade-swap var(--duration-base) var(--ease-out);
+}
+
+.lsa-aligned__row--aligned .lsa-aligned__card {
+  border-style: solid;
+  border-color: var(--color-emerald);
+}
+
+.lsa-aligned__card-icon {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+  background: rgb(207 90 90 / 16%);
+  color: var(--color-danger);
+}
+
+.lsa-aligned__row--aligned .lsa-aligned__card-icon {
+  background: rgb(47 185 140 / 16%);
+  color: var(--color-emerald);
+}
+
+.lsa-aligned__card-fact {
+  margin: var(--space-2) 0 0;
+  font: var(--body-sm);
+  color: var(--text-inverse-muted);
+}
+
+@media (max-width: 56rem) {
+  .lsa-aligned__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lsa-earns {
+  background: var(--surface-navy);
+}
+
+.lsa-earns__inner {
+  padding-block: 0 var(--space-10);
+  text-align: center;
+}
+
+.lsa-earns__heading {
+  font: var(--display-md);
+  max-width: 26ch;
+  margin-inline: auto;
+}
+
+.lsa-earns__lede {
+  margin: var(--space-4) auto 0;
+  max-width: 50ch;
+  color: var(--text-inverse-muted);
+}
+
+.lsa-earns__steps {
+  margin-top: var(--space-8);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.lsa-earns__step {
+  border-top: 1px solid var(--border-navy-hairline);
+  padding-top: var(--space-4);
+}
+
+.lsa-earns__step-label {
+  margin: 0 0 4px;
+  font: 600 1rem/1.3 var(--font-body);
+  color: var(--text-inverse);
+}
+
+.lsa-earns__step-body {
+  margin: 0;
+  font: var(--body-sm);
+  color: var(--text-inverse-muted);
+}
+
+@media (max-width: 48rem) {
+  .lsa-earns__steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   What changes (transition strip)
+   ========================================================================== */
+
+.lsa-changes__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-8);
+  align-items: end;
+  padding-block: var(--space-9);
+}
+
+.lsa-changes__copy {
+  margin: 0;
+  max-width: 40ch;
+}
+
+@media (max-width: 48rem) {
+  .lsa-changes__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   What we actually do
+   ========================================================================== */
+
+.lsa-what-we-do {
+  padding-block: var(--space-10);
+}
+
+.lsa-what-we-do__lede {
+  margin-top: var(--space-5);
+  max-width: 56ch;
+}
+
+.lsa-what-we-do__list {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+}
+
+.lsa-what-we-do__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--border-mist-hairline);
+}
+
+.lsa-what-we-do__item-title {
+  margin: 0 0 4px;
+  font: 600 1.0625rem/1.3 var(--font-body);
+  color: var(--text-primary);
+}
+
+.lsa-what-we-do__item-body {
+  margin: 0;
+}
